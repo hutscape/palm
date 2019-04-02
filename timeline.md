@@ -19,10 +19,10 @@ Ideation tasks:
 1. Research for modules and sensors
 1. Research for similar projects and tutorials
 1. Research for datasheets
+1. Research on power sources
 1. Do an initial power tree analysis
-1. Settle on a project name
 1. Decide on a mechanical housing
-1. Research on power
+1. Settle on a project name
 1. Order modules, parts, power required for component testing
 1. Note the prices for prototype items
 1. Note the time taken to receive all the parts
