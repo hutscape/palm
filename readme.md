@@ -49,3 +49,4 @@
 ## Similar projects
 
 - [UV-badge](https://hackaday.io/project/4706-uv-badge)
+- [#badgelife](https://twitter.com/search?q=%23badgelife&src=typed_query) on Twitter for various PCB designs
