@@ -1,11 +1,11 @@
 # Palm
 
-> Measure UV, temperature, humidity and barometric pressure outdoors on a keychain 🗝 hanging on a backpack 🎒.
+> Measure UV, temperature and humidity outdoors on a keychain 🗝 hanging on a backpack 🎒.
 
 > Users can sync the logged data from the keychain through their mobile phone/browser or press a button to display the current sensor values.
 
 - **Wireless:**	BLE
-- **Sensors:**	`VEML6075` for UV and `BME280` for temperature, humidity and barometric pressure
+- **Sensors:**	`VEML6075` for UV and `Si7021` for temperature and humidity
 - **Power:**	`CR2032` [coin cell with on-off switch](https://www.adafruit.com/product/1871)
 - **Processor:**	`NRF52` on [Adafruit Bluefruit LE](https://www.adafruit.com/product/2661)
 - **Firmware:**	[Arduino NRF52](https://github.com/sandeepmistry/arduino-nRF5)
@@ -28,9 +28,9 @@
 
 ## Humidity, Temperature and Barometric pressure sensor
 
-1. [Adafruit BME280](https://www.adafruit.com/product/2652) breakout board frmo Adafruit with `I2C` or `SPI`
+1. [Adafruit BME280](https://www.adafruit.com/product/2652) breakout board from Adafruit with `I2C` or `SPI`
 1. [What's the difference between the BMP280 and the BME280 atmospheric sensors](https://www.youtube.com/watch?v=0aL1PxK3rkE)
-    - BME has both temeprature and humidity sensor
+    - BME has both temperature and humidity sensor
 
 ## Processor
 
