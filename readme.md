@@ -1,6 +1,6 @@
 # Palm
 
-> Measure UV, temperature and humidity outdoors on a keychain 🗝 hanging on a backpack 🎒.
+> Measure UV, temperature and humidity outdoors with a keychain 🗝 hanging on a backpack 🎒.
 
 > Users can sync the logged data from the keychain through their mobile phone/browser or press a button to display the current sensor values.
 
