@@ -11,22 +11,22 @@
 - **Ideation Start Date:** 2 April, 2019
 - **Ideation End Date:** *Pending*
 - **Prototype Parts Lead Time:** *Pending*
-- **Order prototype parts date:** *Pending*
+- **Order prototype parts date:** 4 April, 2019
 - **Receive prototype parts date:** *Pending*
 
 Ideation tasks:
 
-1. Research for modules and sensors
-1. Research for similar projects and tutorials
-1. Research for datasheets
-1. Research on power sources
-1. Do an initial power tree analysis
-1. Decide on a mechanical housing
-1. Settle on a project name
-1. Order modules, parts, power required for component testing
-1. Note the prices for prototype items
-1. Note the time taken to receive all the parts
-1. Note mechanical dimensions of parts and housing
+- [x] Research for modules and sensors
+- [x] Research for similar projects and tutorials
+- [ ] Research for datasheets
+- [ ] Research on power sources
+- [ ] Do an initial power tree analysis
+- [ ] Decide on a mechanical housing
+- [x] Settle on a project name
+- [x] Order modules, parts, power required for component testing
+- [x] Note the prices for prototype items
+- [ ] Note the time taken to receive all the parts
+- [ ] Note mechanical dimensions of parts and housing
 
 ## Prototyping
 
@@ -36,10 +36,10 @@ Ideation tasks:
 
 Prototyping tasks:
 
-1. Ensure various components work with both hardware modules and firmware
-1. Finalize the power tree
-1. Make a theoretical power consumption calculation
-1. Make a mechanical and physical layout of the PCB housing
+- [ ] Ensure various components work with both hardware modules and firmware
+- [ ] Finalize the power tree
+- [ ] Make a theoretical power consumption calculation
+- [ ] Make a mechanical and physical layout of the PCB housing
 
 ## Schematic
 
@@ -49,8 +49,9 @@ Prototyping tasks:
 
 Schematic tasks:
 
-1. Create new components
-1. Ensure DRC passes
+- [ ] Create new components
+- [ ] Ensure DRC passes
+- [ ] Go through [schematic checklist](https://github.com/azonenberg/pcb-checklist/blob/master/schematic-checklist.md)
 
 ## Mechanical
 
@@ -60,15 +61,17 @@ Schematic tasks:
 
 Mechanical tasks:
 
-1. Create a BOM list
-1. Ensure vendors have the stock
-1. Ensure edge cuts can house all the components
-1. Note all the dimensions of major components
-1. Note all connectors to external links
-1. Layout the PCB footprint
-1. Ensure ERC passes
-1. Add version, name, year, logos on the silkscreen
-1. Add mounting holes
+- [ ] Create a BOM list
+- [ ] Ensure vendors have the stock
+- [ ] Ensure edge cuts can house all the components
+- [ ] Note all the dimensions of major components
+- [ ] Note all connectors to external links
+- [ ] Layout the PCB footprint
+- [ ] Ensure ERC passes
+- [ ] Add version, name, year, logos on the silkscreen
+- [ ] Add mounting holes
+- [ ] Go through [layout checklist](https://github.com/azonenberg/pcb-checklist/blob/master/layout-checklist.md)
+- [ ] Go through [PCB manufacturing checks](https://www.seeedstudio.com/blog/2019/04/05/11-do-it-yourself-pcb-design-for-manufacture-checks-anyone-can-do/)
 
 ## Manufacturing
 
