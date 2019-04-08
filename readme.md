@@ -5,15 +5,17 @@
 > Users can sync the logged data from the keychain through their mobile phone/browser or press a button to display the current sensor values.
 
 - **Wireless:**	BLE
-- **Sensors:**	`VEML6075` for UV and `Si7021` for temperature and humidity
+- **Sensors:**	2 (`VEML6075` for UV and `Si7021` for temperature and humidity)
 - **Power:**	`CR2032` [coin cell with on-off switch](https://www.adafruit.com/product/1871) or CR2016
 - **Processor:**	`NRF52` on [Adafruit Bluefruit LE](https://www.adafruit.com/product/2661)
 - **Firmware:**	[Arduino NRF52](https://github.com/sandeepmistry/arduino-nRF5)
 - **OTA?**	No
 - **Works without connectivity?**	Display 3 sensor values using an [LCD screen](https://www.adafruit.com/product/3502)
-- **BOM Total Items:**	*Not yet*
-- **BOM Unique Items:** *Not yet*
-- **Manufacturer Name:**	*Not yet*
+- **BOM Total Items:**	*Pending*
+- **BOM Unique Items:** *Pending*
+- **Manufacturer Name:**	*Pending*
+- **BOM vendor:** *Pending*
+- **Total units:** *Pending*
 
 ## References 📚
 

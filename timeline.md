@@ -10,9 +10,9 @@
 - **Ideation Duration:** *Pending*
 - **Ideation Start Date:** 2 April, 2019
 - **Ideation End Date:** *Pending*
-- **Prototype Parts Lead Time:** *Pending*
+- **Prototype Parts Lead Time:** 4 days
 - **Order prototype parts date:** 4 April, 2019
-- **Receive prototype parts date:** *Pending*
+- **Receive prototype parts date:** 8 April, 2019
 
 Ideation tasks:
 
