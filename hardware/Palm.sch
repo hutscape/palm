@@ -1,0 +1,142 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Module:Arduino_UNO_R3 A1
+U 1 1 5CAF02E7
+P 3100 2500
+F 0 "A1" V 2650 1500 50  0000 L CNN
+F 1 "Arduino_UNO_R3" V 3700 2850 50  0000 L CNN
+F 2 "Module:Arduino_UNO_R3" H 3250 1450 50  0001 L CNN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 2900 3550 50  0001 C CNN
+	1    3100 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L Sensor_UV:VEML6075_breakout U1
+U 1 1 5CAF1352
+P 2700 3650
+F 0 "U1" V 3000 3850 50  0000 R CNN
+F 1 "VEML6075_breakout" V 2350 4000 50  0000 R CNN
+F 2 "" H 2700 3650 50  0001 C CNN
+F 3 "" H 2700 3650 50  0001 C CNN
+	1    2700 3650
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4100 2400 4300 2400
+Wire Wire Line
+	2700 3000 2700 3150
+$Comp
+L power:+5V #PWR0101
+U 1 1 5CAF70B7
+P 4300 2100
+F 0 "#PWR0101" H 4300 1950 50  0001 C CNN
+F 1 "+5V" H 4315 2273 50  0000 C CNN
+F 2 "" H 4300 2100 50  0001 C CNN
+F 3 "" H 4300 2100 50  0001 C CNN
+	1    4300 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5CAF7E45
+P 1900 3750
+F 0 "#PWR0103" H 1900 3500 50  0001 C CNN
+F 1 "GND" H 1905 3577 50  0000 C CNN
+F 2 "" H 1900 3750 50  0001 C CNN
+F 3 "" H 1900 3750 50  0001 C CNN
+	1    1900 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 2600 1900 2600
+NoConn ~ 2400 2000
+NoConn ~ 2500 2000
+NoConn ~ 2600 2000
+NoConn ~ 2700 2000
+NoConn ~ 2800 2000
+NoConn ~ 2900 2000
+NoConn ~ 3000 2000
+NoConn ~ 3100 2000
+NoConn ~ 3200 2000
+NoConn ~ 3300 2000
+NoConn ~ 3400 2000
+NoConn ~ 3500 2000
+NoConn ~ 3600 2000
+NoConn ~ 3700 2000
+NoConn ~ 3700 3000
+NoConn ~ 3500 3000
+NoConn ~ 3300 3000
+NoConn ~ 3100 3000
+NoConn ~ 3000 3000
+NoConn ~ 2900 3000
+NoConn ~ 2800 3000
+NoConn ~ 2000 2400
+NoConn ~ 2000 2500
+NoConn ~ 2400 3000
+NoConn ~ 2300 3000
+NoConn ~ 4100 2600
+NoConn ~ 4100 2700
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5CAFADC6
+P 4300 2150
+F 0 "#FLG0101" H 4300 2225 50  0001 C CNN
+F 1 "PWR_FLAG" V 4300 2278 50  0000 L CNN
+F 2 "" H 4300 2150 50  0001 C CNN
+F 3 "~" H 4300 2150 50  0001 C CNN
+	1    4300 2150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 5CAFB749
+P 1650 2600
+F 0 "#FLG0102" H 1650 2675 50  0001 C CNN
+F 1 "PWR_FLAG" V 1650 2727 50  0000 L CNN
+F 2 "" H 1650 2600 50  0001 C CNN
+F 3 "~" H 1650 2600 50  0001 C CNN
+	1    1650 2600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1900 2600 1650 2600
+Connection ~ 1900 2600
+Wire Wire Line
+	3000 3750 4300 3750
+Wire Wire Line
+	4300 3750 4300 2400
+Connection ~ 4300 2400
+Connection ~ 4300 2150
+Wire Wire Line
+	4300 2150 4300 2100
+Wire Wire Line
+	4300 2150 4300 2400
+Wire Wire Line
+	2650 3300 2600 3300
+Wire Wire Line
+	2600 3000 2600 3300
+Wire Wire Line
+	2550 3300 2550 3150
+Wire Wire Line
+	2550 3150 2700 3150
+Wire Wire Line
+	2400 3750 1900 3750
+Wire Wire Line
+	1900 2600 1900 3750
+Connection ~ 1900 3750
+NoConn ~ 3000 3550
+$EndSCHEMATC
