@@ -31,7 +31,7 @@ Ideation tasks:
 ## Prototyping
 
 - **Prototype Testing Duration:** *Pending*
-- **Prototype Testing Start Date:** *Pending*
+- **Prototype Testing Start Date:** 11 April, 2019
 - **Prototype Testing End Date:** *Pending*
 
 Prototyping tasks:
