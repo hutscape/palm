@@ -1,7 +1,5 @@
 # NRF52 breakout board
 
-> With Adafruit nRF52 Bluefruit breakout board
-
 - Hardware: Adafruit Bluefruit nRF52 breakout board
 - [Firmware](main.ino): blinky LED with Arduino IDE
 
