@@ -27,7 +27,7 @@
 1. Flash the [firmware](components/display-uv/main.ino) to display UV values
 1. See the UV sensor values being displayed every second
 
-    ![](components/display-uv/prototype.png)
+    ![](components/display-uv/prototype.jpg)
 
 ## References 📚
 
