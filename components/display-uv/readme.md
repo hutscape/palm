@@ -15,3 +15,4 @@
 ## References:
 
 - [Adafruit SHARP memory display firmware](https://github.com/adafruit/Adafruit_SHARP_Memory_Display/blob/master/examples/sharpmemtest/sharpmemtest.ino)
+- [Display LiPo battery voltage firmware](https://github.com/adafruit/Adafruit_nRF52_Arduino/blob/master/libraries/Bluefruit52Lib/examples/Hardware/adc_vbat/adc_vbat.ino)
