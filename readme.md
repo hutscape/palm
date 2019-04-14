@@ -23,8 +23,8 @@
 
 1. Wire up the hardware components
 
-    ![](components/display-uv/schematic.png)
-1. Flash the [firmware](components/display-uv/main.ino) to display UV values
+    ![](components/display-uv-lipo/schematic.png)
+1. Flash the [firmware](components/display-uv-lipo/main.ino) to display UV values
 1. See the UV sensor values being displayed every second
 
     ![](components/display-uv/prototype.jpg)

@@ -57,7 +57,6 @@ NoConn ~ 5250 2300
 NoConn ~ 5250 2400
 NoConn ~ 5250 2500
 NoConn ~ 5250 2750
-NoConn ~ 5250 2850
 NoConn ~ 5250 2950
 $Comp
 L power:PWR_FLAG #FLG0101
@@ -92,15 +91,15 @@ F 3 "~" H 5950 3150 50  0001 C CNN
 	1    5950 3150
 	0    1    1    0   
 $EndComp
-Text Label 5850 1000 0    50   ~ 0
-5V
+Text Label 5100 2850 2    50   ~ 0
+3V
 Text Label 5950 3300 0    50   ~ 0
 GND
 Connection ~ 5950 3150
 Wire Wire Line
 	5950 3150 5950 3300
 Text Label 8250 1600 0    50   ~ 0
-5V
+3V
 $Bitmap
 Pos 2800 2050
 Scale 0.500000
@@ -8873,7 +8872,7 @@ Wire Wire Line
 Wire Wire Line
 	7450 2100 7600 2100
 Text Label 10100 1450 0    50   ~ 0
-5V
+3V
 Text Label 10100 2600 0    50   ~ 0
 GND
 NoConn ~ 9450 1950
@@ -8918,5 +8917,6 @@ Connection ~ 5850 1100
 Wire Wire Line
 	5850 1100 5850 1200
 NoConn ~ 5250 2600
-NoConn ~ 9500 2900
+Wire Wire Line
+	5250 2850 5100 2850
 $EndSCHEMATC
