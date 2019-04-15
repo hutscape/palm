@@ -15,6 +15,9 @@
     - [`VEML6075 1.7V-3.6V`](https://www.vishay.com/docs/84304/veml6075.pdf) - UVA and UVB light sensor
     - [`2N7002DW`](http://www.farnell.com/datasheets/1900920.pdf) - N-channel enhancement mode field effect transistor
 1. [SHARP Memory display](https://github.com/adafruit/Adafruit-Sharp-Memory-Display) breakout board
+    - [`74HC4050`](https://www.nxp.com/docs/en/data-sheet/74HC4050.pdf) - Hex non-inverting HIGH-to-LOW level shifter
+    - [`LS013B4DN04`](https://cdn-shop.adafruit.com/datasheets/LS013B4DN04-3V_FPC-204284.pdf) - LCD
+    - [`MCP182T-3302`](https://4donline.ihs.com/images/VipMasterIC/IC/MCHP/MCHPS04295/MCHPS04295-1.pdf) - LDO
 
 ### Firmware
 
