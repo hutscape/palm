@@ -70,10 +70,10 @@ F 3 "~" H 5850 1100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Adafruit_SHARP_display:Adafruit_SHARP_display_168_144 U3
+L Adafruit_SHARP_display:Adafruit_SHARP_display_168_144 U4
 U 1 1 5CB1739B
 P 9900 2050
-F 0 "U3" H 9600 2550 50  0000 C CNN
+F 0 "U4" H 9600 2550 50  0000 C CNN
 F 1 "Adafruit_SHARP_display_168_144" H 9900 1350 50  0000 C CNN
 F 2 "" H 10100 3100 50  0001 C CNN
 F 3 "" H 10100 3100 50  0001 C CNN
@@ -98,7 +98,7 @@ GND
 Connection ~ 5950 3150
 Wire Wire Line
 	5950 3150 5950 3300
-Text Label 8250 1600 0    50   ~ 0
+Text Label 8250 1150 0    50   ~ 0
 3V
 $Bitmap
 Pos 2800 2050
@@ -8828,12 +8828,12 @@ $EndBitmap
 $Comp
 L Sensor_UV:VEML6075_breakout U2
 U 1 1 5CAF1352
-P 7950 1950
-F 0 "U2" H 8250 2200 50  0000 R CNN
-F 1 "VEML6075_breakout" H 8300 1500 50  0000 R CNN
-F 2 "" H 7950 1950 50  0001 C CNN
-F 3 "" H 7950 1950 50  0001 C CNN
-	1    7950 1950
+P 7950 1500
+F 0 "U2" H 8250 1750 50  0000 R CNN
+F 1 "VEML6075_breakout" H 8300 1050 50  0000 R CNN
+F 2 "" H 7950 1500 50  0001 C CNN
+F 3 "" H 7950 1500 50  0001 C CNN
+	1    7950 1500
 	-1   0    0    -1  
 $EndComp
 NoConn ~ 5750 1200
@@ -8844,33 +8844,33 @@ NoConn ~ 6350 2450
 NoConn ~ 6350 2550
 NoConn ~ 6350 2650
 NoConn ~ 6350 2750
-NoConn ~ 7850 1650
+NoConn ~ 7850 1200
 Wire Wire Line
-	8050 1650 8050 1600
+	8050 1200 8050 1150
 Wire Wire Line
-	8050 1600 8250 1600
+	8050 1150 8250 1150
 Wire Wire Line
-	8050 2250 8050 2300
+	8050 1800 8050 1850
 Wire Wire Line
-	8050 2300 8250 2300
-Text Label 8250 2300 0    50   ~ 0
+	8050 1850 8250 1850
+Text Label 8250 1850 0    50   ~ 0
 GND
 Text Label 6550 1650 0    50   ~ 0
 SDA
 Text Label 6550 1750 0    50   ~ 0
 SCL
-Text Label 7450 2000 2    50   ~ 0
+Text Label 7450 1550 2    50   ~ 0
 SCL
-Text Label 7450 2100 2    50   ~ 0
+Text Label 7450 1650 2    50   ~ 0
 SDA
 Wire Wire Line
 	6350 1650 6550 1650
 Wire Wire Line
 	6350 1750 6550 1750
 Wire Wire Line
-	7450 2000 7600 2000
+	7450 1550 7600 1550
 Wire Wire Line
-	7450 2100 7600 2100
+	7450 1650 7600 1650
 Text Label 10100 1450 0    50   ~ 0
 3V
 Text Label 10100 2600 0    50   ~ 0
@@ -8919,4 +8919,36 @@ Wire Wire Line
 NoConn ~ 5250 2600
 Wire Wire Line
 	5250 2850 5100 2850
+$Comp
+L Adafruit_Si7021_breakout:Si7021_breakout U3
+U 1 1 5CB56213
+P 7950 2650
+F 0 "U3" H 7700 2900 50  0000 L CNN
+F 1 "Si7021_breakout" H 7650 2100 50  0000 L CNN
+F 2 "" H 7950 2050 50  0000 C CNN
+F 3 "https://learn.adafruit.com/adafruit-si7021-temperature-plus-humidity-sensor/overview" H 7950 2450 50  0001 C CNN
+	1    7950 2650
+	1    0    0    -1  
+$EndComp
+Text Label 8150 2300 0    50   ~ 0
+3V
+Text Label 8200 3050 0    50   ~ 0
+GND
+Text Label 7450 2600 2    50   ~ 0
+SDA
+Text Label 7450 2700 2    50   ~ 0
+SCL
+Wire Wire Line
+	7950 2350 7950 2300
+Wire Wire Line
+	7950 2300 8150 2300
+Wire Wire Line
+	7600 2600 7450 2600
+Wire Wire Line
+	7950 3000 7950 3050
+Wire Wire Line
+	7950 3050 8200 3050
+Wire Wire Line
+	7600 2700 7450 2700
+NoConn ~ 8300 2600
 $EndSCHEMATC

@@ -1,5 +1,15 @@
 # Components
 
+## Component experiments
+
+1. [UV sensor VEML6075](uv-sensor
+  ) with nRF52 breakout board
+1. Hello world blinky with Adafruit Bluefruit [NRF52 breakout board](nrf52)
+1. [Hello world with nRF52 breakout board and SHARP display](sharp-display)
+1. [Display UV sensor values](display-uv)
+1. [Display UV sensor with LiPo](display-uv-lipo)
+1. [Display UV and temperature/humidity sensors with LiPo](display-sensors)
+
 ## Main Components
 
 ### Hardware
@@ -18,12 +28,3 @@
     - [`MCP182T-3302`](https://4donline.ihs.com/images/VipMasterIC/IC/MCHP/MCHPS04295/MCHPS04295-1.pdf) - LDO
 
 ### Firmware
-
-## Component experiments
-
-1. [UV sensor VEML6075](uv-sensor
-  ) with nRF52 breakout board
-1. Hello world blinky with Adafruit Bluefruit [NRF52 breakout board](nrf52)
-1. [Hello world with nRF52 breakout board and SHARP display](sharp-display)
-1. [Display UV sensor values](display-uv)
-1. [Display UV sensor with LiPo](display-uv-lipo)
