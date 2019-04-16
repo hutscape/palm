@@ -23,11 +23,13 @@
 
 1. Wire up the hardware components
 
-    ![](components/display-uv-lipo/schematic.png)
-1. Flash the [firmware](components/display-uv-lipo/main.ino) to display UV values
-1. See the UV sensor values being displayed every second
+    ![](components/display-sensors/schematic.png)
+1. Flash the [firmware](components/display-sensors/main.ino) to display UV, temperature and humidity values
 
-    ![](components/display-uv/prototype.jpg)
+    ![](components/display-sensors/console.png)
+1. See the UV, temperature and humidity values values being displayed every second
+
+    ![](components/display-sensors/prototype.jpg)
 
 ## References 📚
 

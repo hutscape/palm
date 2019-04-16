@@ -11,6 +11,8 @@
 
     ![](schematic.png)
 
+![](prototype.png)
+
 ## Pre-requisites
 
 1. [nRF52](../nrf52)
