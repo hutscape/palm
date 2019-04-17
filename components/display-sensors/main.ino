@@ -21,7 +21,7 @@ Adafruit_SharpMem display(SHARP_SCK, SHARP_MOSI, SHARP_SS, 144, 168);
 #define BLACK 0
 #define WHITE 1
 
-bool debug = false;
+bool debug = false; // toggle true or false to enable serial console debug messages
 
 struct SensorValues {
   int vbat_raw;
@@ -49,7 +49,7 @@ void setup(void) {
 
 void loop(void) {
   SensorValues v = getSensorValues();
-  
+
   display.clearDisplay();
 
   displayBatt(v.vbat_raw, v.vbat_per, v.vbat_mv);
