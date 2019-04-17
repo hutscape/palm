@@ -23,6 +23,19 @@ Adafruit_SharpMem display(SHARP_SCK, SHARP_MOSI, SHARP_SS, 144, 168);
 
 bool debug = false;
 
+struct SensorValues {
+  int vbat_raw;
+  uint8_t vbat_per;
+  float vbat_mv;
+
+  float uvindex;
+  float uva;
+  float uvb;
+
+  float humidity;
+  float temperature;
+};
+
 void setup(void) {
   if (debug) {
       Serial.begin(115200);
@@ -35,22 +48,13 @@ void setup(void) {
 }
 
 void loop(void) {
-  int vbat_raw = analogRead(VBAT_PIN);
-  uint8_t vbat_per = mvToPercent(vbat_raw * VBAT_MV_PER_LSB);
-  float vbat_mv = (float)vbat_raw * VBAT_MV_PER_LSB * VBAT_DIVIDER_COMP;
-
-  float uvindex = uv.readUVI();
-  float uva = uv.readUVA();
-  float uvb = uv.readUVB();
-
-  float humidity = sensor.readHumidity();
-  float temperature = sensor.readTemperature();
-
+  SensorValues v = getSensorValues();
+  
   display.clearDisplay();
 
-  displayBatt(vbat_raw, vbat_per, vbat_mv);
-  displayUV(uvindex, uva, uvb);
-  displayTempHumidity(temperature, humidity);
+  displayBatt(v.vbat_raw, v.vbat_per, v.vbat_mv);
+  displayUV(v.uvindex, v.uva, v.uvb);
+  displayTempHumidity(v.temperature, v.humidity);
 
   display.refresh();
   delay(4000);
@@ -93,28 +97,22 @@ void initBatt(void) {
 uint8_t mvToPercent(float mvolts) {
     uint8_t battery_level;
 
-    if (mvolts >= 3000)
-    {
+    if (mvolts >= 3000) {
         battery_level = 100;
     }
-    else if (mvolts > 2900)
-    {
+    else if (mvolts > 2900) {
         battery_level = 100 - ((3000 - mvolts) * 58) / 100;
     }
-    else if (mvolts > 2740)
-    {
+    else if (mvolts > 2740) {
         battery_level = 42 - ((2900 - mvolts) * 24) / 160;
     }
-    else if (mvolts > 2440)
-    {
+    else if (mvolts > 2440) {
         battery_level = 18 - ((2740 - mvolts) * 12) / 300;
     }
-    else if (mvolts > 2100)
-    {
+    else if (mvolts > 2100) {
         battery_level = 6 - ((2440 - mvolts) * 6) / 340;
     }
-    else
-    {
+    else {
         battery_level = 0;
     }
 
@@ -178,4 +176,23 @@ void displayTempHumidity(float temperature, float humidity) {
   display.print("Hum ");
   display.print(humidity, 0);
   display.println(" RH%");
+}
+
+SensorValues getSensorValues(void) {
+  int vbat_raw = analogRead(VBAT_PIN);
+
+  SensorValues v = {
+    vbat_raw,
+    mvToPercent(vbat_raw * VBAT_MV_PER_LSB),
+    (float)vbat_raw * VBAT_MV_PER_LSB * VBAT_DIVIDER_COMP,
+
+    uv.readUVI(),
+    uv.readUVA(),
+    uv.readUVB(),
+
+    sensor.readHumidity(),
+    sensor.readTemperature()
+  };
+
+  return v;
 }
