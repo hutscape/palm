@@ -4,6 +4,7 @@
 
 - **Start Date:** 2 April, 2019
 - **End Date:** *Pending*
+- **Total duration:** *Pending*
 
 ## Ideation
 
@@ -81,10 +82,10 @@ Mechanical tasks:
 
 Manufacturing tasks:
 
-1. Order parts online
-1. Order PCB manufacturing online
-1. Note the cost per unit
-1. Note other charges
+- [ ] Order parts online
+- [ ] Order PCB manufacturing online
+- [ ] Note the cost per unit
+- [ ] Note other charges
 
 ## System Integration
 
@@ -94,12 +95,12 @@ Manufacturing tasks:
 
 System Integration tasks:
 
-1. Solder 2 units
-1. Ensure continuity check for `GND` and `Vcc` points
-1. Do a power test
-1. Do a hello world firmware test
-1. Run the test firmware
-1. Run the full firmware
+- [ ] Solder 2 units
+- [ ] Ensure continuity check for `GND` and `Vcc` points
+- [ ] Do a power test
+- [ ] Do a hello world firmware test
+- [ ] Run the test firmware
+- [ ] Run the full firmware
 
 ## Deployment
 
@@ -107,4 +108,4 @@ System Integration tasks:
 
 Deployment tasks:
 
-- Start logging to monitor power consumption
+- [ ] Start logging to monitor power consumption
