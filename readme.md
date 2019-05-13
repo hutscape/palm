@@ -5,28 +5,44 @@
 > Users can sync the logged data from the keychain through their mobile phone/browser or press a button to display the current sensor values.
 
 - **Wireless:**	BLE
-- **Sensors:**	2 (`VEML6075` for UV and `Si7021` for temperature and humidity)
+- **Sensors:**	1 (`VEML6075` for UV)
 - **Power:**	`CR2032` [coin cell with on-off switch](https://www.adafruit.com/product/1871) or CR2016
 - **Processor:**	`NRF52` on [Adafruit Bluefruit LE](https://www.adafruit.com/product/2661)
-- **Modules:** 3 (MCU, display, sensor)
+- **Modules:** 2 (MCU, sensor)
 - **Firmware:**	[Arduino NRF52](https://github.com/sandeepmistry/arduino-nRF5)
 - **OTA?**	No
-- **Works without connectivity?**	Display 3 sensor values using an [LCD screen](https://www.adafruit.com/product/3502)
+- **Works without connectivity?**	Yes. Display an RGB LED on-board
 - **BOM Total Items:**	*Pending*
 - **BOM Unique Items:** *Pending*
 - **PCB Manufacturing vendor:**	*Pending*
-- **BOM vendor:** *Pending*
+- **BOM vendors:** *Pending*
 - **Total vendors:** *Pending*
 - **Total units:** 1
+- **Total cost:** *Pending*
+- **Battery life:** *Pending*
+- **Total schedule:** *Pending*
 
 ## Getting Started
 
 1. Wire up the hardware components
 
-    ![](components/display-sensors/schematic.png)
-1. Flash the [firmware](components/display-sensors/main.ino) to display UV, temperature and humidity values
+    ![](firmware/schematic.png)
+1. Flash the [firmware](firmware/firmware.ino) to display UV, temperature and humidity values
 
-    ![](components/display-sensors/console.png)
+    ![](firmware/console.png)
 1. See the UV, temperature and humidity values values being displayed every second
 
-    ![](components/display-sensors/prototype.jpg)
+    ![](firmware/prototype.jpg)
+
+## Others
+
+- [Hardware](hardware)
+- [Firmware](firmware)
+- Bill of Materials - *Pending*
+- Design - *Pending*
+- [Power](power.md)
+- [Mechanical](mechanical.md)
+- [Schedule](schedule.md)
+- Live log - *Pending*
+- Lessons Learnt - *Pending*
+- [References](references.md)
