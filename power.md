@@ -5,21 +5,36 @@
 | Chip # | Chip | Operating Voltage | Advertising mode (`152.5ms`) | Transmission mode |
 | ------ | ------ | ------ | ------ | ------ |
 | [nRF52832](https://www.adafruit.com/product/3406) | BLE + MCU | `1.7v` to `3.3v` | `60 µA` | `216 µA`
-| [VEML6075](https://www.vishay.com/docs/84304/veml6075.pdf) | UV Sensor |  `1.7V` to `3.6V` |  
+| [VEML6075](https://www.vishay.com/docs/84304/veml6075.pdf) | UV Sensor |  `1.7V` to `3.6V` |  | `480uA` at `1.8V`
 
 ## Calculated
 
 ### Advertising mode
 
+from online simulator
+
+- Voltage `3.3V`
+- Advertising (Connectable)
+- 0 bytes TX payload
 - `120mAh` battery capacity
-- `60uA` current consumption
-- `120m/60u = 2000 h = 83 days`
+- `57 µA` current consumption
+- `120m/57u = 2000 h = 83 days`
 
 ### Transmission mode
 
+from online simulator
+
+- Voltage `3.3V`
+- Connection (peripheral)
+- 3 byte TX payload
+- Connection interval (ms) 1000
 - `120mAh` battery capacity
-- `250uA` current consumption
-- `120m/250u = 480 h = 20 days` 
+- `6.4 µA` current consumption
+- `120m/250u = 18,000 h = 781 days`
+
+## CPU
+
+How much current consumption `Idd` for running code in active mode?
 
 ## References
 

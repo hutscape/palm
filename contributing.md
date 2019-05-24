@@ -6,6 +6,7 @@ Add the following pre-fixes to every commit message to track the [stage of the p
 
 - `[docs]`: general
 - `[idea]`: Ideation phase
+- `[design]`: Design phase
 - `[prot]`: Prototyping phase
 - `[sch]`: Schematic phase
 - `[mech]`: Footprint and mechanical phase
