@@ -1,8 +1,11 @@
 # Power
 
-## Battery
+## Potential batteries
 
-`120mAh` capacity
+| Name | Capacity | Voltage | Dimension | Buy from |
+| ------ | ------ | ------ | ------ | ------ |
+| CR2450 | `120mAh` | 3.6V | 4cm x 2cm x 2cm | [AliExpress](https://www.aliexpress.com/item/Rainpro-2PCS-LOT-LIR2450-horizontal-welding-foot-battery-3-6V-rechargeable-coin-cell-battery-charging-2450/32853897751.html?spm=2114.search0104.3.8.189ed9beMuzTzf&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=48ce131f-0f3b-433f-9bb9-f5874e08c121-1&algo_pvid=48ce131f-0f3b-433f-9bb9-f5874e08c121&transAbTest=ae803_4)
+| LiPo | `380mAh` | 3.7V | 37mm x 19mm x 8mm | [AliExpress](https://www.aliexpress.com/item/Limskey-3-7V-380mAh-25C-Lipo-Battery-for-For-Hubsan-X4-H107-H107L-H107D-JD385-JD388/32846516934.html?spm=2114.search0103.3.69.12983204ovX5ra&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=067ab389-d2ff-4f23-98e8-7aef2b13aeef-9&algo_pvid=067ab389-d2ff-4f23-98e8-7aef2b13aeef&transAbTest=ae803_4)
 
 ## Main components
 
@@ -48,18 +51,18 @@ Result:
 - `6.4 µA` current consumption
 - `120m/250u = 18,000 h = 781 days`
 
-## CPU
+### CPU
 
 How much current consumption `Idd` for running code in active mode?
 
 [page 76, 77](https://infocenter.nordicsemi.com/pdf/nRF52832_PS_v1.1.pdf):
 
-| Description | Typical | Units
-| ------ | ------ | ------ |
+| Description | Typical | Units | Max
+| ------ | ------ | ------ | ------ |
 | 0 dBm TX @ 1 Mb/s Bluetooth Low Energy mode, Clock = HFXO | 7.1 | mA |
 | -40 dBm TX @ 1 Mb/s Bluetooth Low Energy mode, Clock = HFXO | 4.1 | mA |
 | Radio RX @ 1 Mb/s Bluetooth Low Energy mode, Clock = HFXO | 6.5 | mA |
-| CPU running CoreMark from Flash, Radio 0 dBm TX @ 1 Mb/s | 9.6 | mA |
+| CPU running CoreMark from Flash, Radio 0 dBm TX @ 1 Mb/s | 9.6 | mA | x |
 | CPU running CoreMark from Flash, Radio RX @ 1 Mb/s | 9.0 | mA |
 | System ON, No RAM retention, Wake on any event | 1.2 | µA |
 | System ON, Full RAM retention, Wake on any event | 1.5 | µA |
@@ -69,6 +72,17 @@ How much current consumption `Idd` for running code in active mode?
 | System OFF, No RAM retention, Wake on LPCOMP | 1.9 | µA |
 | System OFF, No RAM retention, Wake on NFC field | 0.7 | µA |
 | System OFF, Full RAM retention, Wake on reset | 1.0 | µA |
+
+Result:
+
+- `9.6 mA` current consumption
+- `120m/9.6 = 12.5 h`
+
+### Summary
+
+- If transmitting 100% of the time: ~781 days
+- If advertising 100% of the time: ~83 days
+- if CPU running 100% of the time: ~12.5 hours
 
 ## References
 
