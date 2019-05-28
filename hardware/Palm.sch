@@ -53,9 +53,6 @@ NoConn ~ 5250 1600
 NoConn ~ 5250 1800
 NoConn ~ 5250 2100
 NoConn ~ 5250 2200
-NoConn ~ 5250 2300
-NoConn ~ 5250 2400
-NoConn ~ 5250 2500
 NoConn ~ 5250 2750
 NoConn ~ 5250 2950
 $Comp
@@ -68,17 +65,6 @@ F 2 "" H 5850 1100 50  0001 C CNN
 F 3 "~" H 5850 1100 50  0001 C CNN
 	1    5850 1100
 	0    1    1    0   
-$EndComp
-$Comp
-L Adafruit_SHARP_display:Adafruit_SHARP_display_168_144 U4
-U 1 1 5CB1739B
-P 9900 2050
-F 0 "U4" H 9600 2550 50  0000 C CNN
-F 1 "Adafruit_SHARP_display_168_144" H 9900 1350 50  0000 C CNN
-F 2 "" H 10100 3100 50  0001 C CNN
-F 3 "" H 10100 3100 50  0001 C CNN
-	1    9900 2050
-	1    0    0    -1  
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG0102
@@ -8871,46 +8857,6 @@ Wire Wire Line
 	7450 1550 7600 1550
 Wire Wire Line
 	7450 1650 7600 1650
-Text Label 10100 1450 0    50   ~ 0
-3V
-Text Label 10100 2600 0    50   ~ 0
-GND
-NoConn ~ 9450 1950
-NoConn ~ 9450 2050
-NoConn ~ 9450 2150
-Text Label 10550 1900 0    50   ~ 0
-CLK
-Text Label 5050 2000 2    50   ~ 0
-CLK
-Text Label 10550 2000 0    50   ~ 0
-MOSI
-Text Label 5050 1900 2    50   ~ 0
-MOSI
-Text Label 10550 2100 0    50   ~ 0
-SS
-Text Label 6550 2350 0    50   ~ 0
-SS
-Wire Wire Line
-	10350 1900 10550 1900
-Wire Wire Line
-	10350 2000 10550 2000
-Wire Wire Line
-	10350 2100 10550 2100
-Wire Wire Line
-	9900 1500 9900 1450
-Wire Wire Line
-	9900 1450 10100 1450
-Wire Wire Line
-	9900 2550 9900 2600
-Wire Wire Line
-	9900 2600 10100 2600
-Wire Wire Line
-	6350 2350 6550 2350
-Wire Wire Line
-	5050 1900 5250 1900
-Wire Wire Line
-	5050 2000 5250 2000
-NoConn ~ 10350 1700
 Wire Wire Line
 	5850 850  5850 1100
 Connection ~ 5850 1100
@@ -8919,36 +8865,46 @@ Wire Wire Line
 NoConn ~ 5250 2600
 Wire Wire Line
 	5250 2850 5100 2850
+NoConn ~ 6350 2350
+NoConn ~ 5250 2000
+NoConn ~ 5250 1900
 $Comp
-L Adafruit_Si7021_breakout:Si7021_breakout U3
-U 1 1 5CB56213
-P 7950 2650
-F 0 "U3" H 7700 2900 50  0000 L CNN
-F 1 "Si7021_breakout" H 7650 2100 50  0000 L CNN
-F 2 "" H 7950 2050 50  0000 C CNN
-F 3 "https://learn.adafruit.com/adafruit-si7021-temperature-plus-humidity-sensor/overview" H 7950 2450 50  0001 C CNN
-	1    7950 2650
+L Device:LED_BARG D?
+U 1 1 5CED4526
+P 7950 2700
+F 0 "D?" H 7950 3197 50  0000 C CNN
+F 1 "LED_BARG" H 7950 3106 50  0000 C CNN
+F 2 "" H 7950 2650 50  0001 C CNN
+F 3 "~" H 7950 2650 50  0001 C CNN
+	1    7950 2700
 	1    0    0    -1  
 $EndComp
-Text Label 8150 2300 0    50   ~ 0
-3V
-Text Label 8200 3050 0    50   ~ 0
+Text Label 5050 2500 2    50   ~ 0
+RED
+Text Label 5050 2400 2    50   ~ 0
+GREEN
+Text Label 5050 2300 2    50   ~ 0
+BLUE
+Wire Wire Line
+	5050 2500 5250 2500
+Wire Wire Line
+	5050 2400 5250 2400
+Wire Wire Line
+	5050 2300 5250 2300
+Text Label 7600 2500 2    50   ~ 0
+RED
+Text Label 7600 2700 2    50   ~ 0
+GREEN
+Text Label 7600 2900 2    50   ~ 0
+BLUE
+Text Label 8300 2700 0    50   ~ 0
 GND
-Text Label 7450 2600 2    50   ~ 0
-SDA
-Text Label 7450 2700 2    50   ~ 0
-SCL
 Wire Wire Line
-	7950 2350 7950 2300
+	7600 2500 7750 2500
 Wire Wire Line
-	7950 2300 8150 2300
+	7600 2700 7750 2700
 Wire Wire Line
-	7600 2600 7450 2600
+	7600 2900 7750 2900
 Wire Wire Line
-	7950 3000 7950 3050
-Wire Wire Line
-	7950 3050 8200 3050
-Wire Wire Line
-	7600 2700 7450 2700
-NoConn ~ 8300 2600
+	8150 2700 8300 2700
 $EndSCHEMATC

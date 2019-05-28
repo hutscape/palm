@@ -3,3 +3,6 @@
 # Temporary
 *.kicad_pcb-bak
 *.bak
+*-cache.lib
+*-rescue.lib
+*-rescue.dcm
