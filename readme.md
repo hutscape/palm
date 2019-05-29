@@ -24,8 +24,8 @@
 
 1. Wire up the [hardware](hardware) components
 
-    ![](images/prototype-2.jpg)
     ![](images/schematic.png)
+    ![](images/prototype-2.jpg)
 1. Flash the [firmware](firmware/firmware.ino) to display UV
 
     ![](images/console.png)
