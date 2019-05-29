@@ -28,7 +28,7 @@ from [online power profiler](https://devzone.nordicsemi.com/nordic/power):
 - Advertising interval (ms): `152.5 ms` as recommended in [Apple developer guide](https://developer.apple.com/library/archive/qa/qa1931/_index.html)
 - `120mAh` battery capacity
 
-![](images/power/online-profiler-advertising.png)
+![](images/online-profiler-advertising.png)
 
 Result:
 
@@ -44,7 +44,7 @@ from [online power profiler](https://devzone.nordicsemi.com/nordic/power):
 - `3 byte` TX payload
 - Connection interval (ms): `1000 ms`
 
-![](images/power/online-profiler-peripheral.png)
+![](images/online-profiler-peripheral.png)
 
 Result:
 

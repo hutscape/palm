@@ -2,4 +2,4 @@
 
 ## Schematic
 
-![](images/schematic.png)
+![](../images/schematic.png)

@@ -1,12 +1,10 @@
 # Palm
 
-> Measure UV index outdoors with a keychain 🗝 hanging on a backpack 🎒.
-
-> Users can sync the logged data from the keychain through their mobile phone/browser or press a button to display the current sensor values.
+> Measure UV index outdoors with a keychain 🗝 hanging on a backpack 🎒. Users can view the current UV index on their mobile app or on-board RGB LED.
 
 - **Wireless:**	BLE
 - **Sensors:**	1 (`VEML6075` for UV)
-- **Power:**	`CR2032` [coin cell with on-off switch](https://www.adafruit.com/product/1871) or CR2016
+- **Power:**	[LiPo](power.md)
 - **Processor:**	`NRF52` on [Adafruit Bluefruit LE](https://www.adafruit.com/product/2661)
 - **Modules:** 2 (MCU, sensor)
 - **Firmware:**	[Arduino NRF52](https://github.com/sandeepmistry/arduino-nRF5)
@@ -24,22 +22,25 @@
 
 ## Getting Started
 
-1. Wire up the hardware components
+1. Wire up the [hardware](hardware) components
 
-    ![](firmware/schematic.png)
-1. Flash the [firmware](firmware/firmware.ino) to display UV, temperature and humidity values
+    ![](images/prototype-2.jpg)
+    ![](images/schematic.png)
+1. Flash the [firmware](firmware/firmware.ino) to display UV
 
-    ![](firmware/console.png)
-1. See the UV, temperature and humidity values values being displayed every second
+    ![](images/console.png)
+1. See the UV, temperature and humidity values values being displayed on the [nRF Connect iPhone app](https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8) or the console
 
-    ![](firmware/prototype.jpg)
+    ![](images/ios-detect.jpg)
+    ![](images/ios-services.jpg)
+    ![](images/ios-characteristics.jpg)
 
 ## Others
 
 - [Hardware](hardware)
 - [Firmware](firmware)
 - Bill of Materials - *Pending*
-- Design - *Pending*
+- [Design](design)
 - [Power](power.md)
 - [Mechanical](mechanical.md)
 - [Schedule](schedule.md)

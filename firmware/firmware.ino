@@ -1,198 +1,238 @@
-#include <Adafruit_GFX.h>
-#include <Adafruit_SharpMem.h>
-#include <Wire.h>
+#include <bluefruit.h>
 #include "Adafruit_VEML6075.h"
-#include "Adafruit_Si7021.h"
+
+/* GATT Services https://www.bluetooth.com/specifications/gatt/services/
+    Name: Environmental Sensing
+    Uniform Type Identifier: org.bluetooth.service.environmental_sensing
+    Assigned Number: 0x181A
+    Specification: GSS
+*/
+#define UUID16_SVC_ENVIRONMENTAL_SENSING 0x181A
+
+/* GATT Characteristics https://www.bluetooth.com/specifications/gatt/characteristics/
+    Name: UV Index
+    Uniform Type Identifier: org.bluetooth.characteristic.uv_index
+    Assigned Number: 0x2A76
+    Specification: GSS
+*/
+#define UUID16_CHR_UV_INDEX 0x2A76
+
+BLEService        ess = BLEService(UUID16_SVC_ENVIRONMENTAL_SENSING);
+BLECharacteristic uvic = BLECharacteristic(UUID16_CHR_UV_INDEX);
+
+BLEDis bledis;    // DIS (Device Information Service) helper class instance
 
 Adafruit_VEML6075 uv = Adafruit_VEML6075();
-Adafruit_Si7021 sensor = Adafruit_Si7021();
 
-#define SHARP_SCK  12
-#define SHARP_MOSI 13
-#define SHARP_SS   7
+// See https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.uv_index.xml
 
-#define VBAT_PIN          (A7)
-#define VBAT_MV_PER_LSB   (0.73242188F)   // 3.0V ADC range and 12-bit ADC resolution = 3000mV/4096
-#define VBAT_DIVIDER      (0.71275837F)   // 2M + 0.806M voltage divider on VBAT = (2M / (0.806M + 2M))
-#define VBAT_DIVIDER_COMP (1.403F)        // Compensation factor for the VBAT divider
+// UV index GATT Characteristic format is in uint8
+uint8_t  uvindexvalue = 0x42;
 
-Adafruit_SharpMem display(SHARP_SCK, SHARP_MOSI, SHARP_SS, 144, 168);
+// VEML6075 UV sensor reading is in float
+float  readUVIndexValue = 0.0;
 
-#define BLACK 0
-#define WHITE 1
+// RGB LED pin declarations
+int redPin = PIN_A1;
+int greenPin = PIN_A2;
+int bluePin = PIN_A3;
 
-bool debug = false; // toggle true or false to enable serial console debug messages
+// Advanced function prototypes
+void startAdv(void);
+void setupESService(void);
+void connect_callback(uint16_t conn_handle);
+void disconnect_callback(uint16_t conn_handle, uint8_t reason);
 
-struct SensorValues {
-  int vbat_raw;
-  uint8_t vbat_per;
-  float vbat_mv;
+void setup() {
+  Serial.begin(115200);
+  while (!Serial) delay(10);   // for nrf52840 with native usb
 
-  float uvindex;
-  float uva;
-  float uvb;
+  Serial.println("UV Index sensor");
+  Serial.println("-------------------------------------\n");
 
-  float humidity;
-  float temperature;
-};
-
-void setup(void) {
-  if (debug) {
-      Serial.begin(115200);
-  }
-
-  initDisplay();
-  initUVSensor();
-  initTempHumiditySensor();
-  initBatt();
-}
-
-void loop(void) {
-  SensorValues v = getSensorValues();
-
-  display.clearDisplay();
-
-  displayBatt(v.vbat_raw, v.vbat_per, v.vbat_mv);
-  displayUV(v.uvindex, v.uva, v.uvb);
-  displayTempHumidity(v.temperature, v.humidity);
-
-  display.refresh();
-  delay(4000);
-}
-
-void initDisplay(void) {
-  display.begin();
-
-  display.setRotation(0);
-  display.setTextSize(2);
-  display.setTextColor(BLACK);
-
-  display.clearDisplay();
-}
-
-void initUVSensor(void) {
-  if (! uv.begin() && debug) {
+  // Initialise UV sensor VEML6075
+  if (!uv.begin()) {
     Serial.println("Failed to communicate with VEML6075 sensor, check wiring?");
   }
-  if (debug) {
-    Serial.println("Found VEML6075 sensor");
+
+  // Initialise the Bluefruit module
+  Serial.println("Initialise the Bluefruit nRF52 module");
+  Bluefruit.begin();
+  Bluefruit.setName("Palm@Hutscape");
+
+  // Set the connect/disconnect callback handlers
+  Bluefruit.Periph.setConnectCallback(connect_callback);
+  Bluefruit.Periph.setDisconnectCallback(disconnect_callback);
+
+  // Configure and Start the Device Information Service
+  Serial.println("Configuring the Device Information Service");
+  bledis.setManufacturer("Adafruit Industries");
+  bledis.setModel("Bluefruit Feather52");
+  bledis.begin();;
+
+  // Setup the Environmental Sensing service using
+  // BLEService and BLECharacteristic classes
+  Serial.println("Configuring the Environmental Sensing Service");
+  setupESService();
+
+  // Setup the advertising packet(s)
+  Serial.println("Setting up the advertising payload(s)");
+  startAdv();
+
+  Serial.println("\nAdvertising");
+}
+
+void loop() {
+  digitalToggle(LED_RED);
+
+  readUVIndexValue = uv.readUVI();
+  uvindexvalue = round(abs(readUVIndexValue));  // convert float to uint8_t
+
+  Serial.print("UV Index: ");
+  Serial.println(uvindexvalue);
+
+  displayLED(uvindexvalue);
+
+  if (Bluefruit.connected()) {
+    // Note: We use .indicate instead of .write!
+    // If it is connected but CCCD is not enabled
+    // The characteristic's value is still updated although indicate is not sent
+    if (uvic.indicate(&uvindexvalue, sizeof(uvindexvalue))) {
+      Serial.print("UV Index Measurement updated to: ");
+      Serial.println(uvindexvalue);
+    } else {
+      Serial.println("ERROR: Indicate not set in the CCCD or not connected!");
+    }
+  }
+
+  delay(2000);
+}
+
+void displayLED(uint8_t uvindexvalue) {
+  if (uvindexvalue <= 2) {
+    // UV Index <= 2, display GREEN or no color alerts
+    displayLEDColor(255, 255, 255);
+  } else if (uvindexvalue >= 3 && uvindexvalue <= 5) {
+    // UV Index is from 3 to 5, display YELLOW
+    displayLEDColor(0, 250, 0);
+  } else if (uvindexvalue >= 6 && uvindexvalue <= 7) {
+    // UV Index is from 6 to 7, display ORANGE
+    displayLEDColor(150, 250, 0);
+  } else if (uvindexvalue >= 8 && uvindexvalue <= 10) {
+    // UV Index is from 8 to 10, display RED
+    displayLEDColor(250, 250, 0);
+  } else {
+    // UV Index is above 11, display PURPLE
+    displayLEDColor(250, 0, 0);
   }
 }
 
-void initTempHumiditySensor(void) {
-  if (!sensor.begin() && debug) {
-    Serial.println("Failed to communicate with Si7021 sensor, check wiring?");
-  }
-  if (debug) {
-    Serial.println("Found Si7021 sensor");
-  }
+void displayLEDColor(int red, int green, int blue) {
+  analogWrite(redPin, red);
+  analogWrite(greenPin, green);
+  analogWrite(bluePin, blue);
 }
 
-void initBatt(void) {
-  analogReference(AR_INTERNAL_3_0);
-  analogReadResolution(12); // Can be 8, 10, 12 or 14
-  delay(1);
+void startAdv(void) {
+  // Advertising packet
+  Bluefruit.Advertising.addFlags(BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE);
+  Bluefruit.Advertising.addTxPower();
+
+  // Include HTM Service UUID
+  Bluefruit.Advertising.addService(ess);
+
+  // Include Name
+  Bluefruit.Advertising.addName();
+
+  /* Start Advertising
+   * - Enable auto advertising if disconnected
+   * - Interval:  fast mode = 20 ms, slow mode = 152.5 ms
+   * - Timeout for fast mode is 30 seconds
+   * - Start(timeout) with timeout = 0 will advertise forever (until connected)
+   *
+   * For recommended advertising interval
+   * https://developer.apple.com/library/content/qa/qa1931/_index.html
+   */
+  Bluefruit.Advertising.restartOnDisconnect(true);
+
+  // in unit of 0.625 ms
+  Bluefruit.Advertising.setInterval(32, 244);
+
+  // number of seconds in fast mode
+  Bluefruit.Advertising.setFastTimeout(30);
+
+  // 0 = Don't stop advertising after n seconds
+  Bluefruit.Advertising.start(0);
 }
 
-uint8_t mvToPercent(float mvolts) {
-    uint8_t battery_level;
+void setupESService(void) {
+  // Configure the Environmental Sensing service
+  // See: https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.uv_index.xml
+  // Supported Characteristics:
+  // Name                         UUID    Requirement Properties
+  // ---------------------------- ------  ----------- ----------
+  // UV Index                     0x2A76  Mandatory   Read
+  ess.begin();
 
-    if (mvolts >= 3000) {
-        battery_level = 100;
-    }
-    else if (mvolts > 2900) {
-        battery_level = 100 - ((3000 - mvolts) * 58) / 100;
-    }
-    else if (mvolts > 2740) {
-        battery_level = 42 - ((2900 - mvolts) * 24) / 160;
-    }
-    else if (mvolts > 2440) {
-        battery_level = 18 - ((2740 - mvolts) * 12) / 300;
-    }
-    else if (mvolts > 2100) {
-        battery_level = 6 - ((2440 - mvolts) * 6) / 340;
-    }
-    else {
-        battery_level = 0;
-    }
+  // Note: You must call .begin() on the BLEService before calling .begin() on
+  // any characteristic(s) within that service definition.. Calling .begin() on
+  // a BLECharacteristic will cause it to be added to the last BLEService that
+  // was 'begin()'ed!
 
-    return battery_level;
+  // Configure the UV Index characteristic
+  // See:https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.uv_index.xml
+  // Properties = Indicate
+  // Min Len    = 1
+  // Max Len    = 1
+  // B0         = UINT8 - UV Index measurement unitless
+  uvic.setProperties(CHR_PROPS_INDICATE);
+  uvic.setPermission(SECMODE_OPEN, SECMODE_NO_ACCESS);
+  uvic.setFixedLen(1);
+  uvic.setCccdWriteCallback(cccd_callback);  // Optionally capture CCCD updates
+  uvic.begin();
+  uvic.write(&uvindexvalue, sizeof(uvindexvalue));
 }
 
-void displayBatt(int vbat_raw, uint8_t vbat_per, float vbat_mv) {
-  if (debug) {
-    Serial.print("ADC = ");
-    Serial.print(vbat_raw * VBAT_MV_PER_LSB);
-    Serial.print(" mV (");
-    Serial.print(vbat_raw);
-    Serial.print(") ");
-    Serial.print("LIPO = ");
-    Serial.print(vbat_mv);
-    Serial.print(" mV (");
-    Serial.print(vbat_per);
-    Serial.print("%)");
-  }
+void connect_callback(uint16_t conn_handle) {
+  // Get the reference to current connection
+  BLEConnection* connection = Bluefruit.Connection(conn_handle);
+
+  char central_name[32] = { 0 };
+  connection->getPeerName(central_name, sizeof(central_name));
+
+  Serial.print("Connected to ");
+  Serial.println(central_name);
 }
 
-void displayUV(float uvindex, float uva, float uvb) {
-  if (debug) {
-    Serial.print(", UV Index: ");
-    Serial.print(uvindex, 2);
-    Serial.print(", UVA: ");
-    Serial.print(uva, 2);
-    Serial.print(", UVB: ");
-    Serial.print(uvb, 2);
-  }
+/**
+ * Callback invoked when a connection is dropped
+ * @param conn_handle connection where this event happens
+ * @param reason is a BLE_HCI_STATUS_CODE which can be found in ble_hci.h
+ */
+void disconnect_callback(uint16_t conn_handle, uint8_t reason) {
+  (void) conn_handle;
+  (void) reason;
 
-  display.setCursor(10,10);
-  display.println("UV index");
-  display.setCursor(10,30);
-  display.println(uvindex, 0);
-
-  display.setCursor(10,65);
-  display.print("UVA ");
-  display.println(uva, 0);
-
-  display.setCursor(10,85);
-  display.print("UVB ");
-  display.println(uvb, 0);
+  Serial.println("Disconnected");
+  Serial.println("Advertising!");
 }
 
-void displayTempHumidity(float temperature, float humidity) {
-  if (debug) {
-    Serial.print(" Temperature: ");
-    Serial.print(temperature, 2);
-    Serial.print("°C, Humidity: ");
-    Serial.print(humidity, 2);
-    Serial.println(" RH%");
-  }
+void cccd_callback(uint16_t conn_hdl,
+  BLECharacteristic* chr, uint16_t cccd_value) {
+    // Display the raw request packet
+    Serial.print("CCCD Updated: ");
 
-  display.setCursor(10,120);
-  display.print("Temp ");
-  display.print(temperature, 0);
-  display.println(" C");
+    // Serial.printBuffer(request->data, request->len);
+    Serial.print(cccd_value);
+    Serial.println("");
 
-  display.setCursor(10,140);
-  display.print("Hum ");
-  display.print(humidity, 0);
-  display.println(" RH%");
-}
-
-SensorValues getSensorValues(void) {
-  int vbat_raw = analogRead(VBAT_PIN);
-
-  SensorValues v = {
-    vbat_raw,
-    mvToPercent(vbat_raw * VBAT_MV_PER_LSB),
-    (float)vbat_raw * VBAT_MV_PER_LSB * VBAT_DIVIDER_COMP,
-
-    uv.readUVI(),
-    uv.readUVA(),
-    uv.readUVB(),
-
-    sensor.readHumidity(),
-    sensor.readTemperature()
-  };
-
-  return v;
+    // Check the characteristic this CCCD update is associated with in case
+    // this handler is used for multiple CCCD records.
+    if (chr->uuid == uvic.uuid) {
+        if (chr->indicateEnabled(conn_hdl)) {
+            Serial.println("UV Index Measurement 'Indicate' enabled");
+        } else {
+            Serial.println("UV Index Measurement 'Indicate' disabled");
+        }
+    }
 }
