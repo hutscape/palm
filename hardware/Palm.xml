@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch</source>
+    <date>2019 June 05, Wednesday 12:42:21</date>
+    <tool>Eeschema (5.1.0-0)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Palm.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>Adafruit_nRF52_Feather</value>
+      <datasheet>https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417</datasheet>
+      <fields>
+        <field name="Manufacturer">Adafruit</field>
+        <field name="Package">TH</field>
+        <field name="Part No.">3406</field>
+        <field name="Vendor">Adafruit</field>
+      </fields>
+      <libsource lib="Adafruit_nRF52_Feather" part="Adafruit_nRF52_Feather" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CB07E1A</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>VEML6075_breakout</value>
+      <datasheet>https://learn.adafruit.com/assets/62587</datasheet>
+      <fields>
+        <field name="Manufacturer">Adafruit</field>
+        <field name="Package">TH</field>
+        <field name="Part No.">3964</field>
+        <field name="Vendor">Adafruit</field>
+      </fields>
+      <libsource lib="Sensor_UV" part="VEML6075_breakout" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CAF1352</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>LED_BARG</value>
+      <datasheet>https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Cree</field>
+        <field name="Package">SMD</field>
+        <field name="Part No.">SLV6A-FKB-CK1P1G1BB7R3R3 </field>
+        <field name="Vendor">RS Components</field>
+      </fields>
+      <libsource lib="Device" part="LED_RGB" description="RGB LED, 6 pin package"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CED4526</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>1k</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Package">0805</field>
+        <field name="Stock">18-res-0805-1k</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CED0CF7</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>1k</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Package">0805</field>
+        <field name="Stock">18-res-0805-1k</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CED2FDB</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Package">0805</field>
+        <field name="Stock">18-res-0805-1k</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CED3479</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_SPST</value>
+      <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
+      <fields>
+        <field name="Package">SMD</field>
+        <field name="Vendor">AliExpress</field>
+      </fields>
+      <libsource lib="Switch" part="SW_SPST" description="Single Pole Single Throw (SPST) switch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CEE5E28</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x02_Female</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Package">SMD</field>
+        <field name="Vendor">AliExpress</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CEE767E</tstamp>
+    </comp>
+    <comp ref="SW2">
+      <value>SW_SPST</value>
+      <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
+      <fields>
+        <field name="Package">SMD</field>
+        <field name="Vendor">AliExpress</field>
+      </fields>
+      <libsource lib="Switch" part="SW_SPST" description="Single Pole Single Throw (SPST) switch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CF4F316</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>1k</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Package">0805</field>
+        <field name="Stock">18-res-0805-1k</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CF51E77</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>IRLML6402</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs-apac.rs-online.com/webdocs/10c7/0900766b810c708d.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Infineon</field>
+        <field name="Package">SOT-23</field>
+        <field name="Part No.">IRLML2246TRPBF</field>
+        <field name="Vendor">RS Components</field>
+      </fields>
+      <libsource lib="Transistor_FET" part="IRLML6402" description="-3.7A Id, -20V Vds, P-Channel MOSFET, 65mOhm Rds, SOT-23"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5CF39500</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Adafruit_nRF52_Feather" part="Adafruit_nRF52_Feather">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Adafruit_nRF52_Feather</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~RESET" type="BiDi"/>
+        <pin num="2" name="3V" type="output"/>
+        <pin num="3" name="AREF" type="output"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="A0" type="BiDi"/>
+        <pin num="6" name="A1" type="BiDi"/>
+        <pin num="7" name="A2" type="BiDi"/>
+        <pin num="8" name="A3" type="BiDi"/>
+        <pin num="9" name="A4" type="BiDi"/>
+        <pin num="10" name="A5" type="BiDi"/>
+        <pin num="11" name="SCK" type="BiDi"/>
+        <pin num="12" name="MOSI" type="BiDi"/>
+        <pin num="13" name="MISO" type="BiDi"/>
+        <pin num="14" name="RX" type="BiDi"/>
+        <pin num="15" name="TX" type="BiDi"/>
+        <pin num="16" name="DFU" type="BiDi"/>
+        <pin num="17" name="SDA" type="BiDi"/>
+        <pin num="18" name="SCL" type="BiDi"/>
+        <pin num="19" name="27" type="BiDi"/>
+        <pin num="20" name="30/AIN6" type="BiDi"/>
+        <pin num="21" name="31/AIN7" type="BiDi"/>
+        <pin num="22" name="11" type="BiDi"/>
+        <pin num="23" name="7" type="BiDi"/>
+        <pin num="24" name="15" type="BiDi"/>
+        <pin num="25" name="16" type="BiDi"/>
+        <pin num="26" name="VBUS/USB" type="power_in"/>
+        <pin num="27" name="EN" type="BiDi"/>
+        <pin num="28" name="VBAT" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x02_Female">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Female</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED_RGB">
+      <description>RGB LED, 6 pin package</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_RGB</field>
+      </fields>
+      <pins>
+        <pin num="1" name="RK" type="passive"/>
+        <pin num="2" name="GK" type="passive"/>
+        <pin num="3" name="BK" type="passive"/>
+        <pin num="4" name="BA" type="passive"/>
+        <pin num="5" name="GA" type="passive"/>
+        <pin num="6" name="RA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_UV" part="VEML6075_breakout">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">VEML6075_breakout</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vin" type="power_in"/>
+        <pin num="2" name="3Vo" type="power_out"/>
+        <pin num="3" name="GND" type="input"/>
+        <pin num="4" name="SCL" type="BiDi"/>
+        <pin num="5" name="SDA" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_SPST">
+      <description>Single Pole Single Throw (SPST) switch</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPST</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_FET" part="TP0610T">
+      <aliases>
+        <alias>VP0610T</alias>
+        <alias>BSS84</alias>
+        <alias>NTR2101P</alias>
+        <alias>BSS83P</alias>
+        <alias>Si2319CDS</alias>
+        <alias>IRLML6402</alias>
+      </aliases>
+      <description>-0.18A Id, -60V Vds, P-Channel MOSFET, SOT-23-3</description>
+      <docs>http://www.vishay.com/docs/70209/70209.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">TP0610T</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Adafruit_nRF52_Feather">
+      <uri>/Users/sayanee/Documents/hutscape/kicad-library/Adafruit_nRF52_feather.lib</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/Library/Application Support/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Library/Application Support/kicad/library/Device.lib</uri>
+    </library>
+    <library logical="Sensor_UV">
+      <uri>/Users/sayanee/Documents/hutscape/kicad-library/Sensor_UV.lib</uri>
+    </library>
+    <library logical="Switch">
+      <uri>/Library/Application Support/kicad/library/Switch.lib</uri>
+    </library>
+    <library logical="Transistor_FET">
+      <uri>/Library/Application Support/kicad/library/Transistor_FET.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(U1-Pad1)">
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="2" name="Net-(U1-Pad10)">
+      <node ref="U1" pin="10"/>
+    </net>
+    <net code="3" name="Net-(U1-Pad11)">
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="4" name="Net-(U1-Pad12)">
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="5" name="Net-(U1-Pad13)">
+      <node ref="U1" pin="13"/>
+    </net>
+    <net code="6" name="Net-(U1-Pad14)">
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="7" name="Net-(U1-Pad15)">
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="8" name="Net-(U1-Pad16)">
+      <node ref="U1" pin="16"/>
+    </net>
+    <net code="9" name="Net-(U1-Pad19)">
+      <node ref="U1" pin="19"/>
+    </net>
+    <net code="10" name="+3V3">
+      <node ref="Q1" pin="2"/>
+      <node ref="SW2" pin="2"/>
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="11" name="Net-(U1-Pad20)">
+      <node ref="U1" pin="20"/>
+    </net>
+    <net code="12" name="Net-(U1-Pad21)">
+      <node ref="U1" pin="21"/>
+    </net>
+    <net code="13" name="Net-(U1-Pad22)">
+      <node ref="U1" pin="22"/>
+    </net>
+    <net code="14" name="Net-(U1-Pad23)">
+      <node ref="U1" pin="23"/>
+    </net>
+    <net code="15" name="Net-(U1-Pad27)">
+      <node ref="U1" pin="27"/>
+    </net>
+    <net code="16" name="Net-(SW1-Pad1)">
+      <node ref="U1" pin="28"/>
+      <node ref="SW1" pin="1"/>
+    </net>
+    <net code="17" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="18" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="19" name="Net-(U1-Pad9)">
+      <node ref="U1" pin="9"/>
+    </net>
+    <net code="20" name="GND">
+      <node ref="R5" pin="2"/>
+      <node ref="U2" pin="3"/>
+      <node ref="R3" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="21" name="+5V">
+      <node ref="U1" pin="26"/>
+    </net>
+    <net code="22" name="Net-(U2-Pad2)">
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="23" name="/SDA">
+      <node ref="U2" pin="5"/>
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="24" name="/SCL">
+      <node ref="U2" pin="4"/>
+      <node ref="U1" pin="18"/>
+    </net>
+    <net code="25" name="Net-(D1-Pad1)">
+      <node ref="R1" pin="1"/>
+      <node ref="D1" pin="1"/>
+    </net>
+    <net code="26" name="Net-(D1-Pad2)">
+      <node ref="R2" pin="1"/>
+      <node ref="D1" pin="2"/>
+    </net>
+    <net code="27" name="Net-(D1-Pad3)">
+      <node ref="R3" pin="1"/>
+      <node ref="D1" pin="3"/>
+    </net>
+    <net code="28" name="/RED">
+      <node ref="D1" pin="6"/>
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="29" name="/GREEN">
+      <node ref="D1" pin="5"/>
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="30" name="/BLUE">
+      <node ref="D1" pin="4"/>
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="31" name="Net-(J1-Pad1)">
+      <node ref="SW1" pin="2"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="32" name="Net-(Q1-Pad3)">
+      <node ref="U2" pin="1"/>
+      <node ref="Q1" pin="3"/>
+    </net>
+    <net code="33" name="/EN_SENSOR">
+      <node ref="U1" pin="24"/>
+      <node ref="Q1" pin="1"/>
+    </net>
+    <net code="34" name="Net-(R5-Pad1)">
+      <node ref="R5" pin="1"/>
+      <node ref="U1" pin="25"/>
+      <node ref="SW2" pin="1"/>
+    </net>
+  </nets>
+</export>

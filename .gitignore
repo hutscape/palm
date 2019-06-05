@@ -8,3 +8,4 @@
 *-rescue.dcm
 *.elf
 *.hex
+*.pyc

@@ -22,6 +22,10 @@ F 0 "U1" H 2950 3350 50  0000 C CNN
 F 1 "Adafruit_nRF52_Feather" H 3000 1450 50  0000 C CNN
 F 2 "" H 2400 2250 50  0001 C CNN
 F 3 "https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417" H 2400 2250 50  0001 C CNN
+F 4 "Adafruit" H 0   0   50  0001 C CNN "Manufacturer"
+F 5 "TH" H 0   0   50  0001 C CNN "Package"
+F 6 "3406" H 0   0   50  0001 C CNN "Part No."
+F 7 "Adafruit" H 0   0   50  0001 C CNN "Vendor"
 	1    2550 2400
 	-1   0    0    -1  
 $EndComp
@@ -8815,6 +8819,10 @@ F 0 "U2" H 9500 2100 50  0000 R CNN
 F 1 "VEML6075_breakout" H 8900 1850 50  0000 R CNN
 F 2 "" H 9200 1850 50  0001 C CNN
 F 3 "https://learn.adafruit.com/assets/62587" H 9200 1850 50  0001 C CNN
+F 4 "Adafruit" H 0   0   50  0001 C CNN "Manufacturer"
+F 5 "TH" H 0   0   50  0001 C CNN "Package"
+F 6 "3964" H 0   0   50  0001 C CNN "Part No."
+F 7 "Adafruit" H 0   0   50  0001 C CNN "Vendor"
 	1    9200 1850
 	-1   0    0    -1  
 $EndComp
@@ -8859,6 +8867,10 @@ F 0 "D1" H 9200 3500 50  0000 C CNN
 F 1 "LED_BARG" H 9200 2750 50  0000 C CNN
 F 2 "" H 9200 3050 50  0001 C CNN
 F 3 "https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf" H 9200 3050 50  0001 C CNN
+F 4 "Cree" H 0   0   50  0001 C CNN "Manufacturer"
+F 5 "SMD" H 0   0   50  0001 C CNN "Package"
+F 6 "SLV6A-FKB-CK1P1G1BB7R3R3 " H 0   0   50  0001 C CNN "Part No."
+F 7 "RS Components" H 0   0   50  0001 C CNN "Vendor"
 	1    9200 3100
 	1    0    0    -1  
 $EndComp
@@ -8896,6 +8908,8 @@ F 0 "R1" V 8650 2800 50  0000 C CNN
 F 1 "1k" V 8650 3000 50  0000 C CNN
 F 2 "" H 8750 2900 50  0001 C CNN
 F 3 "~" H 8750 2900 50  0001 C CNN
+F 4 "0805" H 0   0   50  0001 C CNN "Package"
+F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 	1    8750 2900
 	0    1    1    0   
 $EndComp
@@ -8907,6 +8921,8 @@ F 0 "R2" V 8650 3000 50  0000 C CNN
 F 1 "1k" V 8650 3200 50  0000 C CNN
 F 2 "" H 8750 3100 50  0001 C CNN
 F 3 "~" H 8750 3100 50  0001 C CNN
+F 4 "0805" H 0   0   50  0001 C CNN "Package"
+F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 	1    8750 3100
 	0    1    1    0   
 $EndComp
@@ -8918,6 +8934,8 @@ F 0 "R3" V 8650 3200 50  0000 C CNN
 F 1 "1k" V 8650 3400 50  0000 C CNN
 F 2 "" H 8750 3300 50  0001 C CNN
 F 3 "~" H 8750 3300 50  0001 C CNN
+F 4 "0805" H 0   0   50  0001 C CNN "Package"
+F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 	1    8750 3300
 	0    1    1    0   
 $EndComp
@@ -8936,7 +8954,9 @@ P 2050 1200
 F 0 "SW1" H 2050 1435 50  0000 C CNN
 F 1 "SW_SPST" H 2050 1344 50  0000 C CNN
 F 2 "" H 2050 1200 50  0001 C CNN
-F 3 "~" H 2050 1200 50  0001 C CNN
+F 3 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 2050 1200 50  0001 C CNN
+F 4 "SMD" H 0   0   50  0001 C CNN "Package"
+F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
 	1    2050 1200
 	-1   0    0    -1  
 $EndComp
@@ -8948,6 +8968,8 @@ F 0 "J1" H 1528 1176 50  0000 L CNN
 F 1 "Conn_01x02_Female" H 1528 1085 50  0000 L CNN
 F 2 "" H 1500 1200 50  0001 C CNN
 F 3 "~" H 1500 1200 50  0001 C CNN
+F 4 "SMD" H 0   0   50  0001 C CNN "Package"
+F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
 	1    1500 1200
 	-1   0    0    -1  
 $EndComp
@@ -8987,7 +9009,9 @@ P 3850 2950
 F 0 "SW2" H 3850 3050 50  0000 C CNN
 F 1 "SW_SPST" H 3850 2850 50  0000 C CNN
 F 2 "" H 3850 2950 50  0001 C CNN
-F 3 "~" H 3850 2950 50  0001 C CNN
+F 3 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 3850 2950 50  0001 C CNN
+F 4 "SMD" H 0   0   50  0001 C CNN "Package"
+F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
 	1    3850 2950
 	1    0    0    -1  
 $EndComp
@@ -9001,6 +9025,8 @@ F 0 "R5" H 3300 3150 50  0000 L CNN
 F 1 "1k" H 3500 3150 50  0000 L CNN
 F 2 "" H 3450 3150 50  0001 C CNN
 F 3 "~" H 3450 3150 50  0001 C CNN
+F 4 "0805" H 0   0   50  0001 C CNN "Package"
+F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 	1    3450 3150
 	1    0    0    -1  
 $EndComp
@@ -9036,6 +9062,10 @@ F 0 "Q1" H 9406 1204 50  0000 L CNN
 F 1 "IRLML6402" H 9406 1295 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 9400 1175 50  0001 L CIN
 F 3 "https://docs-apac.rs-online.com/webdocs/10c7/0900766b810c708d.pdf" H 9200 1250 50  0001 L CNN
+F 4 "Infineon" H 0   0   50  0001 C CNN "Manufacturer"
+F 5 "SOT-23" H 0   0   50  0001 C CNN "Package"
+F 6 "IRLML2246TRPBF" H 0   0   50  0001 C CNN "Part No."
+F 7 "RS Components" H 0   0   50  0001 C CNN "Vendor"
 	1    9200 1250
 	1    0    0    1   
 $EndComp
