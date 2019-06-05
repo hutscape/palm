@@ -84,4 +84,18 @@ for group in grouped:
         c.getPartName() + ": " + c.getDescription()
     ])
 
-out.writerow(['Component Count:', len(net.groupComponents()), len(net.components)])
+out.writerow([
+    'Total:',
+    len(net.groupComponents()),
+    len(net.components),
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+])
