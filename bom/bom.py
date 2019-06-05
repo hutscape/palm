@@ -56,6 +56,29 @@ def total_cost(unit_cost, quantity, maximum):
 
     return float(unit_cost) * max(int(quantity), int(maximum))
 
+def get_datasheet_part_no(datasheet, part_no):
+    if datasheet == "~": # datasheet link is empty
+        if not part_no:
+            return ""
+        else:
+            return part_no
+    else:
+        if not part_no:
+            return "=HYPERLINK(\"" + datasheet + "\", \"" + "Link to datasheet" + "\")"
+        else:
+            return "=HYPERLINK(\"" + datasheet + "\", \"" + part_no + "\")"
+
+def get_vendor_link(vendor_name, vendor_link):
+    if not vendor_name:
+        if vendor_link:
+            return "=HYPERLINK(\"" + vendor_link + "\", \"" + "Please put the vendor name according to this link" + "\")"
+        else:
+            return ""
+    else:
+        if vendor_link:
+            return "=HYPERLINK(\"" + vendor_link + "\", \"" + vendor_name + "\")"
+        else:
+            return vendor_name
 
 # Output all of the component information
 for group in grouped:
@@ -76,8 +99,8 @@ for group in grouped:
         c.getField("Category"),
         c.getField("Stock"),
         c.getField("Manufacturer"),
-        "=HYPERLINK(\"" + c.getDatasheet() + "\", \"" + c.getField("Part No.") + "\")",
-        "=HYPERLINK(\"" + c.getField("Vendor link") + "\", \"" + c.getField("Vendor") + "\")",
+        get_datasheet_part_no(c.getDatasheet(), c.getField("Part No.")),
+        get_vendor_link(c.getField("Vendor"), c.getField("Vendor link")),
         c.getField("Unit cost"),
         total_cost(c.getField("Unit cost"), len(group), c.getField("Minimum Order")),
         c.getField("Minimum Order"),
