@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch)
-    (date "2019 June 05, Wednesday 16:03:49")
+    (date "2019 June 05, Wednesday 17:23:05")
     (tool "Eeschema (5.1.0-0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -19,6 +19,7 @@
       (value Adafruit_nRF52_Feather)
       (datasheet https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417)
       (fields
+        (field (name Category) Electronics)
         (field (name Manufacturer) Adafruit)
         (field (name "Minimum Order") 1)
         (field (name Package) TH)
@@ -34,6 +35,7 @@
       (value VEML6075_breakout)
       (datasheet https://learn.adafruit.com/assets/62587)
       (fields
+        (field (name Category) Electronics)
         (field (name Manufacturer) Adafruit)
         (field (name "Minimum Order") 1)
         (field (name Package) TH)
@@ -49,6 +51,7 @@
       (value LED_BARG)
       (datasheet https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf)
       (fields
+        (field (name Category) Electronics)
         (field (name Manufacturer) Cree)
         (field (name "Minimum Order") 10)
         (field (name Package) SMD)
@@ -64,6 +67,7 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
+        (field (name Category) Electronics)
         (field (name "Minimum Order") 1)
         (field (name Package) 0805)
         (field (name Stock) 18-res-0805-1k))
@@ -75,6 +79,7 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
+        (field (name Category) Electronics)
         (field (name "Minimum Order") 1)
         (field (name Package) 0805)
         (field (name Stock) 18-res-0805-1k))
@@ -86,6 +91,7 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
+        (field (name Category) Electronics)
         (field (name "Minimum Order") 1)
         (field (name Package) 0805)
         (field (name Stock) 18-res-0805-1k))
@@ -96,6 +102,7 @@
       (value SW_SPDT)
       (datasheet https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html)
       (fields
+        (field (name Category) Connector)
         (field (name "Minimum Order") 1)
         (field (name Package) SMD)
         (field (name "Unit cost") "1.90 ")
@@ -106,11 +113,16 @@
       (tstamp 5CEE5E28))
     (comp (ref J1)
       (value Conn_01x02_Female)
-      (datasheet ~)
+      (datasheet https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf)
       (fields
-        (field (name "Minimum Order") 1)
+        (field (name Category) Connector)
+        (field (name Manufacturer) JST)
+        (field (name "Minimum Order") 5)
         (field (name Package) SMD)
-        (field (name Vendor) AliExpress))
+        (field (name "Part No.") "B2B-PH-SM4-TB(LF)(SN) ")
+        (field (name "Unit cost") 0.486)
+        (field (name Vendor) "RS Components")
+        (field (name "Vendor link") https://sg.rs-online.com/web/p/pcb-headers/6881325/))
       (libsource (lib Connector) (part Conn_01x02_Female) (description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5CEE767E))
@@ -118,6 +130,7 @@
       (value SW_SPDT)
       (datasheet https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html)
       (fields
+        (field (name Category) Connector)
         (field (name "Minimum Order") 1)
         (field (name Package) SMD)
         (field (name "Unit cost") "1.90 ")
@@ -131,6 +144,7 @@
       (footprint Package_TO_SOT_SMD:SOT-23)
       (datasheet https://docs-apac.rs-online.com/webdocs/10c7/0900766b810c708d.pdf)
       (fields
+        (field (name Category) Electronics)
         (field (name Manufacturer) Infineon)
         (field (name "Minimum Order") 5)
         (field (name Package) SOT-23)

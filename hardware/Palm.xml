@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch</source>
-    <date>2019 June 05, Wednesday 16:35:29</date>
+    <date>2019 June 05, Wednesday 17:23:08</date>
     <tool>Eeschema (5.1.0-0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -23,6 +23,7 @@
       <value>Adafruit_nRF52_Feather</value>
       <datasheet>https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Manufacturer">Adafruit</field>
         <field name="Minimum Order">1</field>
         <field name="Package">TH</field>
@@ -40,6 +41,7 @@
       <value>VEML6075_breakout</value>
       <datasheet>https://learn.adafruit.com/assets/62587</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Manufacturer">Adafruit</field>
         <field name="Minimum Order">1</field>
         <field name="Package">TH</field>
@@ -57,6 +59,7 @@
       <value>LED_BARG</value>
       <datasheet>https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Manufacturer">Cree</field>
         <field name="Minimum Order">10</field>
         <field name="Package">SMD</field>
@@ -74,6 +77,7 @@
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Minimum Order">1</field>
         <field name="Package">0805</field>
         <field name="Stock">18-res-0805-1k</field>
@@ -87,6 +91,7 @@
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Minimum Order">1</field>
         <field name="Package">0805</field>
         <field name="Stock">18-res-0805-1k</field>
@@ -100,6 +105,7 @@
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Minimum Order">1</field>
         <field name="Package">0805</field>
         <field name="Stock">18-res-0805-1k</field>
@@ -112,6 +118,7 @@
       <value>SW_SPDT</value>
       <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
       <fields>
+        <field name="Category">Connector</field>
         <field name="Minimum Order">1</field>
         <field name="Package">SMD</field>
         <field name="Unit cost">1.90 </field>
@@ -126,6 +133,7 @@
       <value>Conn_01x02_Female</value>
       <datasheet>https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf</datasheet>
       <fields>
+        <field name="Category">Connector</field>
         <field name="Manufacturer">JST</field>
         <field name="Minimum Order">5</field>
         <field name="Package">SMD</field>
@@ -142,6 +150,7 @@
       <value>SW_SPDT</value>
       <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
       <fields>
+        <field name="Category">Connector</field>
         <field name="Minimum Order">1</field>
         <field name="Package">SMD</field>
         <field name="Unit cost">1.90 </field>
@@ -157,6 +166,7 @@
       <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
       <datasheet>https://docs-apac.rs-online.com/webdocs/10c7/0900766b810c708d.pdf</datasheet>
       <fields>
+        <field name="Category">Electronics</field>
         <field name="Manufacturer">Infineon</field>
         <field name="Minimum Order">5</field>
         <field name="Package">SOT-23</field>

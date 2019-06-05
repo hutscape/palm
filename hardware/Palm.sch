@@ -30,6 +30,7 @@ F 8 "prototype-4" H 0   0   50  0001 C CNN "Stock"
 F 9 "34.0" H 0   0   50  0001 C CNN "Unit cost"
 F 10 "https://www.adafruit.com/product/3406" H 0   0   50  0001 C CNN "Vendor link"
 F 11 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 12 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    2550 2400
 	-1   0    0    -1  
 $EndComp
@@ -8831,6 +8832,7 @@ F 8 "prototype-5" H 0   0   50  0001 C CNN "Stock"
 F 9 "8.20" H 0   0   50  0001 C CNN "Unit cost"
 F 10 "https://www.adafruit.com/product/3964" H 0   0   50  0001 C CNN "Vendor link"
 F 11 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 12 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    9200 1850
 	-1   0    0    -1  
 $EndComp
@@ -8882,6 +8884,7 @@ F 7 "RS Components" H 0   0   50  0001 C CNN "Vendor"
 F 8 "10" H 0   0   50  0001 C CNN "Minimum Order"
 F 9 "0.632" H 0   0   50  0001 C CNN "Unit cost"
 F 10 "https://sg.rs-online.com/web/p/products/1238680/" H 0   0   50  0001 C CNN "Vendor link"
+F 11 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    9200 3100
 	1    0    0    -1  
 $EndComp
@@ -8922,6 +8925,7 @@ F 3 "~" H 8750 2900 50  0001 C CNN
 F 4 "0805" H 0   0   50  0001 C CNN "Package"
 F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 F 6 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 7 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    8750 2900
 	0    1    1    0   
 $EndComp
@@ -8936,6 +8940,7 @@ F 3 "~" H 8750 3100 50  0001 C CNN
 F 4 "0805" H 0   0   50  0001 C CNN "Package"
 F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 F 6 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 7 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    8750 3100
 	0    1    1    0   
 $EndComp
@@ -8950,6 +8955,7 @@ F 3 "~" H 8750 3300 50  0001 C CNN
 F 4 "0805" H 0   0   50  0001 C CNN "Package"
 F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
 F 6 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 7 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    8750 3300
 	0    1    1    0   
 $EndComp
@@ -8974,6 +8980,7 @@ F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
 F 6 "1.90 " H 0   0   50  0001 C CNN "Unit cost"
 F 7 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 0   0   50  0001 C CNN "Vendor link"
 F 8 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 9 "Connector" H 0   0   50  0001 C CNN "Category"
 	1    2050 1200
 	-1   0    0    -1  
 $EndComp
@@ -8992,6 +8999,7 @@ F 7 "JST" H 0   0   50  0001 C CNN "Manufacturer"
 F 8 "B2B-PH-SM4-TB(LF)(SN) " H 0   0   50  0001 C CNN "Part No."
 F 9 "0.486" H 0   0   50  0001 C CNN "Unit cost"
 F 10 "https://sg.rs-online.com/web/p/pcb-headers/6881325/" H 0   0   50  0001 C CNN "Vendor link"
+F 11 "Connector" H 0   0   50  0001 C CNN "Category"
 	1    1350 1100
 	-1   0    0    -1  
 $EndComp
@@ -9035,6 +9043,7 @@ F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
 F 6 "1.90 " H 0   0   50  0001 C CNN "Unit cost"
 F 7 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 0   0   50  0001 C CNN "Vendor link"
 F 8 "1" H 0   0   50  0001 C CNN "Minimum Order"
+F 9 "Connector" H 0   0   50  0001 C CNN "Category"
 	1    3850 2950
 	1    0    0    -1  
 $EndComp
@@ -9070,6 +9079,7 @@ F 7 "RS Components" H 0   0   50  0001 C CNN "Vendor"
 F 8 "5" H 0   0   50  0001 C CNN "Minimum Order"
 F 9 "0.224" H 0   0   50  0001 C CNN "Unit cost"
 F 10 "https://sg.rs-online.com/web/p/products/7604432/" H 0   0   50  0001 C CNN "Vendor link"
+F 11 "Electronics" H 0   0   50  0001 C CNN "Category"
 	1    9200 1250
 	1    0    0    1   
 $EndComp
