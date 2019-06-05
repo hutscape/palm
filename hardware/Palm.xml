@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch</source>
-    <date>2019 June 05, Wednesday 12:42:21</date>
+    <date>2019 June 05, Wednesday 16:35:29</date>
     <tool>Eeschema (5.1.0-0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -24,9 +24,13 @@
       <datasheet>https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417</datasheet>
       <fields>
         <field name="Manufacturer">Adafruit</field>
+        <field name="Minimum Order">1</field>
         <field name="Package">TH</field>
         <field name="Part No.">3406</field>
+        <field name="Stock">prototype-4</field>
+        <field name="Unit cost">34.0</field>
         <field name="Vendor">Adafruit</field>
+        <field name="Vendor link">https://www.adafruit.com/product/3406</field>
       </fields>
       <libsource lib="Adafruit_nRF52_Feather" part="Adafruit_nRF52_Feather" description=""/>
       <sheetpath names="/" tstamps="/"/>
@@ -37,9 +41,13 @@
       <datasheet>https://learn.adafruit.com/assets/62587</datasheet>
       <fields>
         <field name="Manufacturer">Adafruit</field>
+        <field name="Minimum Order">1</field>
         <field name="Package">TH</field>
         <field name="Part No.">3964</field>
+        <field name="Stock">prototype-5</field>
+        <field name="Unit cost">8.20</field>
         <field name="Vendor">Adafruit</field>
+        <field name="Vendor link">https://www.adafruit.com/product/3964</field>
       </fields>
       <libsource lib="Sensor_UV" part="VEML6075_breakout" description=""/>
       <sheetpath names="/" tstamps="/"/>
@@ -50,9 +58,12 @@
       <datasheet>https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Cree</field>
+        <field name="Minimum Order">10</field>
         <field name="Package">SMD</field>
         <field name="Part No.">SLV6A-FKB-CK1P1G1BB7R3R3 </field>
+        <field name="Unit cost">0.632</field>
         <field name="Vendor">RS Components</field>
+        <field name="Vendor link">https://sg.rs-online.com/web/p/products/1238680/</field>
       </fields>
       <libsource lib="Device" part="LED_RGB" description="RGB LED, 6 pin package"/>
       <sheetpath names="/" tstamps="/"/>
@@ -60,8 +71,10 @@
     </comp>
     <comp ref="R1">
       <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
+        <field name="Minimum Order">1</field>
         <field name="Package">0805</field>
         <field name="Stock">18-res-0805-1k</field>
       </fields>
@@ -71,8 +84,10 @@
     </comp>
     <comp ref="R2">
       <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
+        <field name="Minimum Order">1</field>
         <field name="Package">0805</field>
         <field name="Stock">18-res-0805-1k</field>
       </fields>
@@ -82,8 +97,10 @@
     </comp>
     <comp ref="R3">
       <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
+        <field name="Minimum Order">1</field>
         <field name="Package">0805</field>
         <field name="Stock">18-res-0805-1k</field>
       </fields>
@@ -92,48 +109,48 @@
       <tstamp>5CED3479</tstamp>
     </comp>
     <comp ref="SW1">
-      <value>SW_SPST</value>
+      <value>SW_SPDT</value>
       <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
       <fields>
+        <field name="Minimum Order">1</field>
         <field name="Package">SMD</field>
+        <field name="Unit cost">1.90 </field>
         <field name="Vendor">AliExpress</field>
+        <field name="Vendor link">https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</field>
       </fields>
-      <libsource lib="Switch" part="SW_SPST" description="Single Pole Single Throw (SPST) switch"/>
+      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5CEE5E28</tstamp>
     </comp>
     <comp ref="J1">
       <value>Conn_01x02_Female</value>
-      <datasheet>~</datasheet>
+      <datasheet>https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf</datasheet>
       <fields>
+        <field name="Manufacturer">JST</field>
+        <field name="Minimum Order">5</field>
         <field name="Package">SMD</field>
-        <field name="Vendor">AliExpress</field>
+        <field name="Part No.">B2B-PH-SM4-TB(LF)(SN) </field>
+        <field name="Unit cost">0.486</field>
+        <field name="Vendor">RS Components</field>
+        <field name="Vendor link">https://sg.rs-online.com/web/p/pcb-headers/6881325/</field>
       </fields>
       <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5CEE767E</tstamp>
     </comp>
     <comp ref="SW2">
-      <value>SW_SPST</value>
+      <value>SW_SPDT</value>
       <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
       <fields>
+        <field name="Minimum Order">1</field>
         <field name="Package">SMD</field>
+        <field name="Unit cost">1.90 </field>
         <field name="Vendor">AliExpress</field>
+        <field name="Vendor link">https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</field>
       </fields>
-      <libsource lib="Switch" part="SW_SPST" description="Single Pole Single Throw (SPST) switch"/>
+      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5CF4F316</tstamp>
-    </comp>
-    <comp ref="R5">
-      <value>1k</value>
-      <datasheet>~</datasheet>
-      <fields>
-        <field name="Package">0805</field>
-        <field name="Stock">18-res-0805-1k</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5CF51E77</tstamp>
     </comp>
     <comp ref="Q1">
       <value>IRLML6402</value>
@@ -141,9 +158,12 @@
       <datasheet>https://docs-apac.rs-online.com/webdocs/10c7/0900766b810c708d.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Infineon</field>
+        <field name="Minimum Order">5</field>
         <field name="Package">SOT-23</field>
         <field name="Part No.">IRLML2246TRPBF</field>
+        <field name="Unit cost">0.224</field>
         <field name="Vendor">RS Components</field>
+        <field name="Vendor link">https://sg.rs-online.com/web/p/products/7604432/</field>
       </fields>
       <libsource lib="Transistor_FET" part="IRLML6402" description="-3.7A Id, -20V Vds, P-Channel MOSFET, 65mOhm Rds, SOT-23"/>
       <sheetpath names="/" tstamps="/"/>
@@ -251,16 +271,17 @@
         <pin num="5" name="SDA" type="BiDi"/>
       </pins>
     </libpart>
-    <libpart lib="Switch" part="SW_SPST">
-      <description>Single Pole Single Throw (SPST) switch</description>
+    <libpart lib="Switch" part="SW_SPDT">
+      <description>Switch, single pole double throw</description>
       <docs>~</docs>
       <fields>
         <field name="Reference">SW</field>
-        <field name="Value">SW_SPST</field>
+        <field name="Value">SW_SPDT</field>
       </fields>
       <pins>
         <pin num="1" name="A" type="passive"/>
         <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Transistor_FET" part="TP0610T">
@@ -339,7 +360,7 @@
     </net>
     <net code="10" name="+3V3">
       <node ref="Q1" pin="2"/>
-      <node ref="SW2" pin="2"/>
+      <node ref="SW2" pin="1"/>
       <node ref="U1" pin="2"/>
     </net>
     <net code="11" name="Net-(U1-Pad20)">
@@ -357,9 +378,9 @@
     <net code="15" name="Net-(U1-Pad27)">
       <node ref="U1" pin="27"/>
     </net>
-    <net code="16" name="Net-(SW1-Pad1)">
+    <net code="16" name="Net-(SW1-Pad2)">
       <node ref="U1" pin="28"/>
-      <node ref="SW1" pin="1"/>
+      <node ref="SW1" pin="2"/>
     </net>
     <net code="17" name="Net-(U1-Pad3)">
       <node ref="U1" pin="3"/>
@@ -371,13 +392,13 @@
       <node ref="U1" pin="9"/>
     </net>
     <net code="20" name="GND">
-      <node ref="R5" pin="2"/>
+      <node ref="U1" pin="4"/>
       <node ref="U2" pin="3"/>
       <node ref="R3" pin="2"/>
       <node ref="R2" pin="2"/>
       <node ref="R1" pin="2"/>
       <node ref="J1" pin="2"/>
-      <node ref="U1" pin="4"/>
+      <node ref="SW2" pin="3"/>
     </net>
     <net code="21" name="+5V">
       <node ref="U1" pin="26"/>
@@ -417,22 +438,24 @@
       <node ref="D1" pin="4"/>
       <node ref="U1" pin="8"/>
     </net>
-    <net code="31" name="Net-(J1-Pad1)">
-      <node ref="SW1" pin="2"/>
+    <net code="31" name="Net-(SW1-Pad3)">
+      <node ref="SW1" pin="3"/>
+    </net>
+    <net code="32" name="Net-(J1-Pad1)">
       <node ref="J1" pin="1"/>
+      <node ref="SW1" pin="1"/>
     </net>
-    <net code="32" name="Net-(Q1-Pad3)">
-      <node ref="U2" pin="1"/>
+    <net code="33" name="Net-(Q1-Pad3)">
       <node ref="Q1" pin="3"/>
+      <node ref="U2" pin="1"/>
     </net>
-    <net code="33" name="/EN_SENSOR">
-      <node ref="U1" pin="24"/>
+    <net code="34" name="/EN_SENSOR">
       <node ref="Q1" pin="1"/>
+      <node ref="U1" pin="24"/>
     </net>
-    <net code="34" name="Net-(R5-Pad1)">
-      <node ref="R5" pin="1"/>
+    <net code="35" name="Net-(SW2-Pad2)">
       <node ref="U1" pin="25"/>
-      <node ref="SW2" pin="1"/>
+      <node ref="SW2" pin="2"/>
     </net>
   </nets>
 </export>

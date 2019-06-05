@@ -26,6 +26,10 @@ F 4 "Adafruit" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "TH" H 0   0   50  0001 C CNN "Package"
 F 6 "3406" H 0   0   50  0001 C CNN "Part No."
 F 7 "Adafruit" H 0   0   50  0001 C CNN "Vendor"
+F 8 "prototype-4" H 0   0   50  0001 C CNN "Stock"
+F 9 "34.0" H 0   0   50  0001 C CNN "Unit cost"
+F 10 "https://www.adafruit.com/product/3406" H 0   0   50  0001 C CNN "Vendor link"
+F 11 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    2550 2400
 	-1   0    0    -1  
 $EndComp
@@ -8823,6 +8827,10 @@ F 4 "Adafruit" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "TH" H 0   0   50  0001 C CNN "Package"
 F 6 "3964" H 0   0   50  0001 C CNN "Part No."
 F 7 "Adafruit" H 0   0   50  0001 C CNN "Vendor"
+F 8 "prototype-5" H 0   0   50  0001 C CNN "Stock"
+F 9 "8.20" H 0   0   50  0001 C CNN "Unit cost"
+F 10 "https://www.adafruit.com/product/3964" H 0   0   50  0001 C CNN "Vendor link"
+F 11 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    9200 1850
 	-1   0    0    -1  
 $EndComp
@@ -8871,6 +8879,9 @@ F 4 "Cree" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "SMD" H 0   0   50  0001 C CNN "Package"
 F 6 "SLV6A-FKB-CK1P1G1BB7R3R3 " H 0   0   50  0001 C CNN "Part No."
 F 7 "RS Components" H 0   0   50  0001 C CNN "Vendor"
+F 8 "10" H 0   0   50  0001 C CNN "Minimum Order"
+F 9 "0.632" H 0   0   50  0001 C CNN "Unit cost"
+F 10 "https://sg.rs-online.com/web/p/products/1238680/" H 0   0   50  0001 C CNN "Vendor link"
 	1    9200 3100
 	1    0    0    -1  
 $EndComp
@@ -8906,10 +8917,11 @@ U 1 1 5CED0CF7
 P 8750 2900
 F 0 "R1" V 8650 2800 50  0000 C CNN
 F 1 "1k" V 8650 3000 50  0000 C CNN
-F 2 "" H 8750 2900 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8750 2900 50  0001 C CNN
 F 3 "~" H 8750 2900 50  0001 C CNN
 F 4 "0805" H 0   0   50  0001 C CNN "Package"
 F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
+F 6 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    8750 2900
 	0    1    1    0   
 $EndComp
@@ -8919,10 +8931,11 @@ U 1 1 5CED2FDB
 P 8750 3100
 F 0 "R2" V 8650 3000 50  0000 C CNN
 F 1 "1k" V 8650 3200 50  0000 C CNN
-F 2 "" H 8750 3100 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8750 3100 50  0001 C CNN
 F 3 "~" H 8750 3100 50  0001 C CNN
 F 4 "0805" H 0   0   50  0001 C CNN "Package"
 F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
+F 6 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    8750 3100
 	0    1    1    0   
 $EndComp
@@ -8932,10 +8945,11 @@ U 1 1 5CED3479
 P 8750 3300
 F 0 "R3" V 8650 3200 50  0000 C CNN
 F 1 "1k" V 8650 3400 50  0000 C CNN
-F 2 "" H 8750 3300 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8750 3300 50  0001 C CNN
 F 3 "~" H 8750 3300 50  0001 C CNN
 F 4 "0805" H 0   0   50  0001 C CNN "Package"
 F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
+F 6 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    8750 3300
 	0    1    1    0   
 $EndComp
@@ -8948,52 +8962,58 @@ Wire Wire Line
 Text Notes 9900 3300 0    50   ~ 0
 Color display for RGB LED:\nNo color: UV Index 0 - 2\nYellow: UV Index 3 - 5\nOrange: UV Index 6 - 7\nRed: UV Index 8 - 10\nPurple: UV Index 11+\n
 $Comp
-L Switch:SW_SPST SW1
+L Switch:SW_SPDT SW1
 U 1 1 5CEE5E28
 P 2050 1200
-F 0 "SW1" H 2050 1435 50  0000 C CNN
-F 1 "SW_SPST" H 2050 1344 50  0000 C CNN
+F 0 "SW1" H 2150 1400 50  0000 C CNN
+F 1 "SW_SPDT" H 1900 1300 50  0000 C CNN
 F 2 "" H 2050 1200 50  0001 C CNN
 F 3 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 2050 1200 50  0001 C CNN
 F 4 "SMD" H 0   0   50  0001 C CNN "Package"
 F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
+F 6 "1.90 " H 0   0   50  0001 C CNN "Unit cost"
+F 7 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 0   0   50  0001 C CNN "Vendor link"
+F 8 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    2050 1200
 	-1   0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x02_Female J1
 U 1 1 5CEE767E
-P 1500 1200
-F 0 "J1" H 1528 1176 50  0000 L CNN
-F 1 "Conn_01x02_Female" H 1528 1085 50  0000 L CNN
-F 2 "" H 1500 1200 50  0001 C CNN
-F 3 "~" H 1500 1200 50  0001 C CNN
-F 4 "SMD" H 0   0   50  0001 C CNN "Package"
-F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
-	1    1500 1200
+P 1350 1100
+F 0 "J1" H 1378 1076 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 1378 985 50  0000 L CNN
+F 2 "" H 1350 1100 50  0001 C CNN
+F 3 "https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf" H 1350 1100 50  0001 C CNN
+F 4 "SMD" H -150 -100 50  0001 C CNN "Package"
+F 5 "RS Components" H -150 -100 50  0001 C CNN "Vendor"
+F 6 "5" H -150 -100 50  0001 C CNN "Minimum Order"
+F 7 "JST" H 0   0   50  0001 C CNN "Manufacturer"
+F 8 "B2B-PH-SM4-TB(LF)(SN) " H 0   0   50  0001 C CNN "Part No."
+F 9 "0.486" H 0   0   50  0001 C CNN "Unit cost"
+F 10 "https://sg.rs-online.com/web/p/pcb-headers/6881325/" H 0   0   50  0001 C CNN "Vendor link"
+	1    1350 1100
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	1850 1200 1700 1200
-Text Notes 1050 1050 0    50   ~ 0
+Text Notes 1050 950  0    50   ~ 0
 JST-PH2 connector \nfor LiPo
 Wire Wire Line
 	2500 1200 2500 1400
 $Comp
 L power:GND #PWR01
 U 1 1 5CF419F7
-P 1800 1450
-F 0 "#PWR01" H 1800 1200 50  0001 C CNN
-F 1 "GND" H 1805 1277 50  0000 C CNN
-F 2 "" H 1800 1450 50  0001 C CNN
-F 3 "" H 1800 1450 50  0001 C CNN
-	1    1800 1450
+P 1650 1350
+F 0 "#PWR01" H 1650 1100 50  0001 C CNN
+F 1 "GND" H 1655 1177 50  0000 C CNN
+F 2 "" H 1650 1350 50  0001 C CNN
+F 3 "" H 1650 1350 50  0001 C CNN
+	1    1650 1350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1700 1300 1800 1300
+	1550 1200 1650 1200
 Wire Wire Line
-	1800 1300 1800 1450
+	1650 1200 1650 1350
 Wire Wire Line
 	9300 1450 9300 1500
 Text Label 3250 2850 0    50   ~ 0
@@ -9003,57 +9023,38 @@ Wire Wire Line
 Text Label 8850 1250 2    50   ~ 0
 EN_SENSOR
 $Comp
-L Switch:SW_SPST SW2
+L Switch:SW_SPDT SW2
 U 1 1 5CF4F316
 P 3850 2950
-F 0 "SW2" H 3850 3050 50  0000 C CNN
-F 1 "SW_SPST" H 3850 2850 50  0000 C CNN
+F 0 "SW2" H 3800 2850 50  0000 C CNN
+F 1 "SW_SPDT" H 3750 2750 50  0000 C CNN
 F 2 "" H 3850 2950 50  0001 C CNN
 F 3 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 3850 2950 50  0001 C CNN
 F 4 "SMD" H 0   0   50  0001 C CNN "Package"
 F 5 "AliExpress" H 0   0   50  0001 C CNN "Vendor"
+F 6 "1.90 " H 0   0   50  0001 C CNN "Unit cost"
+F 7 "https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html" H 0   0   50  0001 C CNN "Vendor link"
+F 8 "1" H 0   0   50  0001 C CNN "Minimum Order"
 	1    3850 2950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1850 3050 2000 3050
 $Comp
-L Device:R_Small R5
-U 1 1 5CF51E77
-P 3450 3150
-F 0 "R5" H 3300 3150 50  0000 L CNN
-F 1 "1k" H 3500 3150 50  0000 L CNN
-F 2 "" H 3450 3150 50  0001 C CNN
-F 3 "~" H 3450 3150 50  0001 C CNN
-F 4 "0805" H 0   0   50  0001 C CNN "Package"
-F 5 "18-res-0805-1k" H 0   0   50  0001 C CNN "Stock"
-	1    3450 3150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3450 2950 3450 3050
-Wire Wire Line
-	3450 2950 3650 2950
-$Comp
 L power:GND #PWR02
 U 1 1 5CF52DF5
-P 3450 3400
-F 0 "#PWR02" H 3450 3150 50  0001 C CNN
-F 1 "GND" H 3455 3227 50  0000 C CNN
-F 2 "" H 3450 3400 50  0001 C CNN
-F 3 "" H 3450 3400 50  0001 C CNN
-	1    3450 3400
+P 4200 3100
+F 0 "#PWR02" H 4200 2850 50  0001 C CNN
+F 1 "GND" H 4205 2927 50  0000 C CNN
+F 2 "" H 4200 3100 50  0001 C CNN
+F 3 "" H 4200 3100 50  0001 C CNN
+	1    4200 3100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3450 3250 3450 3400
-Wire Wire Line
-	3100 2950 3450 2950
-Connection ~ 3450 2950
 Wire Wire Line
 	2250 1200 2500 1200
 Wire Wire Line
-	4050 2950 4200 2950
+	4050 2850 4200 2850
 $Comp
 L Transistor_FET:IRLML6402 Q1
 U 1 1 5CF39500
@@ -9066,6 +9067,9 @@ F 4 "Infineon" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "SOT-23" H 0   0   50  0001 C CNN "Package"
 F 6 "IRLML2246TRPBF" H 0   0   50  0001 C CNN "Part No."
 F 7 "RS Components" H 0   0   50  0001 C CNN "Vendor"
+F 8 "5" H 0   0   50  0001 C CNN "Minimum Order"
+F 9 "0.224" H 0   0   50  0001 C CNN "Unit cost"
+F 10 "https://sg.rs-online.com/web/p/products/7604432/" H 0   0   50  0001 C CNN "Vendor link"
 	1    9200 1250
 	1    0    0    1   
 $EndComp
@@ -9110,12 +9114,12 @@ Wire Wire Line
 $Comp
 L power:+3V3 #PWR0103
 U 1 1 5CF48BA3
-P 4200 2950
-F 0 "#PWR0103" H 4200 2800 50  0001 C CNN
-F 1 "+3V3" H 4215 3123 50  0000 C CNN
-F 2 "" H 4200 2950 50  0001 C CNN
-F 3 "" H 4200 2950 50  0001 C CNN
-	1    4200 2950
+P 4200 2850
+F 0 "#PWR0103" H 4200 2700 50  0001 C CNN
+F 1 "+3V3" H 4215 3023 50  0000 C CNN
+F 2 "" H 4200 2850 50  0001 C CNN
+F 3 "" H 4200 2850 50  0001 C CNN
+	1    4200 2850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -9152,4 +9156,13 @@ Wire Wire Line
 Connection ~ 8500 3300
 Wire Wire Line
 	8500 3300 8500 3450
+Wire Wire Line
+	1550 1100 1850 1100
+NoConn ~ 1850 1300
+Wire Wire Line
+	3100 2950 3650 2950
+Wire Wire Line
+	4200 3050 4200 3100
+Wire Wire Line
+	4050 3050 4200 3050
 $EndSCHEMATC
