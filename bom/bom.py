@@ -49,6 +49,7 @@ out.writerow([
 # Get all of the components in groups of matching parts + values
 # (see ky_generic_netlist_reader.py)
 grouped = net.groupComponents()
+grand_total = 0.0
 
 def total_cost(unit_cost, quantity, maximum):
     if not unit_cost:
@@ -107,6 +108,8 @@ for group in grouped:
         c.getPartName() + ": " + c.getDescription()
     ])
 
+    grand_total += total_cost(c.getField("Unit cost"), len(group), c.getField("Minimum Order"))
+
 out.writerow([
     'Total:',
     len(net.groupComponents()),
@@ -118,7 +121,7 @@ out.writerow([
     "",
     "",
     "",
-    "",
+    format(grand_total, '.2f'),
     "",
     "",
 ])
