@@ -1,4 +1,4 @@
-15833616352289829
+15835176350699004
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -40872,6 +40872,13 @@ DCDC-Converter XP_POWER JTE06 Dual
 0
 8
 8
+CREE_RGB_LED_-PLCC-6_5.5x5.5mm
+LED_RGB_Cree-PLCC-6_5.5x5.5mm_P2.1mm
+
+
+0
+0
+0
 Crystal
 Crystal_AT310_D3.0mm_L10.0mm_Horizontal
 Crystal THT AT310 10.0mm-10.5mm length 3.0mm diameter
@@ -49837,7 +49844,7 @@ nRF52_Bluefruit_Adafruit_breakout_board
 
 
 0
-28
+32
 16
 OptoDevice
 ADNS-9800
