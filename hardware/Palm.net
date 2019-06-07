@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch)
-    (date "2019 June 05, Wednesday 17:23:05")
+    (date "2019 June 06, Thursday 13:06:14")
     (tool "Eeschema (5.1.0-0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -33,6 +33,7 @@
       (tstamp 5CB07E1A))
     (comp (ref U2)
       (value VEML6075_breakout)
+      (footprint VEML6075_breakout_board:VEML6075_breakout_board)
       (datasheet https://learn.adafruit.com/assets/62587)
       (fields
         (field (name Category) Electronics)

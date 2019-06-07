@@ -20,7 +20,7 @@ U 1 1 5CB07E1A
 P 2550 2400
 F 0 "U1" H 2950 3350 50  0000 C CNN
 F 1 "Adafruit_nRF52_Feather" H 3000 1450 50  0000 C CNN
-F 2 "" H 2400 2250 50  0001 C CNN
+F 2 "nRF52_Bluefruit_Adafruit_breakout:nRF52_Bluefruit_Adafruit_breakout_board" H 2400 2250 50  0001 C CNN
 F 3 "https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417" H 2400 2250 50  0001 C CNN
 F 4 "Adafruit" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "TH" H 0   0   50  0001 C CNN "Package"
@@ -8822,7 +8822,7 @@ U 1 1 5CAF1352
 P 9200 1850
 F 0 "U2" H 9500 2100 50  0000 R CNN
 F 1 "VEML6075_breakout" H 8900 1850 50  0000 R CNN
-F 2 "" H 9200 1850 50  0001 C CNN
+F 2 "VEML6075_breakout_board:VEML6075_breakout_board" H 9200 1850 50  0001 C CNN
 F 3 "https://learn.adafruit.com/assets/62587" H 9200 1850 50  0001 C CNN
 F 4 "Adafruit" H 0   0   50  0001 C CNN "Manufacturer"
 F 5 "TH" H 0   0   50  0001 C CNN "Package"
@@ -9175,4 +9175,6 @@ Wire Wire Line
 	4200 3050 4200 3100
 Wire Wire Line
 	4050 3050 4200 3050
+Entry Wire Line
+	8300 -350 8400 -250
 $EndSCHEMATC
