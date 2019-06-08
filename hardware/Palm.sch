@@ -8822,7 +8822,7 @@ U 1 1 5CAF1352
 P 9800 1900
 F 0 "U2" H 10100 2150 50  0000 R CNN
 F 1 "VEML6075_breakout" H 9500 1900 50  0000 R CNN
-F 2 "VEML6075_breakout_board:VEML6075_breakout_board" H 9800 1900 50  0001 C CNN
+F 2 "veml6075_breakout_board:VEML6075_breakout_board" H 9800 1900 50  0001 C CNN
 F 3 "https://learn.adafruit.com/assets/62587" H 9800 1900 50  0001 C CNN
 F 4 "Adafruit" H 600 50  50  0001 C CNN "Manufacturer"
 F 5 "TH" H 600 50  50  0001 C CNN "Package"
@@ -8875,7 +8875,7 @@ U 1 1 5CED4526
 P 10300 3100
 F 0 "D1" H 10300 3500 50  0000 C CNN
 F 1 "LED_BARG" H 10300 2750 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 10300 3050 50  0001 C CNN
+F 2 "CREE_RGB_LED_-PLCC-6_5.5x5.5mm:LED_RGB_Cree-PLCC-6_5.5x5.5mm_P2.1mm" H 10300 3050 50  0001 C CNN
 F 3 "https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf" H 10300 3050 50  0001 C CNN
 F 4 "Cree" H 1100 0   50  0001 C CNN "Manufacturer"
 F 5 "SMD" H 1100 0   50  0001 C CNN "Package"
@@ -8990,7 +8990,7 @@ U 1 1 5CEE767E
 P 1550 1100
 F 0 "J1" H 1578 1076 50  0000 L CNN
 F 1 "Conn_01x02_Female" H 1578 985 50  0000 L CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 1550 1100 50  0001 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal" H 1550 1100 50  0001 C CNN
 F 3 "https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf" H 1550 1100 50  0001 C CNN
 F 4 "SMD" H 50  -100 50  0001 C CNN "Package"
 F 5 "RS Components" H 50  -100 50  0001 C CNN "Vendor"
