@@ -33,9 +33,9 @@ uint8_t  uvindexvalue = 0x42;
 float  readUVIndexValue = 0.0;
 
 // RGB LED pin declarations
-int redPin = PIN_A1;
+int redPin = PIN_A3;
 int greenPin = PIN_A2;
-int bluePin = PIN_A3;
+int bluePin = PIN_A1;
 
 // Advanced function prototypes
 void startAdv(void);

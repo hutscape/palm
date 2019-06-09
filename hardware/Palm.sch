@@ -8889,11 +8889,11 @@ F 11 "Electronics" H 1100 0   50  0001 C CNN "Category"
 	1    0    0    -1  
 $EndComp
 Text Label 2000 2700 2    50   ~ 0
-RED
+BLUE
 Text Label 2000 2600 2    50   ~ 0
 GREEN
 Text Label 2000 2500 2    50   ~ 0
-BLUE
+RED
 Wire Wire Line
 	2000 2700 2200 2700
 Wire Wire Line
