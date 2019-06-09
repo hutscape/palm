@@ -1,4 +1,4 @@
-update=2019 June 08, Saturday 11:24:23
+update=2019 June 09, Sunday 20:28:41
 version=1
 last_client=kicad
 [general]
@@ -67,4 +67,16 @@ OthersTextUpright=1
 SolderMaskClearance=0.051
 SolderMaskMinWidth=0.25
 SolderPasteClearance=0
-SolderPasteRatio=0
+SolderPasteRatio=-0
+[pcbnew/Netclasses]
+[pcbnew/Netclasses/1]
+Name=Power
+Clearance=0.3
+TrackWidth=0.4
+ViaDiameter=0.7
+ViaDrill=0.5
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25

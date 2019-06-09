@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch)
-    (date "2019 June 09, Sunday 12:03:25")
+    (date "2019 June 09, Sunday 20:23:40")
     (tool "Eeschema (5.1.0-0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
