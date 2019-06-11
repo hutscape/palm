@@ -13,5 +13,9 @@ View the [schematic](images/schematic.pdf) in PDF format.
 
 ## Footprint
 
+Front
 ![](images/footprint-front.png)
+
+Back
+
 ![](images/footprint-back.png)
