@@ -8841,7 +8841,6 @@ NoConn ~ 3300 2150
 NoConn ~ 3300 2450
 NoConn ~ 3300 2650
 NoConn ~ 3300 2750
-NoConn ~ 9700 1600
 Wire Wire Line
 	9900 2200 9900 2250
 Text Label 3500 1950 0    50   ~ 0
@@ -8965,7 +8964,7 @@ Wire Wire Line
 	9600 3100 9750 3100
 Wire Wire Line
 	9600 3300 9750 3300
-Text Notes 8400 3550 0    50   ~ 0
+Text Notes 8450 3350 0    50   ~ 0
 Color display for RGB LED:\nNo color: UV Index 0 - 2\nYellow: UV Index 3 - 5\nOrange: UV Index 6 - 7\nRed: UV Index 8 - 10\nPurple: UV Index 11+\n
 $Comp
 L Switch:SW_SPDT SW1
@@ -9207,4 +9206,24 @@ Wire Notes Line style solid
 	8350 2750 9000 2750
 Wire Notes Line style solid
 	9000 2750 9000 2550
+$Comp
+L Device:R_Small R4
+U 1 1 5D00B535
+P 9350 1500
+F 0 "R4" V 9300 1350 50  0000 C CNN
+F 1 "0R" V 9400 1350 50  0000 C CNN
+F 2 "" H 9350 1500 50  0001 C CNN
+F 3 "~" H 9350 1500 50  0001 C CNN
+	1    9350 1500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9250 1500 9250 1600
+Wire Wire Line
+	9250 1600 9700 1600
+Wire Wire Line
+	9450 1500 9900 1500
+Connection ~ 9900 1500
+Text Notes 8400 1650 0    50   ~ 0
+DNP 0 ohm \nresistor for 5-pin \nsensor board
 $EndSCHEMATC
