@@ -9214,6 +9214,9 @@ F 0 "R4" V 9300 1350 50  0000 C CNN
 F 1 "0R" V 9400 1350 50  0000 C CNN
 F 2 "" H 9350 1500 50  0001 C CNN
 F 3 "~" H 9350 1500 50  0001 C CNN
+F 4 "Electronics" H 0   0   50  0001 C CNN "Category"
+F 5 "0805" H 0   0   50  0001 C CNN "Package"
+F 6 "15-res-0805-0" H 0   0   50  0001 C CNN "Stock"
 	1    9350 1500
 	0    1    1    0   
 $EndComp

@@ -2,16 +2,16 @@
 <export version="D">
   <design>
     <source>/Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch</source>
-    <date>2019 June 05, Wednesday 17:23:08</date>
+    <date>2019 June 12, Wednesday 14:59:37</date>
     <tool>Eeschema (5.1.0-0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
-        <title/>
-        <company/>
-        <rev/>
-        <date/>
+        <title>Palm</title>
+        <company>Palm@Hutscape</company>
+        <rev>V1.0</rev>
+        <date>2019-06-07</date>
         <source>Palm.sch</source>
-        <comment number="1" value=""/>
+        <comment number="1" value="Keychain for measuring UV Index"/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
@@ -21,6 +21,7 @@
   <components>
     <comp ref="U1">
       <value>Adafruit_nRF52_Feather</value>
+      <footprint>nRF52_Bluefruit_Adafruit_breakout:nRF52_Bluefruit_Adafruit_breakout_board</footprint>
       <datasheet>https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417</datasheet>
       <fields>
         <field name="Category">Electronics</field>
@@ -39,6 +40,7 @@
     </comp>
     <comp ref="U2">
       <value>VEML6075_breakout</value>
+      <footprint>veml6075_breakout_board:VEML6075_breakout_board</footprint>
       <datasheet>https://learn.adafruit.com/assets/62587</datasheet>
       <fields>
         <field name="Category">Electronics</field>
@@ -57,6 +59,7 @@
     </comp>
     <comp ref="D1">
       <value>LED_BARG</value>
+      <footprint>CREE_RGB_LED_-PLCC-6_5.5x5.5mm:LED_RGB_Cree-PLCC-6_5.5x5.5mm_P2.1mm</footprint>
       <datasheet>https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf</datasheet>
       <fields>
         <field name="Category">Electronics</field>
@@ -116,6 +119,7 @@
     </comp>
     <comp ref="SW1">
       <value>SW_SPDT</value>
+      <footprint>Button_Switch_SMD:SW_SPDT_PCM12</footprint>
       <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
       <fields>
         <field name="Category">Connector</field>
@@ -131,6 +135,7 @@
     </comp>
     <comp ref="J1">
       <value>Conn_01x02_Female</value>
+      <footprint>Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal</footprint>
       <datasheet>https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf</datasheet>
       <fields>
         <field name="Category">Connector</field>
@@ -148,6 +153,7 @@
     </comp>
     <comp ref="SW2">
       <value>SW_SPDT</value>
+      <footprint>Button_Switch_SMD:SW_SPDT_PCM12</footprint>
       <datasheet>https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html</datasheet>
       <fields>
         <field name="Category">Connector</field>
@@ -178,6 +184,18 @@
       <libsource lib="Transistor_FET" part="IRLML6402" description="-3.7A Id, -20V Vds, P-Channel MOSFET, 65mOhm Rds, SOT-23"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5CF39500</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>0R</value>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Category">Electronics</field>
+        <field name="Package">0805</field>
+        <field name="Stock">15-res-0805-0</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D00B535</tstamp>
     </comp>
   </components>
   <libparts>
@@ -369,8 +387,8 @@
       <node ref="U1" pin="19"/>
     </net>
     <net code="10" name="+3V3">
-      <node ref="Q1" pin="2"/>
       <node ref="SW2" pin="1"/>
+      <node ref="Q1" pin="2"/>
       <node ref="U1" pin="2"/>
     </net>
     <net code="11" name="Net-(U1-Pad20)">
@@ -389,8 +407,8 @@
       <node ref="U1" pin="27"/>
     </net>
     <net code="16" name="Net-(SW1-Pad2)">
-      <node ref="U1" pin="28"/>
       <node ref="SW1" pin="2"/>
+      <node ref="U1" pin="28"/>
     </net>
     <net code="17" name="Net-(U1-Pad3)">
       <node ref="U1" pin="3"/>
@@ -402,70 +420,72 @@
       <node ref="U1" pin="9"/>
     </net>
     <net code="20" name="GND">
-      <node ref="U1" pin="4"/>
-      <node ref="U2" pin="3"/>
       <node ref="R3" pin="2"/>
       <node ref="R2" pin="2"/>
       <node ref="R1" pin="2"/>
-      <node ref="J1" pin="2"/>
       <node ref="SW2" pin="3"/>
+      <node ref="J1" pin="2"/>
+      <node ref="U1" pin="4"/>
+      <node ref="U2" pin="3"/>
     </net>
     <net code="21" name="+5V">
       <node ref="U1" pin="26"/>
     </net>
-    <net code="22" name="Net-(U2-Pad2)">
-      <node ref="U2" pin="2"/>
-    </net>
-    <net code="23" name="/SDA">
+    <net code="22" name="/SDA">
       <node ref="U2" pin="5"/>
       <node ref="U1" pin="17"/>
     </net>
-    <net code="24" name="/SCL">
-      <node ref="U2" pin="4"/>
+    <net code="23" name="/SCL">
       <node ref="U1" pin="18"/>
+      <node ref="U2" pin="4"/>
     </net>
-    <net code="25" name="Net-(D1-Pad1)">
+    <net code="24" name="Net-(D1-Pad1)">
       <node ref="R1" pin="1"/>
       <node ref="D1" pin="1"/>
     </net>
-    <net code="26" name="Net-(D1-Pad2)">
+    <net code="25" name="Net-(D1-Pad2)">
       <node ref="R2" pin="1"/>
       <node ref="D1" pin="2"/>
     </net>
-    <net code="27" name="Net-(D1-Pad3)">
+    <net code="26" name="Net-(D1-Pad3)">
       <node ref="R3" pin="1"/>
       <node ref="D1" pin="3"/>
     </net>
-    <net code="28" name="/RED">
-      <node ref="D1" pin="6"/>
+    <net code="27" name="/BLUE">
       <node ref="U1" pin="6"/>
-    </net>
-    <net code="29" name="/GREEN">
-      <node ref="D1" pin="5"/>
-      <node ref="U1" pin="7"/>
-    </net>
-    <net code="30" name="/BLUE">
       <node ref="D1" pin="4"/>
-      <node ref="U1" pin="8"/>
     </net>
-    <net code="31" name="Net-(SW1-Pad3)">
+    <net code="28" name="/GREEN">
+      <node ref="U1" pin="7"/>
+      <node ref="D1" pin="5"/>
+    </net>
+    <net code="29" name="/RED">
+      <node ref="U1" pin="8"/>
+      <node ref="D1" pin="6"/>
+    </net>
+    <net code="30" name="Net-(SW1-Pad3)">
       <node ref="SW1" pin="3"/>
     </net>
-    <net code="32" name="Net-(J1-Pad1)">
+    <net code="31" name="Net-(J1-Pad1)">
       <node ref="J1" pin="1"/>
       <node ref="SW1" pin="1"/>
     </net>
-    <net code="33" name="Net-(Q1-Pad3)">
-      <node ref="Q1" pin="3"/>
-      <node ref="U2" pin="1"/>
-    </net>
-    <net code="34" name="/EN_SENSOR">
+    <net code="32" name="/EN_SENSOR">
       <node ref="Q1" pin="1"/>
       <node ref="U1" pin="24"/>
     </net>
-    <net code="35" name="Net-(SW2-Pad2)">
-      <node ref="U1" pin="25"/>
+    <net code="33" name="Net-(SW2-Pad2)">
       <node ref="SW2" pin="2"/>
+      <node ref="U1" pin="25"/>
+    </net>
+    <net code="34" name="Net-(Q1-Pad3)">
+      <node ref="Q1" pin="3"/>
+      <node ref="U2" pin="1"/>
+      <node ref="R4" pin="1"/>
+    </net>
+    <net code="35" name="Net-(R4-Pad2)">
+      <node ref="U2" pin="2"/>
+      <node ref="R4" pin="2"/>
     </net>
   </nets>
 </export>
