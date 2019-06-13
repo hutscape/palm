@@ -2,7 +2,7 @@
 
 ## Schematic
 
-View the [schematic](images/schematic.pdf) in PDF format.
+View the [schematic](images/schematic.pdf) and [footprint layout](images/footprint.pdf) in PDF format.
 
 ## Main components
 
@@ -14,6 +14,7 @@ View the [schematic](images/schematic.pdf) in PDF format.
 ## Footprint
 
 Front
+
 ![](images/footprint-front.png)
 
 Back

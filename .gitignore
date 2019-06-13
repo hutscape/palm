@@ -1,5 +1,3 @@
-*.pdf
-
 # Temporary
 *.kicad_pcb-bak
 *.bak
@@ -9,3 +7,5 @@
 *.elf
 *.hex
 *.pyc
+
+datasheets
