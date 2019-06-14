@@ -10,13 +10,13 @@
 - **Firmware:**	[Arduino NRF52](https://github.com/sandeepmistry/arduino-nRF5)
 - **OTA?**	No
 - **Works without connectivity?**	Yes. Display an RGB LED on-board
-- **BOM Total Items:**	*Pending*
-- **BOM Unique Items:** *Pending*
+- **BOM Total Items:**	[11]((bill_of_materials.csv))
+- **BOM Unique Items:** [8]((bill_of_materials.csv))
 - **PCB Manufacturing vendor:**	*Pending*
 - **BOM vendors:** *Pending*
 - **Total vendors:** *Pending*
 - **Total units:** 1
-- **Total cost:** *Pending*
+- **Total cost:** [SGD 55.87](bill_of_materials.csv)
 - **Battery life:** *Pending*
 - **Total schedule:** *Pending*
 
@@ -39,7 +39,7 @@
 
 - [Hardware](hardware)
 - [Firmware](firmware)
-- Bill of Materials - *Pending*
+- [Bill of Materials](bill_of_materials.csv)
 - [Design](design)
 - [Power](power.md)
 - [Mechanical](mechanical.md)

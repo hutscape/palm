@@ -19,15 +19,15 @@ Ideation tasks:
 
 - [x] Research for modules and sensors
 - [x] Research for similar projects and tutorials
-- [ ] Research for datasheets
+- [x] Research for datasheets
 - [ ] Research on power sources
 - [ ] Do an initial power tree analysis
-- [ ] Decide on a mechanical housing
+- [x] Decide on a mechanical housing
 - [x] Settle on a project name
 - [x] Order modules, parts, power required for component testing
 - [x] Note the prices for prototype items
 - [ ] Note the time taken to receive all the parts
-- [ ] Note mechanical dimensions of parts and housing
+- [x] Note mechanical dimensions of parts and housing
 
 ## Prototyping
 
@@ -37,10 +37,10 @@ Ideation tasks:
 
 Prototyping tasks:
 
-- [ ] Ensure various components work with both hardware modules and firmware
-- [ ] Finalize the power tree
-- [ ] Make a theoretical power consumption calculation
-- [ ] Make a mechanical and physical layout of the PCB housing
+- [x] Ensure various components work with both hardware modules and firmware
+- [x] Finalize the power tree
+- [x] Make a theoretical power consumption calculation
+- [x] Make a mechanical and physical layout of the PCB housing
 
 ## Schematic
 
@@ -50,9 +50,9 @@ Prototyping tasks:
 
 Schematic tasks:
 
-- [ ] Create new components
-- [ ] Ensure DRC passes
-- [ ] Go through [schematic checklist](https://github.com/azonenberg/pcb-checklist/blob/master/schematic-checklist.md)
+- [x] Create new components
+- [x] Ensure DRC passes
+- [x] Go through [schematic checklist](https://github.com/azonenberg/pcb-checklist/blob/master/schematic-checklist.md)
 
 ## Mechanical
 
@@ -62,17 +62,17 @@ Schematic tasks:
 
 Mechanical tasks:
 
-- [ ] Create a BOM list
-- [ ] Ensure vendors have the stock
-- [ ] Ensure edge cuts can house all the components
-- [ ] Note all the dimensions of major components
-- [ ] Note all connectors to external links
-- [ ] Layout the PCB footprint
-- [ ] Ensure ERC passes
-- [ ] Add version, name, year, logos on the silkscreen
-- [ ] Add mounting holes
-- [ ] Go through [layout checklist](https://github.com/azonenberg/pcb-checklist/blob/master/layout-checklist.md)
-- [ ] Go through [PCB manufacturing checks](https://www.seeedstudio.com/blog/2019/04/05/11-do-it-yourself-pcb-design-for-manufacture-checks-anyone-can-do/)
+- [x] Create a BOM list
+- [x] Ensure vendors have the stock
+- [x] Ensure edge cuts can house all the components
+- [x] Note all the dimensions of major components
+- [x] Note all connectors to external links
+- [x] Layout the PCB footprint
+- [x] Ensure ERC passes
+- [x] Add version, name, year, logos on the silkscreen
+- [x] Add mounting holes
+- [x] Go through [layout checklist](https://github.com/azonenberg/pcb-checklist/blob/master/layout-checklist.md)
+- [x] Go through [PCB manufacturing checks](https://www.seeedstudio.com/blog/2019/04/05/11-do-it-yourself-pcb-design-for-manufacture-checks-anyone-can-do/)
 
 ## Manufacturing
 
