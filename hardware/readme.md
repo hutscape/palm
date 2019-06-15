@@ -11,6 +11,14 @@ View the [schematic](images/schematic.pdf) and [footprint layout](images/footpri
 1. RGB LED
 1. LiPo
 
+## Prototype
+
+![](../images/prototype-2.jpg)
+
+## Schematic
+
+![](images/schematic.png)
+
 ## Footprint
 
 Front
