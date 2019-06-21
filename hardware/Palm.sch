@@ -8989,15 +8989,15 @@ U 1 1 5CEE767E
 P 1550 1100
 F 0 "J1" H 1578 1076 50  0000 L CNN
 F 1 "Conn_01x02_Female" H 1578 985 50  0000 L CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal" H 1550 1100 50  0001 C CNN
-F 3 "https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf" H 1550 1100 50  0001 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal, Body orientation: Right angle" H 1550 1100 50  0001 C CNN
+F 3 "https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4bd.pdf" H 1550 1100 50  0001 C CNN
 F 4 "SMD" H 50  -100 50  0001 C CNN "Package"
 F 5 "RS Components" H 50  -100 50  0001 C CNN "Vendor"
 F 6 "5" H 50  -100 50  0001 C CNN "Minimum Order"
 F 7 "JST" H 200 0   50  0001 C CNN "Manufacturer"
-F 8 "B2B-PH-SM4-TB(LF)(SN) " H 200 0   50  0001 C CNN "Part No."
+F 8 "S2B-PH-SM4-TB(LF)(SN)" H 200 0   50  0001 C CNN "Part No."
 F 9 "0.486" H 200 0   50  0001 C CNN "Unit cost"
-F 10 "https://sg.rs-online.com/web/p/pcb-headers/6881325/" H 200 0   50  0001 C CNN "Vendor link"
+F 10 "https://sg.rs-online.com/web/p/products/6881353/" H 200 0   50  0001 C CNN "Vendor link"
 F 11 "Connector" H 200 0   50  0001 C CNN "Category"
 	1    1550 1100
 	-1   0    0    -1  

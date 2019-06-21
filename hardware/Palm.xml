@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch</source>
-    <date>2019 June 12, Wednesday 14:59:37</date>
+    <date>2019 June 21, Friday 15:09:06</date>
     <tool>Eeschema (5.1.0-0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -135,17 +135,17 @@
     </comp>
     <comp ref="J1">
       <value>Conn_01x02_Female</value>
-      <footprint>Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal</footprint>
-      <datasheet>https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf</datasheet>
+      <footprint>Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal, Body orientation: Right angle</footprint>
+      <datasheet>https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4bd.pdf</datasheet>
       <fields>
         <field name="Category">Connector</field>
         <field name="Manufacturer">JST</field>
         <field name="Minimum Order">5</field>
         <field name="Package">SMD</field>
-        <field name="Part No.">B2B-PH-SM4-TB(LF)(SN) </field>
+        <field name="Part No.">S2B-PH-SM4-TB(LF)(SN)</field>
         <field name="Unit cost">0.486</field>
         <field name="Vendor">RS Components</field>
-        <field name="Vendor link">https://sg.rs-online.com/web/p/pcb-headers/6881325/</field>
+        <field name="Vendor link">https://sg.rs-online.com/web/p/products/6881353/</field>
       </fields>
       <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/" tstamps="/"/>
@@ -187,6 +187,7 @@
     </comp>
     <comp ref="R4">
       <value>0R</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Category">Electronics</field>
