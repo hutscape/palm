@@ -82,15 +82,15 @@ Mechanical tasks:
 
 Manufacturing tasks:
 
-- [ ] Order parts online
-- [ ] Order PCB manufacturing online
-- [ ] Note the cost per unit
-- [ ] Note other charges
+- [x] Order parts online
+- [x] Order PCB manufacturing online
+- [x] Note the cost per unit
+- [x] Note other charges
 
 ## System Integration
 
 - **Integration Duration:** *Pending*
-- **Integration Start Date:** *Pending*
+- **Integration Start Date:** 30 June 2019
 - **Integration End Date:** *Pending*
 
 System Integration tasks:
