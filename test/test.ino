@@ -49,6 +49,8 @@ void setup() {
 
   digitalWrite(ENSensorPin, HIGH);
   if (!uv.begin()) {
+    // TODO: Test to disable MOSFET and disable sensor
+    // digitalWrite(ENSensorPin, LOW);
     Serial.println("Test 7: Failed to communicate with VEML6075 sensor");
   } else {
     Serial.println("Test 7: It expects to communicate with VEML6075 sensor");
