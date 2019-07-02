@@ -13,6 +13,6 @@ upload:
 clean:
 	rm -f .*.elf
 	rm -f .*.hex
-	rm -f .*.zip
+	rm -f *.zip
 
 flash: lint compile upload clean

@@ -7,7 +7,7 @@ int greenPin = PIN_A2;
 int bluePin = PIN_A3;
 
 // Enable VEML6075 sensor pin 15
-uint8_t ENSensorPin = 15;
+const int ENSensorPin = 15;
 Adafruit_VEML6075 uv = Adafruit_VEML6075();
 
 // UV index GATT Characteristic format is in uint8
@@ -18,7 +18,8 @@ float  readUVIndexValue = 0.0;
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial) delay(10);   // for nrf52840 with native usb
+  while (!Serial) delay(10);
+  pinMode(ENSensorPin, OUTPUT);
 
   Serial.println("Starting Palm design verification test");
   Serial.println("-------------------------------------\n");
@@ -47,22 +48,23 @@ void setup() {
   displayLEDColor(0, 0, 0);
   delay(2000);
 
-  digitalWrite(ENSensorPin, HIGH);
+  digitalWrite(ENSensorPin, LOW);
   if (!uv.begin()) {
-    // TODO: Test to disable MOSFET and disable sensor
-    // digitalWrite(ENSensorPin, LOW);
-    Serial.println("Test 7: Failed to communicate with VEML6075 sensor");
-  } else {
-    Serial.println("Test 7: It expects to communicate with VEML6075 sensor");
-    Serial.print("Test 8: It expects to read UV Index value: ");
-
-    readUVIndexValue = uv.readUVI();
-    uvindexvalue = round(abs(readUVIndexValue));  // convert float to uint8_t
-    Serial.println(uvindexvalue);
+    Serial.println("Test 7: It expects the Sensor VEML6075 to be disabled");
   }
+  delay(2000);
+
+  digitalWrite(ENSensorPin, HIGH);
+  Serial.println("Test 8: It expects the Sensor VEML6075 to be enabled");
+  Serial.print("Test 9: It expects to read UV Index value: ");
+
+  readUVIndexValue = uv.readUVI();
+  uvindexvalue = round(abs(readUVIndexValue));  // convert float to uint8_t
+  Serial.println(uvindexvalue);
+  delay(2000);
 }
 
-void loop() { }
+void loop() {}
 
 void displayLEDColor(int red, int green, int blue) {
   analogWrite(redPin, red);
