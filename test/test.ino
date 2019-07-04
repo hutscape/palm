@@ -1,19 +1,14 @@
 #include <bluefruit.h>
 #include "Adafruit_VEML6075.h"
 
-// RGB LED pin declarations
 int redPin = PIN_A1;
 int greenPin = PIN_A2;
 int bluePin = PIN_A3;
 
-// Enable VEML6075 sensor pin 15
 const int ENSensorPin = 15;
 Adafruit_VEML6075 uv = Adafruit_VEML6075();
 
-// UV index GATT Characteristic format is in uint8
 uint8_t  uvindexvalue = 0x42;
-
-// VEML6075 UV sensor reading is in float
 float  readUVIndexValue = 0.0;
 
 void setup() {
@@ -55,7 +50,9 @@ void setup() {
 
   digitalWrite(ENSensorPin, LOW);
   delay(100);
-  if (!uv.begin()) {
+
+  int returnValue = uv.begin();
+  if (!returnValue) {
     Serial.println("Test 8: It expects to error if sensor is not found");
   }
   Serial.println("Test 9: It expects the Sensor VEML6075 to be enabled");
