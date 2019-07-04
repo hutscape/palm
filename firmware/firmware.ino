@@ -1,6 +1,15 @@
 #include <bluefruit.h>
 #include "Adafruit_VEML6075.h"
 
+int redPin = PIN_A1;
+int greenPin = PIN_A2;
+int bluePin = PIN_A3;
+
+const int ENSensorPin = 15;
+Adafruit_VEML6075 uv = Adafruit_VEML6075();
+uint8_t  uvindexvalue = 0x42;
+float  readUVIndexValue = 0.0;
+
 /* GATT Services https://www.bluetooth.com/specifications/gatt/services/
     Name: Environmental Sensing
     Uniform Type Identifier: org.bluetooth.service.environmental_sensing
@@ -22,21 +31,6 @@ BLECharacteristic uvic = BLECharacteristic(UUID16_CHR_UV_INDEX);
 
 BLEDis bledis;    // DIS (Device Information Service) helper class instance
 
-Adafruit_VEML6075 uv = Adafruit_VEML6075();
-
-// See https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.uv_index.xml
-
-// UV index GATT Characteristic format is in uint8
-uint8_t  uvindexvalue = 0x42;
-
-// VEML6075 UV sensor reading is in float
-float  readUVIndexValue = 0.0;
-
-// RGB LED pin declarations
-int redPin = PIN_A3;
-int greenPin = PIN_A2;
-int bluePin = PIN_A1;
-
 // Advanced function prototypes
 void startAdv(void);
 void setupESService(void);
@@ -45,52 +39,42 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason);
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial) delay(10);   // for nrf52840 with native usb
+  while (!Serial) delay(10);
+  pinMode(ENSensorPin, OUTPUT);
+  digitalWrite(ENSensorPin, LOW);
 
-  Serial.println("UV Index sensor");
+  Serial.println("Palm@Hutscape - UV Index sensor");
   Serial.println("-------------------------------------\n");
 
-  // Initialise UV sensor VEML6075
-  if (!uv.begin()) {
-    Serial.println("Failed to communicate with VEML6075 sensor, check wiring?");
+  int returnValue = uv.begin();
+  if (!returnValue) {
+    Serial.println("[ERROR] Sensor VEML6075 cannot be found");
   }
+  Serial.println("[INFO] Sensor VEML6075 enabled");
 
-  // Initialise the Bluefruit module
-  Serial.println("Initialise the Bluefruit nRF52 module");
   Bluefruit.begin();
   Bluefruit.setName("Palm@Hutscape");
 
-  // Set the connect/disconnect callback handlers
   Bluefruit.Periph.setConnectCallback(connect_callback);
   Bluefruit.Periph.setDisconnectCallback(disconnect_callback);
 
-  // Configure and Start the Device Information Service
-  Serial.println("Configuring the Device Information Service");
   bledis.setManufacturer("Adafruit Industries");
   bledis.setModel("Bluefruit Feather52");
   bledis.begin();;
-
-  // Setup the Environmental Sensing service using
-  // BLEService and BLECharacteristic classes
-  Serial.println("Configuring the Environmental Sensing Service");
   setupESService();
-
-  // Setup the advertising packet(s)
-  Serial.println("Setting up the advertising payload(s)");
   startAdv();
 
-  Serial.println("\nAdvertising");
+  Serial.println("[INFO] Start advertising...");
 }
 
 void loop() {
-  digitalToggle(LED_RED);
+  digitalToggle(LED_RED);  // blinking RED LED indicates reading UV sensor
 
   readUVIndexValue = uv.readUVI();
-  uvindexvalue = round(abs(readUVIndexValue));  // convert float to uint8_t
+  uvindexvalue = round(abs(readUVIndexValue));
 
-  Serial.print("UV Index: ");
+  Serial.print("[INFO] UV Index: ");
   Serial.println(uvindexvalue);
-
   displayLED(uvindexvalue);
 
   if (Bluefruit.connected()) {
@@ -98,39 +82,39 @@ void loop() {
     // If it is connected but CCCD is not enabled
     // The characteristic's value is still updated although indicate is not sent
     if (uvic.indicate(&uvindexvalue, sizeof(uvindexvalue))) {
-      Serial.print("UV Index Measurement updated to: ");
+      Serial.print("[INFO] Updated UV Index: ");
       Serial.println(uvindexvalue);
     } else {
-      Serial.println("ERROR: Indicate not set in the CCCD or not connected!");
+      Serial.println("[ERROR] Indicate not set in the CCCD or not connected");
     }
   }
 
   delay(2000);
 }
 
-void displayLED(uint8_t uvindexvalue) {
-  if (uvindexvalue <= 2) {
-    // UV Index <= 2, display GREEN or no color alerts
-    displayLEDColor(255, 255, 255);
-  } else if (uvindexvalue >= 3 && uvindexvalue <= 5) {
-    // UV Index is from 3 to 5, display YELLOW
-    displayLEDColor(0, 250, 0);
-  } else if (uvindexvalue >= 6 && uvindexvalue <= 7) {
-    // UV Index is from 6 to 7, display ORANGE
-    displayLEDColor(150, 250, 0);
-  } else if (uvindexvalue >= 8 && uvindexvalue <= 10) {
-    // UV Index is from 8 to 10, display RED
-    displayLEDColor(250, 250, 0);
-  } else {
-    // UV Index is above 11, display PURPLE
-    displayLEDColor(250, 0, 0);
-  }
-}
-
 void displayLEDColor(int red, int green, int blue) {
   analogWrite(redPin, red);
   analogWrite(greenPin, green);
   analogWrite(bluePin, blue);
+}
+
+void displayLED(uint8_t uvindexvalue) {
+  if (uvindexvalue <= 2) {
+    // UV Index <= 2, display GREEN or no color alerts
+    displayLEDColor(0, 255, 0);
+  } else if (uvindexvalue >= 3 && uvindexvalue <= 5) {
+    // UV Index is from 3 to 5, display YELLOW
+    displayLEDColor(255, 255, 0);
+  } else if (uvindexvalue >= 6 && uvindexvalue <= 7) {
+    // UV Index is from 6 to 7, display ORANGE
+    displayLEDColor(255, 50, 0);
+  } else if (uvindexvalue >= 8 && uvindexvalue <= 10) {
+    // UV Index is from 8 to 10, display RED
+    displayLEDColor(255, 0, 0);
+  } else {
+    // UV Index is above 11, display PURPLE
+    displayLEDColor(255, 0, 255);
+  }
 }
 
 void startAdv(void) {
@@ -200,7 +184,7 @@ void connect_callback(uint16_t conn_handle) {
   char central_name[32] = { 0 };
   connection->getPeerName(central_name, sizeof(central_name));
 
-  Serial.print("Connected to ");
+  Serial.print("[INFO] Connected to ");
   Serial.println(central_name);
 }
 
@@ -213,14 +197,14 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason) {
   (void) conn_handle;
   (void) reason;
 
-  Serial.println("Disconnected");
-  Serial.println("Advertising!");
+  Serial.println("[INFO] Disconnected");
+  Serial.println("[INFO] Advertising!");
 }
 
 void cccd_callback(uint16_t conn_hdl,
   BLECharacteristic* chr, uint16_t cccd_value) {
     // Display the raw request packet
-    Serial.print("CCCD Updated: ");
+    Serial.print("[INFO] CCCD Updated: ");
 
     // Serial.printBuffer(request->data, request->len);
     Serial.print(cccd_value);
@@ -230,9 +214,9 @@ void cccd_callback(uint16_t conn_hdl,
     // this handler is used for multiple CCCD records.
     if (chr->uuid == uvic.uuid) {
         if (chr->indicateEnabled(conn_hdl)) {
-            Serial.println("UV Index Measurement 'Indicate' enabled");
+            Serial.println("[INFO] UV Index Measurement 'Indicate' enabled");
         } else {
-            Serial.println("UV Index Measurement 'Indicate' disabled");
+            Serial.println("[INFO] UV Index Measurement 'Indicate' disabled");
         }
     }
 }

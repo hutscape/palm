@@ -25,8 +25,8 @@
 1. Wire up the [hardware](hardware) components
 
     ![](hardware/images/schematic.png)
-    ![](images/prototype-2.jpg)
-1. Flash the [firmware](firmware/firmware.ino) to display UV
+    ![](images/prototype-3.jpg)
+1. Flash the [firmware](firmware/firmware.ino) to display UV Index
 
     ![](images/console.png)
 1. See the UV, temperature and humidity values values being displayed on the [nRF Connect iPhone app](https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8) or the console
