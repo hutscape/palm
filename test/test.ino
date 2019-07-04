@@ -50,13 +50,15 @@ void setup() {
   delay(1000);
 
   digitalWrite(ENSensorPin, HIGH);
-  if (!uv.begin()) {
-    Serial.println("Test 7: It expects the Sensor VEML6075 to be disabled");
-  }
+  Serial.println("Test 7: It expects the Sensor VEML6075 to be disabled");
   delay(1000);
 
   digitalWrite(ENSensorPin, LOW);
-  Serial.println("Test 8: It expects the Sensor VEML6075 to be enabled");
+  delay(100);
+  if (!uv.begin()) {
+    Serial.println("Test 8: It expects to error if sensor is not found");
+  }
+  Serial.println("Test 9: It expects the Sensor VEML6075 to be enabled");
 }
 
 void loop() {
@@ -65,7 +67,7 @@ void loop() {
   readUVIndexValue = uv.readUVI();
   uvindexvalue = round(abs(readUVIndexValue));
 
-  Serial.print("Test 9: It expects to read UV Index value: ");
+  Serial.print("Test 10: It expects to read UV Index value: ");
   Serial.println(uvindexvalue);
   displayLED(uvindexvalue);
 
