@@ -1,15 +1,13 @@
 # Contributing
 
-## Git commits
-
-Add the following pre-fixes to every commit message to track the [stage of the project](timeline.md):
+Add the following pre-fixes to every commit message to track the [stage of the project](schedule.md):
 
 - `[docs]`: general
-- `[idea]`: Ideation phase
-- `[design]`: Design phase
-- `[prot]`: Prototyping phase
-- `[sch]`: Schematic phase
-- `[mech]`: Footprint and mechanical phase
+- `[design]`: Design and prototyping phase
+- `[schematic]`: Schematic phase
+- `[mech]`: Mechanical design phase
+- `[footprint]`: Footprint and mechanical phase
 - `[bom]`: BOM and manufacturing PCB phase
+- `[test]`: Design verification test with PCB
 - `[si]`: System Integration phase
 - `[deploy]`: Deployment phase

@@ -3,10 +3,10 @@
 ## Total duration
 
 - **Start Date:** 2 April, 2019
-- **End Date:** *Pending*
-- **Total duration:** *Pending*
+- **End Date:** 4 July, 2019
+- **Total duration:** 3 months
 
-## Ideation
+## Design
 
 - **Ideation Duration:** *Pending*
 - **Ideation Start Date:** 2 April, 2019
@@ -28,12 +28,6 @@ Ideation tasks:
 - [x] Note the prices for prototype items
 - [ ] Note the time taken to receive all the parts
 - [x] Note mechanical dimensions of parts and housing
-
-## Prototyping
-
-- **Prototype Testing Duration:** *Pending*
-- **Prototype Testing Start Date:** 11 April, 2019
-- **Prototype Testing End Date:** *Pending*
 
 Prototyping tasks:
 
@@ -96,15 +90,15 @@ Manufacturing tasks:
 System Integration tasks:
 
 - [ ] Solder 2 units
-- [ ] Ensure continuity check for `GND` and `Vcc` points
-- [ ] Do a power test
-- [ ] Do a hello world firmware test
-- [ ] Run the test firmware
-- [ ] Run the full firmware
+- [x] Ensure continuity check for `GND` and `Vcc` points
+- [x] Do a power test
+- [x] Do a hello world firmware test
+- [x] Run the test firmware
+- [x] Run the full firmware
 
 ## Deployment
 
-- **Start logging:** *Pending*
+- **Start logging:** 4 July 2019
 
 Deployment tasks:
 
