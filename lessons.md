@@ -7,7 +7,7 @@
 
 ## V2.0
 
-- No more modules
+- Do not use modules as they are big and bulky
 - Use DP3T to power on, wireless off and wireless on options instead of 2 switches
-- Smaller and brighter RGB LED
-- Single layer board and housing for the battery
+- Use a smaller and brighter RGB LED
+- Use a single layer board so that a housing can be catered for the battery at the back
