@@ -12,13 +12,13 @@
 - **Works without connectivity?**	Yes. Display an RGB LED on-board
 - **BOM Total Items:**	[11](bill_of_materials.csv)
 - **BOM Unique Items:** [8](bill_of_materials.csv)
-- **PCB Manufacturing vendor:**	*Pending*
-- **BOM vendors:** *Pending*
-- **Total vendors:** *Pending*
+- **PCB Manufacturing vendor:**	JLCPCB
+- **BOM vendors:** [RS Components, Adafruit, AliExpress, JLCPCB](bill_of_materials.csv)
+- **Total vendors:** 4
 - **Total units:** 1
-- **Total cost:** [SGD 55.87](bill_of_materials.csv)
+- **Total cost:** [SGD 64.07](bill_of_materials.csv)
 - **Battery life:** *Pending*
-- **Total schedule:** *Pending*
+- **Total schedule:** 3 months
 
 ## Getting Started
 
@@ -44,6 +44,5 @@
 - [Power](power.md)
 - [Mechanical](mechanical.md)
 - [Schedule](schedule.md)
-- Live log - *Pending*
-- Lessons Learnt - *Pending*
+- [Lessons Learnt](lessons.md)
 - [References](references.md)
