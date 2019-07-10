@@ -10,6 +10,9 @@ Adafruit_VEML6075 uv = Adafruit_VEML6075();
 uint8_t  uvindexvalue = 0x42;
 float  readUVIndexValue = 0.0;
 
+const int ENBLEPin = 16;
+bool isBLEON = false;
+
 /* GATT Services https://www.bluetooth.com/specifications/gatt/services/
     Name: Environmental Sensing
     Uniform Type Identifier: org.bluetooth.service.environmental_sensing
@@ -42,6 +45,9 @@ void setup() {
   while (!Serial) delay(10);
   pinMode(ENSensorPin, OUTPUT);
   digitalWrite(ENSensorPin, LOW);
+  pinMode(ENBLEPin, INPUT);
+  pinMode(LED_RED, OUTPUT);
+  Bluefruit.autoConnLed(false);  // Turn off BLUE LED
 
   Serial.println("Palm@Hutscape - UV Index sensor");
   Serial.println("-------------------------------------\n");
@@ -52,6 +58,7 @@ void setup() {
   }
   Serial.println("[INFO] Sensor VEML6075 enabled");
 
+  // TODO: Turn on/off BLE based on the ENBLEPin
   Bluefruit.begin();
   Bluefruit.setName("Palm@Hutscape");
 
@@ -75,7 +82,19 @@ void loop() {
   Serial.println(uvindexvalue);
   displayLED(uvindexvalue);
 
-  if (Bluefruit.connected()) {
+  Serial.print("[INFO] BLE Switch: ");
+  Serial.println(digitalRead(ENBLEPin));
+
+  // Turn on BLE
+  if (digitalRead(ENBLEPin) == 1) {
+    isBLEON = true;
+    digitalToggle(LED_RED);  // Blinking RED LED indicated BLE is ON
+  } else {
+    isBLEON = false;
+    digitalWrite(LED_RED, LOW);
+  }
+
+  if (isBLEON && Bluefruit.connected()) {
     // Note: We use .indicate instead of .write!
     // If it is connected but CCCD is not enabled
     // The characteristic's value is still updated although indicate is not sent
