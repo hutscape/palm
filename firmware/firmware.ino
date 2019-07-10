@@ -68,8 +68,6 @@ void setup() {
 }
 
 void loop() {
-  digitalToggle(LED_RED);  // blinking RED LED indicates reading UV sensor
-
   readUVIndexValue = uv.readUVI();
   uvindexvalue = round(abs(readUVIndexValue));
 
