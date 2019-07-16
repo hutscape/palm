@@ -26,25 +26,26 @@ sequence: 1
           <div class="tile is-parent">
             <article class="tile is-child notification">
               <p class="title">Step 1</p>
-              <p class="subtitle">Setup an <a href="https://ifttt.com/services/maker_webhooks">IFTTT webhook</a> to receive a POST request with data and add a row to a Google Spreadsheet.</p>
-              <img src="images/start/ifttt.png" alt="IFTTT">
+              <p class="subtitle">Wire up the hardware components with <a href="">nRF52 Adafruit feather board</a>, <a href="https://www.adafruit.com/product/3964">VEML6075 sensor board</a> and LiPo battery. Turn on the switch for power and BLE.</p>
+              <a href="images/hardware/schematic.png"><img src="images/hardware/schematic.png" alt="Schematic"></a>
+              <a href="images/hardware/prototype-3.jpg"><img src="images/hardware/prototype-3.jpg" alt="Prototype"></a>
             </article>
           </div>
           <div class="tile is-parent">
             <article class="tile is-child notification">
               <p class="title">Step 2</p>
-              <p class="subtitle">Connect to the WiFi access point <code>Cactus {UNIQUE_MAC_ADDRESS}</code>.</p>
-              <p class="subtitle">Go to the web page <code>http://cactus.local</code> to fill in the WiFi credentials and <a href="https://ifttt.com/services/maker_webhooks/settings">IFTTT webhook key</a>.</p>
-              <img src="images/start/access_point.jpg" alt="Access point">
-              <img src="images/start/webpage.png" alt="Webpage form">
+              <p class="subtitle">Flash the firmware onto the <code>nRF52</code> board to display UV Index</p>
+              <a href="images/software/console.png"><img src="images/software/console.png" alt="Serial console for firmware"></a>
             </article>
           </div>
           <div class="tile is-parent">
             <article class="tile is-child notification">
               <div class="content">
                 <p class="title">Step 3</p>
-                <p class="subtitle">Press on-board button or wait for the <a href="https://docs.google.com/spreadsheets/d/1qedLXiCeU6vCwEvv3JqwrVWjrriB8L3DA9Xp-g01Jk0/edit?usp=sharing">Google Sheet</a> to update with a new row with a periodic update to the cloud.</p>
-                <img src="images/start/google-sheet.png" alt="Google sheets">
+                <p class="subtitle">See the UV, temperature and humidity values values being displayed on the <a href="https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8">nRF Connect iPhone app</a></p>
+                <img src="images/software/ios-detect.jpg" alt="iOS app detect">
+                <br><br>
+                <img src="images/software/ios-characteristics.jpg" alt="iOS app characteristics">
               </div>
             </article>
           </div>
@@ -60,13 +61,8 @@ sequence: 1
 
     <div class="content is-medium">
       <ul>
-        <li>⚠️ <strong>USB Connectors on WeMos D1 Mini vs WeMos battery shield</strong>
-          <ul>
-            <li>Do not plug in the USB cable on WeMos D1 Mini while the battery shield is on the PCB</li>
-            <li><strong>Flashing firmware</strong>: Remove the battery shield from the PCB and use the USB cable on the WeMos D1 mini</li>
-          </ul>
-        </li>
-        <li>Charge the LiPo by plugging in the USB cable into the battery shield</li>
+        <li><strong>Flashing firmware:</strong> Plug in the USB cable into the USB connector</li>
+        <li><strong>Charging the LiPo:</strong> Plug in the USB cable into the USB connector. Charging will have the yellow LED on.</li>
       </ul>
     </div>
   </div>
