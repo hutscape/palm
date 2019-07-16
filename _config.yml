@@ -1,0 +1,8 @@
+title: Palm
+description: 🌴 Get alerted on excessive UV radiation with a backpack keychain 🗝
+url: "https://hutscape.com/palm"
+markdown: kramdown
+permalink: /:title
+google_analytics: UA-XXXXX-Y
+github:
+  repository_url: https://github.com/hutscape/palm
