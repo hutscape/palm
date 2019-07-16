@@ -6,5 +6,6 @@ permalink: /:title
 google_analytics: UA-XXXXX-Y
 github:
   repository_url: https://github.com/hutscape/palm
-exclude: ["datasheets", "Gemfile", "Gemfile.lock", "contributing.md", "Makefile", "readme.md", "test", "hardware", "scripts", "firmware"]
-include: ["_data", "hardware.md"]
+  raw_content_url: https://raw.githubusercontent.com/hutscape/palm/master
+exclude: ["datasheets", "Gemfile", "Gemfile.lock", "contributing.md", "Makefile", "readme.md", "test", "scripts", "firmware"]
+include: ["_data"]
