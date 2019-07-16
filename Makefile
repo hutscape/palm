@@ -24,7 +24,7 @@ build:
 serve: build
 	jekyll serve
 
-bom: clean
+bom:
 	rm -f bill_of_materials.csv
 	python bom/bom.py hardware/Palm.xml bill_of_materials.csv
 
