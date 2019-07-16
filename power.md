@@ -1,94 +1,128 @@
-# Power
+---
+layout: default
+title: Power
+permalink: /power
+sequence: 6
+---
 
-## Potential batteries
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title is-1">Power source</h2>
+    <p class="subtitle"><code>380mAh</code> LiPo battery</p>
+  </div>
+</section>
 
-| Name | Capacity | Voltage | Dimension | Buy from |
-| ------ | ------ | ------ | ------ | ------ |
-| CR2450 | `120mAh` | 3.6V | 4cm x 2cm x 2cm | [AliExpress](https://www.aliexpress.com/item/Rainpro-2PCS-LOT-LIR2450-horizontal-welding-foot-battery-3-6V-rechargeable-coin-cell-battery-charging-2450/32853897751.html?spm=2114.search0104.3.8.189ed9beMuzTzf&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=48ce131f-0f3b-433f-9bb9-f5874e08c121-1&algo_pvid=48ce131f-0f3b-433f-9bb9-f5874e08c121&transAbTest=ae803_4)
-| LiPo | `380mAh` | 3.7V | 37mm x 19mm x 8mm | [AliExpress](https://www.aliexpress.com/item/Limskey-3-7V-380mAh-25C-Lipo-Battery-for-For-Hubsan-X4-H107-H107L-H107D-JD385-JD388/32846516934.html?spm=2114.search0103.3.69.12983204ovX5ra&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=067ab389-d2ff-4f23-98e8-7aef2b13aeef-9&algo_pvid=067ab389-d2ff-4f23-98e8-7aef2b13aeef&transAbTest=ae803_4)
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title is-1">Potential batteries</h2>
 
-## Main components
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Capacity</th>
+          <th>Voltage</th>
+          <th>Dimension</th>
+          <th>Buy from</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CR2450</td>
+          <td><code>120mAh</code></td>
+          <td><code>3.6V</code></td>
+          <td><code>4cm</code> x <code>2cm</code>x <code>2cm</code></td>
+          <td><a href="https://www.aliexpress.com/item/Rainpro-2PCS-LOT-LIR2450-horizontal-welding-foot-battery-3-6V-rechargeable-coin-cell-battery-charging-2450/32853897751.html?spm=2114.search0104.3.8.189ed9beMuzTzf&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=48ce131f-0f3b-433f-9bb9-f5874e08c121-1&algo_pvid=48ce131f-0f3b-433f-9bb9-f5874e08c121&transAbTest=ae803_4">AliExpress</a></td>
+        </tr>
+        <tr>
+          <td>LiPo</td>
+          <td><code>380mAh</code></td>
+          <td><code>3.7V</code></td>
+          <td><code>37mm</code> x <code>19mm</code> x <code>8mm</code></td>
+          <td><a href="https://www.aliexpress.com/item/Limskey-3-7V-380mAh-25C-Lipo-Battery-for-For-Hubsan-X4-H107-H107L-H107D-JD385-JD388/32846516934.html?spm=2114.search0103.3.69.12983204ovX5ra&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=067ab389-d2ff-4f23-98e8-7aef2b13aeef-9&algo_pvid=067ab389-d2ff-4f23-98e8-7aef2b13aeef&transAbTest=ae803_4">AliExpress</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-| Chip # | Chip | Operating Voltage | Advertising mode (`152.5ms`) | Transmission mode |
-| ------ | ------ | ------ | ------ | ------ |
-| [nRF52832](https://www.adafruit.com/product/3406) | BLE + MCU | `1.7v` to `3.3v` | `60 µA` | `216 µA`
-| [VEML6075](https://www.vishay.com/docs/84304/veml6075.pdf) | UV Sensor |  `1.7V` to `3.6V` |  | `480uA` at `1.8V`
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title is-1">Main components</h2>
 
-## Calculated
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Chip #</th>
+          <th>Chip</th>
+          <th>Operating Voltage</th>
+          <th>Advertising mode (<code>152.5ms</code>)</th>
+          <th>Transmission mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.adafruit.com/product/3406">nRF52832</a></td>
+          <td>BLE + MCU</td>
+          <td>`1.7v` to `3.3v`</td>
+          <td>`60 µA`</td>
+          <td>`216 µA`</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.vishay.com/docs/84304/veml6075.pdf">VEML6075</a></td>
+          <td>UV Sensor</td>
+          <td>`1.7V` to `3.6V`</td>
+          <td></td>
+          <td>`480uA` at `1.8V`</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-### Advertising mode
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title is-1">Calculation</h2>
 
-from [online power profiler](https://devzone.nordicsemi.com/nordic/power):
+    <h3 class="title is-3">Advertising Mode</h3>
+    <p class="subtitle">From <a href="https://devzone.nordicsemi.com/nordic/power">online power profiler</a></p>
 
-- Chip `nRF52832`
-- Voltage `3.3V`
-- Radio TX Power `0dBm`
-- Role: Advertising (Connectable)
-- TX payload (Byte) 0 bytes
-- Advertising interval (ms): `152.5 ms` as recommended in [Apple developer guide](https://developer.apple.com/library/archive/qa/qa1931/_index.html)
-- `120mAh` battery capacity
+    <div class="content">
+      <ul>
+        <li>Chip <code>nRF52832</code></li>
+        <li>Voltage <code>3.3V</code></li>
+        <li>Radio TX Power <code>0dBm</code></li>
+        <li>Role: Advertising (Connectable)</li>
+        <li>TX payload (Byte)<code>0 byte</code></li>
+        <li>Advertising interval (ms): <code>152.5 ms</code> as recommended in <a href="https://developer.apple.com/library/archive/qa/qa1931/_index.html">Apple developer guide</a></li>
+        <li><code>120mAh</code> battery capacity</li>
+      </ul>
 
-![](images/online-profiler-advertising.png)
+      <img src="{{site.url}}/images/online-profiler-advertising.png" alt="Online profiler">
 
-Result:
+      <h3 class="title is-3">Transmission Mode</h3>
+      <p class="subtitle">From <a href="https://devzone.nordicsemi.com/nordic/power">online power profiler</a></p>
 
-- `57 µA` current consumption
-- `120m/57u = 2000 h = 83 days`
+      <div class="content">
+        <ul>
+          <li>Voltage <code>3.3V</code></li>
+          <li>Role: Connection (peripheral)</li>
+          <li><code>3 byte</code> TX payload</li>
+          <li>Connection interval (ms): <code>1000 ms</code></li>
+        </ul>
 
-### Transmission mode
+        <img src="{{site.url}}/images/online-profiler-peripheral.png" alt="Online profiler">
+      </div>
 
-from [online power profiler](https://devzone.nordicsemi.com/nordic/power):
+      <h3 class="title is-3">Summary</h3>
 
-- Voltage `3.3V`
-- Role: Connection (peripheral)
-- `3 byte` TX payload
-- Connection interval (ms): `1000 ms`
-
-![](images/online-profiler-peripheral.png)
-
-Result:
-
-- `6.4 µA` current consumption
-- `120m/250u = 18,000 h = 781 days`
-
-### CPU
-
-How much current consumption `Idd` for running code in active mode?
-
-[page 76, 77](https://infocenter.nordicsemi.com/pdf/nRF52832_PS_v1.1.pdf):
-
-| Description | Typical | Units | Max
-| ------ | ------ | ------ | ------ |
-| 0 dBm TX @ 1 Mb/s Bluetooth Low Energy mode, Clock = HFXO | 7.1 | mA |
-| -40 dBm TX @ 1 Mb/s Bluetooth Low Energy mode, Clock = HFXO | 4.1 | mA |
-| Radio RX @ 1 Mb/s Bluetooth Low Energy mode, Clock = HFXO | 6.5 | mA |
-| CPU running CoreMark from Flash, Radio 0 dBm TX @ 1 Mb/s | 9.6 | mA | x |
-| CPU running CoreMark from Flash, Radio RX @ 1 Mb/s | 9.0 | mA |
-| System ON, No RAM retention, Wake on any event | 1.2 | µA |
-| System ON, Full RAM retention, Wake on any event | 1.5 | µA |
-| System ON, No RAM retention, Wake on RTC | 1.9 | µA |
-| System OFF, No RAM retention, Wake on reset | 0.7 | µA |
-| System OFF, No RAM retention, Wake on GPIO | 1.2 | µA |
-| System OFF, No RAM retention, Wake on LPCOMP | 1.9 | µA |
-| System OFF, No RAM retention, Wake on NFC field | 0.7 | µA |
-| System OFF, Full RAM retention, Wake on reset | 1.0 | µA |
-
-Result:
-
-- `9.6 mA` current consumption
-- `120m/9.6 = 12.5 h`
-
-### Summary
-
-- If transmitting 100% of the time: ~781 days
-- If advertising 100% of the time: ~83 days
-- if CPU running 100% of the time: ~12.5 hours
-
-## References
-
-- [Measuring current for nRF52832](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf52832_dk%2FUG%2Fnrf52_DK%2Fhw_meas_current.html)
-- [Online Power profiler](https://devzone.nordicsemi.com/nordic/power)
-- [High pulse drain impact on CR2032 coin cell battery capacity](https://www.dmcinfo.com/Portals/0/Blog%20Files/High%20pulse%20drain%20impact%20on%20CR2032%20coin%20cell%20battery%20capacity.pdf)
-- [CR2032 Coin Cell battery life estimation with NRF52 as beacon](https://devzone.nordicsemi.com/f/nordic-q-a/36982/cr2032-coin-cell-battery-life-estimation-with-nrf52-as-beacon)
-- [Using the correct Bluetooth LE Advertising and Connection Parameters for a stable connection](https://developer.apple.com/library/archive/qa/qa1931/_index.html)
-- [nRF52832 Product Specification v1.1](https://infocenter.nordicsemi.com/pdf/nRF52832_PS_v1.1.pdf)
+      <div class="content">
+        <ul>
+          <li>If transmitting 100% of the time: ~781 days</li>
+          <li>If advertising 100% of the time: ~83 days</li>
+          <li>if CPU running 100% of the time: ~12.5 hours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
