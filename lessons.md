@@ -1,13 +1,27 @@
-# Lessons Learnt
+---
+layout: default
+title: Lessons learnt
+permalink: /lessons
+sequence: 9
+---
 
-> Good practices to continue for future projects
+{% assign lessons = site.data.lessons %}
+{% for le in lessons %}
+<section class="section is-small">
+  <div class="container">
 
-- Mark polarity for power connectors. E.g. JST connector should have `+` and `-` labels on silkscreen
-- Buy good quality LiPo / battery and power connectors
+    <h2 class="title is-1">{{ le.title }}</h2>
+    {% if le.subtitle %}
+    <p class="subtitle">{{le.subtitle}}</p>
+    {% endif %}
 
-## V2.0
-
-- Do not use modules as they are big and bulky
-- Use DP3T to power on, wireless off and wireless on options instead of 2 switches
-- Use a smaller and brighter RGB LED
-- Use a single layer board so that a housing can be catered for the battery at the back
+    <div class="content is-medium">
+      <ul>
+        {% for li in le.list %}
+        <li>{{ li.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endfor %}
