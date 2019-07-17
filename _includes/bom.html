@@ -31,7 +31,13 @@
     }
   }
   bomUniqVendors = bomVendors.filter((v, i, a) => a.indexOf(v) === i);
-  console.log(bomUniqVendors)
-  document.getElementById("bom-vendors").innerHTML = bomUniqVendors.length + " (" + bomUniqVendors + ")"
 
+  // Remove stocks interally that are already available
+  ["Old Stock", "Prototype stock"].forEach(function(stock) {
+    if (bomUniqVendors.indexOf(stock) > -1) {
+      bomUniqVendors.splice(bomUniqVendors.indexOf(stock), 1)
+    }
+  })
+
+  document.getElementById("bom-vendors").innerHTML = bomUniqVendors.length + " (" + bomUniqVendors + ")"
 </script>
