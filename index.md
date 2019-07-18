@@ -28,7 +28,7 @@ sequence: 1
               <p class="title">Step 1</p>
               <p class="subtitle">Wire up the hardware components with <a href="">nRF52 Adafruit feather board</a>, <a href="https://www.adafruit.com/product/3964">VEML6075 sensor board</a> and LiPo battery. Turn on the switch for power and BLE.</p>
               <a href="images/hardware/schematic.png"><img src="images/hardware/schematic.png" alt="Schematic"></a>
-              <a href="images/hardware/prototype-3.jpg"><img src="images/hardware/prototype-3.jpg" alt="Prototype"></a>
+              <a href="images/prototype/prototype-3.jpg"><img src="images/prototype/prototype-3.jpg" alt="Prototype"></a>
             </article>
           </div>
           <div class="tile is-parent">
