@@ -28,7 +28,7 @@ sequence: 4
       <thead>
         <tr>
           <th>Designator</th>
-          <th>Quantity</th>
+          <th>Q</th>
           <th>Package</th>
           <th>Value</th>
           <th>Manufacturer Part No.</th>
