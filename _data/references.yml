@@ -28,14 +28,14 @@
       url: https://abra-electronics.com/sensors/sensors-light-imaging-en/sens-43uv-analog-ultra-violet-light-sensor-module-for-5v-microcontrollers.html
     - name: Analog UV Light Sensor Breakout from Adafruit
       url: https://www.adafruit.com/product/1918
-    - name: SI1145 Digital UV Index / IR / Visible light sensor breakout board from Adafruit with `I2C` bus connection
+    - name: SI1145 Digital UV Index / IR / Visible light sensor breakout board from Adafruit with <code>I2C</code> bus connection
       url: https://www.adafruit.com/product/1777
     - name: VEML6070 breakout board with <code>I2C</code>
       url: https://www.adafruit.com/product/2899
 
 - topic: Humidity, Temperature and Barometric pressure sensor
   list:
-    - name: Adafruit BME280 breakout board from Adafruit with `I2C` or `SPI`
+    - name: Adafruit BME280 breakout board from Adafruit with <code>I2C</code> or <code>SPI</code>
       url: https://www.adafruit.com/product/2652
     - name: What's the difference between the BMP280 and the BME280 atmospheric sensors
       url: https://www.youtube.com/watch?v=0aL1PxK3rkE

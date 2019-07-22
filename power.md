@@ -64,16 +64,16 @@ sequence: 6
         <tr>
           <td><a href="https://www.adafruit.com/product/3406">nRF52832</a></td>
           <td>BLE + MCU</td>
-          <td>`1.7v` to `3.3v`</td>
-          <td>`60 µA`</td>
-          <td>`216 µA`</td>
+          <td><code>1.7v</code> to <code>3.3v</code></td>
+          <td><code>60 µA</code></td>
+          <td><code>216 µA</code></td>
         </tr>
         <tr>
           <td><a href="https://www.vishay.com/docs/84304/veml6075.pdf">VEML6075</a></td>
           <td>UV Sensor</td>
-          <td>`1.7V` to `3.6V`</td>
+          <td><code>1.7V</code> to <code>3.6V</code></td>
           <td></td>
-          <td>`480uA` at `1.8V`</td>
+          <td><code>480uA</code> at <code>1.8V</code></td>
         </tr>
       </tbody>
     </table>
