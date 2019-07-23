@@ -40,6 +40,15 @@ void setupESService(void);
 void connect_callback(uint16_t conn_handle);
 void disconnect_callback(uint16_t conn_handle, uint8_t reason);
 
+// Battery
+#define VBAT_PIN          (A7)
+#define VBAT_MV_PER_LSB   (0.73242188F)
+#define VBAT_DIVIDER      (0.71275837F)
+#define VBAT_DIVIDER_COMP (1.403F)
+int vbat_raw;
+uint8_t vbat_per;
+float vbat_mv;
+
 void setup() {
   Serial.begin(115200);
   while (!Serial) delay(10);
@@ -48,6 +57,10 @@ void setup() {
   pinMode(ENBLEPin, INPUT);
   pinMode(LED_RED, OUTPUT);
   Bluefruit.autoConnLed(false);  // Turn off BLUE LED
+
+  // Battery
+  analogReference(AR_INTERNAL_3_0);
+  analogReadResolution(12);  // Can be 8, 10, 12 or 14
 
   Serial.println("Palm@Hutscape - UV Index sensor");
   Serial.println("-------------------------------------\n");
@@ -75,9 +88,24 @@ void setup() {
 }
 
 void loop() {
+  // Battery
+  vbat_raw = analogRead(VBAT_PIN);
+  vbat_per = mvToPercent(vbat_raw * VBAT_MV_PER_LSB);
+  vbat_mv = (float)vbat_raw * VBAT_MV_PER_LSB * VBAT_DIVIDER_COMP;
+  Serial.print("[INFO] ADC = ");
+  Serial.print(vbat_raw * VBAT_MV_PER_LSB);
+  Serial.print(" mV (");
+  Serial.print(vbat_raw);
+  Serial.print(") ");
+  Serial.print("LIPO = ");
+  Serial.print(vbat_mv);
+  Serial.print(" mV (");
+  Serial.print(vbat_per);
+  Serial.println("%)");
+
+  // UV Index
   readUVIndexValue = uv.readUVI();
   uvindexvalue = round(abs(readUVIndexValue));
-
   Serial.print("[INFO] UV Index: ");
   Serial.println(uvindexvalue);
   displayLED(uvindexvalue);
@@ -106,7 +134,7 @@ void loop() {
     }
   }
 
-  delay(2000);
+  delay(4000);
 }
 
 void displayLEDColor(int red, int green, int blue) {
@@ -236,4 +264,24 @@ void cccd_callback(uint16_t conn_hdl,
             Serial.println("[INFO] UV Index Measurement 'Indicate' disabled");
         }
     }
+}
+
+uint8_t mvToPercent(float mvolts) {
+  uint8_t battery_level;
+
+  if (mvolts >= 3000) {
+    battery_level = 100;
+  } else if (mvolts > 2900) {
+    battery_level = 100 - ((3000 - mvolts) * 58) / 100;
+  } else if (mvolts > 2740) {
+    battery_level = 42 - ((2900 - mvolts) * 24) / 160;
+  } else if (mvolts > 2440) {
+    battery_level = 18 - ((2740 - mvolts) * 12) / 300;
+  } else if (mvolts > 2100) {
+    battery_level = 6 - ((2440 - mvolts) * 6) / 340;
+  } else {
+    battery_level = 0;
+  }
+
+  return battery_level;
 }

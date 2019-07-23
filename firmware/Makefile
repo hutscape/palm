@@ -1,7 +1,7 @@
 .PHONY: lint compile upload clean
 
 lint:
-	cpplint --extensions=ino --filter=-legal/copyright *.ino
+	cpplint --extensions=ino --filter=-legal/copyright,-readability/todo,-readability/casting *.ino
 
 compile:
 	arduino-cli compile --fqbn adafruit:nrf52:feather52832 ./
