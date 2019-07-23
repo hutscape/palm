@@ -23,7 +23,7 @@ sequence: 1
           <div class="tile is-parent">
             <article class="tile is-child notification">
               <p class="title">Step 2</p>
-              <p class="subtitle">Flash the firmware onto the <code>nRF52</code> board to display UV Index</p>
+              <p class="subtitle">Flash the firmware onto the <code>nRF52</code> board to display UV Index and battery level.</p>
               <a href="images/software/console.png"><img src="images/software/console.png" alt="Serial console for firmware"></a>
             </article>
           </div>
@@ -31,10 +31,10 @@ sequence: 1
             <article class="tile is-child notification">
               <div class="content">
                 <p class="title">Step 3</p>
-                <p class="subtitle">See the UV, temperature and humidity values values being displayed on the <a href="https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8">nRF Connect iPhone app</a></p>
+                <p class="subtitle">See the UV and battery level values on the <a href="https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8">nRF Connect iPhone app</a></p>
                 <img src="images/software/ios-detect.jpg" alt="iOS app detect">
                 <br><br>
-                <img src="images/software/ios-characteristics.jpg" alt="iOS app characteristics">
+                <img src="images/software/ios-services.jpg" alt="iOS app GATT Services">
               </div>
             </article>
           </div>

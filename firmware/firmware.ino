@@ -29,14 +29,15 @@ bool isBLEON = false;
 */
 #define UUID16_CHR_UV_INDEX 0x2A76
 
-BLEService        ess = BLEService(UUID16_SVC_ENVIRONMENTAL_SENSING);
-BLECharacteristic uvic = BLECharacteristic(UUID16_CHR_UV_INDEX);
+BLEService environmental_sensing_service = BLEService(UUID16_SVC_ENVIRONMENTAL_SENSING);
+BLECharacteristic uv_index_characteristic = BLECharacteristic(UUID16_CHR_UV_INDEX);
 
 BLEDis bledis;    // DIS (Device Information Service) helper class instance
 
 // Advanced function prototypes
 void startAdv(void);
 void setupESService(void);
+void setupBattService(void);
 void connect_callback(uint16_t conn_handle);
 void disconnect_callback(uint16_t conn_handle, uint8_t reason);
 
@@ -48,6 +49,28 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason);
 int vbat_raw;
 uint8_t vbat_per;
 float vbat_mv;
+
+/* GATT Services https://www.bluetooth.com/specifications/gatt/services/
+    Name: Battery Service
+    Uniform Type Identifier: org.bluetooth.service.battery_service
+    Assigned Number: 0x180F
+    Specification: GSS
+*/
+#define UUID16_SVC_BATTERY 0x180F
+
+/* GATT Characteristics https://www.bluetooth.com/specifications/gatt/characteristics/
+    Name: Battery Level
+    Abstract: The current charge level of a battery.
+          100% represents fully charged while 0% represents fully discharged.
+    Uniform Type Identifier: org.bluetooth.characteristic.battery_level
+    Assigned Number: 0x2A19
+    Format: uint8
+    Specification: GSS
+*/
+#define UUID16_CHR_BATTERY_LEVEL 0x2A19
+
+BLEService        battery_service = BLEService(UUID16_SVC_BATTERY);
+BLECharacteristic battery_level_characteristic = BLECharacteristic(UUID16_CHR_BATTERY_LEVEL);
 
 void setup() {
   Serial.begin(115200);
@@ -65,6 +88,7 @@ void setup() {
   Serial.println("Palm@Hutscape - UV Index sensor");
   Serial.println("-------------------------------------\n");
 
+  // Enable UV sensor
   int returnValue = uv.begin();
   if (!returnValue) {
     Serial.println("[ERROR] Sensor VEML6075 cannot be found");
@@ -82,6 +106,7 @@ void setup() {
   bledis.setModel("Bluefruit Feather52");
   bledis.begin();;
   setupESService();
+  setupBattService();
   startAdv();
 
   Serial.println("[INFO] Start advertising...");
@@ -92,26 +117,11 @@ void loop() {
   vbat_raw = analogRead(VBAT_PIN);
   vbat_per = mvToPercent(vbat_raw * VBAT_MV_PER_LSB);
   vbat_mv = (float)vbat_raw * VBAT_MV_PER_LSB * VBAT_DIVIDER_COMP;
-  Serial.print("[INFO] ADC = ");
-  Serial.print(vbat_raw * VBAT_MV_PER_LSB);
-  Serial.print(" mV (");
-  Serial.print(vbat_raw);
-  Serial.print(") ");
-  Serial.print("LIPO = ");
-  Serial.print(vbat_mv);
-  Serial.print(" mV (");
-  Serial.print(vbat_per);
-  Serial.println("%)");
 
   // UV Index
   readUVIndexValue = uv.readUVI();
   uvindexvalue = round(abs(readUVIndexValue));
-  Serial.print("[INFO] UV Index: ");
-  Serial.println(uvindexvalue);
   displayLED(uvindexvalue);
-
-  Serial.print("[INFO] BLE Switch: ");
-  Serial.println(digitalRead(ENBLEPin));
 
   // Turn on BLE
   if (digitalRead(ENBLEPin) == 1) {
@@ -126,13 +136,28 @@ void loop() {
     // Note: We use .indicate instead of .write!
     // If it is connected but CCCD is not enabled
     // The characteristic's value is still updated although indicate is not sent
-    if (uvic.indicate(&uvindexvalue, sizeof(uvindexvalue))) {
+    if (uv_index_characteristic.indicate(&uvindexvalue, sizeof(uvindexvalue))) {
       Serial.print("[INFO] Updated UV Index: ");
       Serial.println(uvindexvalue);
     } else {
-      Serial.println("[ERROR] Indicate not set in the CCCD or not connected");
+      Serial.println("[ERROR] UV Index Indicate not set in the CCCD or not connected");
+    }
+
+    if (battery_level_characteristic.indicate(&vbat_per, sizeof(vbat_per))) {
+      Serial.print("[INFO] Updated Battery level: ");
+      Serial.print(vbat_per);
+      Serial.println("%");
+    } else {
+      Serial.println("[ERROR] Battery level Indicate not set in the CCCD or not connected");
     }
   }
+
+  Serial.print("[INFO] UV Index: ");
+  Serial.println(uvindexvalue);
+  Serial.print("[INFO] Battery level: ");
+  Serial.print(vbat_per);
+  Serial.println("%");
+  Serial.println("");
 
   delay(4000);
 }
@@ -168,7 +193,8 @@ void startAdv(void) {
   Bluefruit.Advertising.addTxPower();
 
   // Include HTM Service UUID
-  Bluefruit.Advertising.addService(ess);
+  Bluefruit.Advertising.addService(environmental_sensing_service);
+  Bluefruit.Advertising.addService(battery_service);
 
   // Include Name
   Bluefruit.Advertising.addName();
@@ -201,7 +227,7 @@ void setupESService(void) {
   // Name                         UUID    Requirement Properties
   // ---------------------------- ------  ----------- ----------
   // UV Index                     0x2A76  Mandatory   Read
-  ess.begin();
+  environmental_sensing_service.begin();
 
   // Note: You must call .begin() on the BLEService before calling .begin() on
   // any characteristic(s) within that service definition.. Calling .begin() on
@@ -214,12 +240,23 @@ void setupESService(void) {
   // Min Len    = 1
   // Max Len    = 1
   // B0         = UINT8 - UV Index measurement unitless
-  uvic.setProperties(CHR_PROPS_INDICATE);
-  uvic.setPermission(SECMODE_OPEN, SECMODE_NO_ACCESS);
-  uvic.setFixedLen(1);
-  uvic.setCccdWriteCallback(cccd_callback);  // Optionally capture CCCD updates
-  uvic.begin();
-  uvic.write(&uvindexvalue, sizeof(uvindexvalue));
+  uv_index_characteristic.setProperties(CHR_PROPS_INDICATE);
+  uv_index_characteristic.setPermission(SECMODE_OPEN, SECMODE_NO_ACCESS);
+  uv_index_characteristic.setFixedLen(1);
+  uv_index_characteristic.setCccdWriteCallback(cccd_callback);  // Optionally capture CCCD updates
+  uv_index_characteristic.begin();
+  uv_index_characteristic.write(&uvindexvalue, sizeof(uvindexvalue));
+}
+
+void setupBattService(void) {
+  battery_service.begin();
+
+  battery_level_characteristic.setProperties(CHR_PROPS_INDICATE);
+  battery_level_characteristic.setPermission(SECMODE_OPEN, SECMODE_NO_ACCESS);
+  battery_level_characteristic.setFixedLen(1);
+  battery_level_characteristic.setCccdWriteCallback(cccd_callback);  // Optionally capture CCCD updates
+  battery_level_characteristic.begin();
+  battery_level_characteristic.write(&vbat_per, sizeof(vbat_per));
 }
 
 void connect_callback(uint16_t conn_handle) {
@@ -257,11 +294,17 @@ void cccd_callback(uint16_t conn_hdl,
 
     // Check the characteristic this CCCD update is associated with in case
     // this handler is used for multiple CCCD records.
-    if (chr->uuid == uvic.uuid) {
+    if (chr->uuid == uv_index_characteristic.uuid) {
         if (chr->indicateEnabled(conn_hdl)) {
             Serial.println("[INFO] UV Index Measurement 'Indicate' enabled");
         } else {
             Serial.println("[INFO] UV Index Measurement 'Indicate' disabled");
+        }
+    } else if (chr->uuid == battery_level_characteristic.uuid) {
+        if (chr->indicateEnabled(conn_hdl)) {
+            Serial.println("[INFO] Battery level 'Indicate' enabled");
+        } else {
+            Serial.println("[INFO] Battery level 'Indicate' disabled");
         }
     }
 }
