@@ -10,6 +10,7 @@ lessons:
       - name: Mark polarity for power connectors to safe guard against reverse polarity. E.g. JST connector should have <code>+</code> and <code>-</code> labels on silkscreen
       - name: Buy good quality LiPo / battery and power connectors E.g. JST connectors
   - title: V2.0
+    subtitle: For next iteration
     list:
       - name: Do not use modules as they are big and bulky
       - name: Use DP3T to power on, wireless off and wireless on options instead of 2 switches
