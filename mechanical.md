@@ -14,7 +14,7 @@ sequence: 7
         <tr>
           <th>Item</th>
           <th>Length</th>
-          <th>Breadth</th>
+          <th>Width</th>
           <th>Height</th>
           <th>Weight</th>
         </tr>
