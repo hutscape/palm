@@ -4,6 +4,8 @@
    "sensor": "UV Index",
    "mcu": "nRF52",
    "ota": "No",
+   "battery-life": "15 hours",
+   "version": "1.0",
 
    "bom-uniq": 10,
    "bom-total": 13,
