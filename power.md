@@ -3,48 +3,11 @@ layout: default
 title: Power
 permalink: /power
 sequence: 6
+power_source: <code>380mAh</code> LiPo battery
+battery_life: 5 days
+charging_duration: 5 hours
+charging_instruction: Plug in the USB cable to charge. <code>Yellow</code> LED will be on while it is charging.
 ---
-
-<section class="section is-small">
-  <div class="container">
-    <h2 class="title is-1">Power source</h2>
-    <p class="subtitle"><code>380mAh</code> LiPo battery</p>
-  </div>
-</section>
-
-<section class="section is-small">
-  <div class="container">
-    <h2 class="title is-1">Potential batteries</h2>
-
-    <table class="table is-fullwidth">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Capacity</th>
-          <th>Voltage</th>
-          <th>Dimension</th>
-          <th>Buy from</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>CR2450</td>
-          <td><code>120mAh</code></td>
-          <td><code>3.6V</code></td>
-          <td><code>4cm</code> x <code>2cm</code>x <code>2cm</code></td>
-          <td><a href="https://www.aliexpress.com/item/Rainpro-2PCS-LOT-LIR2450-horizontal-welding-foot-battery-3-6V-rechargeable-coin-cell-battery-charging-2450/32853897751.html?spm=2114.search0104.3.8.189ed9beMuzTzf&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=48ce131f-0f3b-433f-9bb9-f5874e08c121-1&algo_pvid=48ce131f-0f3b-433f-9bb9-f5874e08c121&transAbTest=ae803_4">AliExpress</a></td>
-        </tr>
-        <tr>
-          <td>LiPo</td>
-          <td><code>380mAh</code></td>
-          <td><code>3.7V</code></td>
-          <td><code>37mm</code> x <code>19mm</code> x <code>8mm</code></td>
-          <td><a href="https://www.aliexpress.com/item/Limskey-3-7V-380mAh-25C-Lipo-Battery-for-For-Hubsan-X4-H107-H107L-H107D-JD385-JD388/32846516934.html?spm=2114.search0103.3.69.12983204ovX5ra&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=067ab389-d2ff-4f23-98e8-7aef2b13aeef-9&algo_pvid=067ab389-d2ff-4f23-98e8-7aef2b13aeef&transAbTest=ae803_4">AliExpress</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
 
 <section class="section is-small">
   <div class="container">
@@ -124,5 +87,39 @@ sequence: 6
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title is-1">Other potential batteries</h2>
+
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Capacity</th>
+          <th>Voltage</th>
+          <th>Dimension</th>
+          <th>Buy from</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CR2450</td>
+          <td><code>120mAh</code></td>
+          <td><code>3.6V</code></td>
+          <td><code>4cm</code> x <code>2cm</code>x <code>2cm</code></td>
+          <td><a href="https://www.aliexpress.com/item/Rainpro-2PCS-LOT-LIR2450-horizontal-welding-foot-battery-3-6V-rechargeable-coin-cell-battery-charging-2450/32853897751.html?spm=2114.search0104.3.8.189ed9beMuzTzf&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=48ce131f-0f3b-433f-9bb9-f5874e08c121-1&algo_pvid=48ce131f-0f3b-433f-9bb9-f5874e08c121&transAbTest=ae803_4">AliExpress</a></td>
+        </tr>
+        <tr>
+          <td>LiPo</td>
+          <td><code>380mAh</code></td>
+          <td><code>3.7V</code></td>
+          <td><code>37mm</code> x <code>19mm</code> x <code>8mm</code></td>
+          <td><a href="https://www.aliexpress.com/item/Limskey-3-7V-380mAh-25C-Lipo-Battery-for-For-Hubsan-X4-H107-H107L-H107D-JD385-JD388/32846516934.html?spm=2114.search0103.3.69.12983204ovX5ra&ws_ab_test=searchweb0_0,searchweb201602_6_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=067ab389-d2ff-4f23-98e8-7aef2b13aeef-9&algo_pvid=067ab389-d2ff-4f23-98e8-7aef2b13aeef&transAbTest=ae803_4">AliExpress</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
