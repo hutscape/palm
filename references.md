@@ -6,6 +6,8 @@ sequence: 10
 references:
   - topic:  Similar projects
     list:
+      - name: QSun app and tracker
+        url: https://qsun.co
       - name: UV-badge
         url: https://hackaday.io/project/4706-uv-badge
       - name: "#badgelife"
