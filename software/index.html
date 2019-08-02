@@ -9,10 +9,10 @@
   <code><span id="ble-characteristic-uv">uv_index</span></code>
 </p>
 
-<button id="read">Read UV Index</button>
-<button id="start" disabled>Start</button>
-<button id="stop" disabled>Stop</button>
-<button id="reset">Reset device</button>
+<button id="read-env">Read UV Index</button>
+<button id="start-env" disabled>Start</button>
+<button id="stop-env" disabled>Stop</button>
+<button id="reset-env">Reset device</button>
 
 <p>
   For BLE GATT Service
@@ -35,19 +35,35 @@
   var bleCharacteristicBattLevel = document.getElementById("ble-characteristic-batt-level").innerText
 
   // User actions read, start, stop, reset
-  document.querySelector('#read').addEventListener('click', function() {
+  document.querySelector('#read-env').addEventListener('click', function() {
     if (isWebBluetoothEnabled()) { read() }
   })
 
-  document.querySelector('#start').addEventListener('click', function(event) {
+  document.querySelector('#start-env').addEventListener('click', function(event) {
     if (isWebBluetoothEnabled()) { onStart() }
   })
 
-  document.querySelector('#stop').addEventListener('click', function(event) {
+  document.querySelector('#stop-env').addEventListener('click', function(event) {
     if (isWebBluetoothEnabled()) { onStop() }
   })
 
-  document.querySelector('#reset').addEventListener('click', function(event) {
+  document.querySelector('#reset-env').addEventListener('click', function(event) {
+    if (isWebBluetoothEnabled()) { onReset() }
+  })
+
+  document.querySelector('#read-batt').addEventListener('click', function() {
+    if (isWebBluetoothEnabled()) { readBatt() }
+  })
+
+  document.querySelector('#start-batt').addEventListener('click', function(event) {
+    if (isWebBluetoothEnabled()) { onStartBatt() }
+  })
+
+  document.querySelector('#stop-batt').addEventListener('click', function(event) {
+    if (isWebBluetoothEnabled()) { onStop() }
+  })
+
+  document.querySelector('#reset-batt').addEventListener('click', function(event) {
     if (isWebBluetoothEnabled()) { onReset() }
   })
 
@@ -72,6 +88,17 @@
     });
   }
 
+  function requestDeviceBatt() {
+    console.log('Requesting any Bluetooth Device...');
+    return navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
+        optionalServices: ['battery_service']})
+    .then(device => {
+      bluetoothDevice = device;
+      bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
+    });
+  }
+
   function read() {
     return (bluetoothDevice ? Promise.resolve() : requestDevice())
     .then(connectGATT)
@@ -84,7 +111,20 @@
     });
   }
 
+  function readBatt() {
+    return (bluetoothDevice ? Promise.resolve() : requestDeviceBatt())
+    .then(connectGATTBatt)
+    .then(_ => {
+      console.log('Reading Battery level...');
+      return gattCharacteristic.readValue();
+    })
+    .catch(error => {
+      console.log('[ERROR] Read on click: ' + error);
+    });
+  }
+
   function connectGATT() {
+    console.log('here')
     if (bluetoothDevice.gatt.connected && gattCharacteristic) {
       return Promise.resolve();
     }
@@ -103,8 +143,32 @@
       gattCharacteristic = characteristic;
       gattCharacteristic.addEventListener('characteristicvaluechanged',
           handleChangedValue);
-      document.querySelector('#start').disabled = false;
-      document.querySelector('#stop').disabled = true;
+      document.querySelector('#start-env').disabled = false;
+      document.querySelector('#stop-env').disabled = true;
+    });
+  }
+
+  function connectGATTBatt() {
+    if (bluetoothDevice.gatt.connected && gattCharacteristic) {
+      return Promise.resolve();
+    }
+
+    console.log('Connecting to GATT Server...');
+    return bluetoothDevice.gatt.connect()
+    .then(server => {
+      console.log('Getting GATT Service...');
+      return server.getPrimaryService('battery_service');
+    })
+    .then(service => {
+      console.log('Getting GATT Characteristic...');
+      return service.getCharacteristic('battery_level');
+    })
+    .then(characteristic => {
+      gattCharacteristic = characteristic;
+      gattCharacteristic.addEventListener('characteristicvaluechanged',
+          handleChangedValue);
+      document.querySelector('#start-batt').disabled = false;
+      document.querySelector('#stop-batt').disabled = true;
     });
   }
 
@@ -119,8 +183,21 @@
     gattCharacteristic.startNotifications()
     .then(_ => {
       console.log('> Notifications started');
-      document.querySelector('#start').disabled = true;
-      document.querySelector('#stop').disabled = false;
+      document.querySelector('#start-env').disabled = true;
+      document.querySelector('#stop-env').disabled = false;
+    })
+    .catch(error => {
+      console.log('[ERROR] Start notifications: ' + error);
+    });
+  }
+
+  function onStartBatt() {
+    console.log('Starting Notifications...');
+    gattCharacteristic.startNotifications()
+    .then(_ => {
+      console.log('> Notifications started');
+      document.querySelector('#start-batt').disabled = true;
+      document.querySelector('#stop-batt').disabled = false;
     })
     .catch(error => {
       console.log('[ERROR] Start notifications: ' + error);
@@ -132,8 +209,21 @@
     gattCharacteristic.stopNotifications()
     .then(_ => {
       console.log('> Notifications stopped');
-      document.querySelector('#start').disabled = false;
-      document.querySelector('#stop').disabled = true;
+      document.querySelector('#start-env').disabled = false;
+      document.querySelector('#stop-env').disabled = true;
+    })
+    .catch(error => {
+      console.log('[ERROR] Stop notifications: ' + error);
+    });
+  }
+
+  function onStopBatt() {
+    console.log('Stopping Notifications...');
+    gattCharacteristic.stopNotifications()
+    .then(_ => {
+      console.log('> Notifications stopped');
+      document.querySelector('#start-batt').disabled = false;
+      document.querySelector('#stop-batt').disabled = true;
     })
     .catch(error => {
       console.log('[ERROR] Stop notifications: ' + error);
@@ -154,6 +244,7 @@
   function onDisconnected() {
     console.log('> Bluetooth Device disconnected');
     connectGATT()
+    connectGATTBatt()
     .catch(error => {
       console.log('[ERROR] on disconnected:  ' + error);
     })
