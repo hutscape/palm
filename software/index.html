@@ -1,12 +1,12 @@
-<style> code{ background: #eee; }</style>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 
 <h1>Web Bluetooth: Read Characteristic Value Changed</h1>
 
 <p>
   For BLE GATT Service
-  <code><span id="ble-service-env">environmental_sensing</span></code>
+  <code>environmental_sensing</code>
   and BLE GATT Characteristic
-  <code><span id="ble-characteristic-uv">uv_index</span></code>
+  <code>uv_index</code>
 </p>
 
 <button id="read-env">Read UV Index</button>
@@ -16,9 +16,9 @@
 
 <p>
   For BLE GATT Service
-  <code><span id="ble-service-batt">battery_service</span></code>
+  <code>battery_service</code>
   and BLE GATT Characteristic
-  <code><span id="ble-characteristic-batt-level">battery_level</span></code>
+  <code>battery_level</code>
 </p>
 
 <button id="read-batt">Read Battery level</button>
@@ -35,20 +35,17 @@
       serviceName: "UV Index",
       shortName: "env",
       service: "environmental_sensing",
-      characteristic: "uv_index"
+      characteristic: "uv_index",
+      unit: ""
     },
     batt: {
       serviceName: "Battery level",
       shortName: "batt",
       service: "battery_service",
-      characteristic: "battery_level"
+      characteristic: "battery_level",
+      unit: "%"
     }
   }
-
-  var bleServiceEnv = document.getElementById("ble-service-env").innerText
-  var bleCharacteristicUV = document.getElementById("ble-characteristic-uv").innerText
-  var bleServiceBatt = document.getElementById("ble-service-batt").innerText
-  var bleCharacteristicBattLevel = document.getElementById("ble-characteristic-batt-level").innerText
 
   // User actions read, start, stop, reset
   document.querySelector('#read-env').addEventListener('click', function() {
@@ -56,31 +53,31 @@
   })
 
   document.querySelector('#start-env').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { onStart() }
+    if (isWebBluetoothEnabled()) { start() }
   })
 
   document.querySelector('#stop-env').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { onStop() }
+    if (isWebBluetoothEnabled()) { stop() }
   })
 
   document.querySelector('#reset-env').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { currentGatt = ''; onReset() }
+    if (isWebBluetoothEnabled()) { currentGatt = ''; reset() }
   })
 
   document.querySelector('#read-batt').addEventListener('click', function() {
-    if (isWebBluetoothEnabled()) { currentGatt = 'batt'; readBatt() }
+    if (isWebBluetoothEnabled()) { currentGatt = 'batt'; read() }
   })
 
   document.querySelector('#start-batt').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { onStartBatt() }
+    if (isWebBluetoothEnabled()) { start() }
   })
 
   document.querySelector('#stop-batt').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { onStopBatt() }
+    if (isWebBluetoothEnabled()) { stop() }
   })
 
   document.querySelector('#reset-batt').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { currentGatt = ''; onReset() }
+    if (isWebBluetoothEnabled()) { currentGatt = ''; reset() }
   })
 
   function isWebBluetoothEnabled() {
@@ -101,42 +98,50 @@
       return gattCharacteristic.readValue();
     })
     .catch(error => {
-      console.log('[ERROR] Read on click: ' + error);
+      console.log('[ERROR] Read ' + gatt[currentGatt].serviceName + ' on click: ' + error);
     });
   }
 
-  function readBatt() {
-    return (bluetoothDevice ? Promise.resolve() : requestDeviceBatt())
-    .then(connectGATTBatt)
+  function start() {
+    console.log('Starting Notifications...');
+    gattCharacteristic.startNotifications()
     .then(_ => {
-      console.log('Reading ' + gatt[currentGatt].serviceName + '...');
-      return gattCharacteristic.readValue();
+      console.log('> Notifications started');
+      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = true;
+      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = false;
     })
     .catch(error => {
-      console.log('[ERROR] Read on click: ' + error);
+      console.log('[ERROR] Start notifications: ' + error);
     });
   }
 
-  function requestDevice() {
-    console.log('Requesting any Bluetooth Device...');
-    return navigator.bluetooth.requestDevice({
-        acceptAllDevices: true,
-        optionalServices: [gatt[currentGatt].service]})
-    .then(device => {
-      bluetoothDevice = device;
-      bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
+  function stop() {
+    console.log('Stopping Notifications...');
+    gattCharacteristic.stopNotifications()
+    .then(_ => {
+      console.log('> Notifications stopped');
+      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = false;
+      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = true;
+    })
+    .catch(error => {
+      console.log('[ERROR] Stop notifications: ' + error);
     });
   }
 
-  function requestDeviceBatt() {
-    console.log('Requesting any Bluetooth Device...');
-    return navigator.bluetooth.requestDevice({
-        acceptAllDevices: true,
-        optionalServices: [gatt[currentGatt].service]})
-    .then(device => {
-      bluetoothDevice = device;
-      bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
-    });
+  function reset() {
+    if (gattCharacteristic) {
+      gattCharacteristic.removeEventListener('characteristicvaluechanged',
+          handleChangedValue);
+      gattCharacteristic = null;
+    }
+
+    bluetoothDevice = null;
+    document.querySelector('#start-batt').disabled = true;
+    document.querySelector('#stop-batt').disabled = true;
+    document.querySelector('#start-env').disabled = true;
+    document.querySelector('#stop-env').disabled = true;
+
+    console.log('> Bluetooth Device reset');
   }
 
   function connectGATT() {
@@ -163,102 +168,21 @@
     });
   }
 
-  function connectGATTBatt() {
-    if (bluetoothDevice.gatt.connected && gattCharacteristic) {
-      return Promise.resolve();
-    }
-
-    console.log('Connecting to GATT Server...');
-    return bluetoothDevice.gatt.connect()
-    .then(server => {
-      console.log('Getting GATT Service...');
-      return server.getPrimaryService(gatt[currentGatt].service);
-    })
-    .then(service => {
-      console.log('Getting GATT Characteristic...');
-      return service.getCharacteristic(gatt[currentGatt].characteristic);
-    })
-    .then(characteristic => {
-      gattCharacteristic = characteristic;
-      gattCharacteristic.addEventListener('characteristicvaluechanged',
-          handleChangedValue);
-      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = false;
-      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = true;
+  function requestDevice() {
+    console.log('Requesting any Bluetooth Device...');
+    return navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
+        optionalServices: [gatt[currentGatt].service]})
+    .then(device => {
+      bluetoothDevice = device;
+      bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
     });
   }
 
   function handleChangedValue(event) {
     let value = event.target.value.getUint8(0);
     var now = new Date()
-    console.log('> ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + ' ' + gatt[currentGatt].serviceName + ' is ' + value);
-  }
-
-  function onStart() {
-    console.log('Starting Notifications...');
-    gattCharacteristic.startNotifications()
-    .then(_ => {
-      console.log('> Notifications started');
-      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = true;
-      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = false;
-    })
-    .catch(error => {
-      console.log('[ERROR] Start notifications: ' + error);
-    });
-  }
-
-  function onStartBatt() {
-    console.log('Starting Notifications...');
-    gattCharacteristic.startNotifications()
-    .then(_ => {
-      console.log('> Notifications started');
-      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = true;
-      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = false;
-    })
-    .catch(error => {
-      console.log('[ERROR] Start notifications: ' + error);
-    });
-  }
-
-  function onStop() {
-    console.log('Stopping Notifications...');
-    gattCharacteristic.stopNotifications()
-    .then(_ => {
-      console.log('> Notifications stopped');
-      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = false;
-      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = true;
-    })
-    .catch(error => {
-      console.log('[ERROR] Stop notifications: ' + error);
-    });
-  }
-
-  function onStopBatt() {
-    console.log('Stopping Notifications...');
-    gattCharacteristic.stopNotifications()
-    .then(_ => {
-      console.log('> Notifications stopped');
-      document.querySelector('#start-' + gatt[currentGatt].shortName).disabled = false;
-      document.querySelector('#stop-' + gatt[currentGatt].shortName).disabled = true;
-    })
-    .catch(error => {
-      console.log('[ERROR] Stop notifications: ' + error);
-    });
-  }
-
-  function onReset() {
-    if (gattCharacteristic) {
-      gattCharacteristic.removeEventListener('characteristicvaluechanged',
-          handleChangedValue);
-      gattCharacteristic = null;
-    }
-
-    bluetoothDevice = null;
-    document.querySelector('#start-batt').disabled = true;
-    document.querySelector('#stop-batt').disabled = true;
-    document.querySelector('#start-env').disabled = true;
-    document.querySelector('#stop-env').disabled = true;
-
-    console.log('> Bluetooth Device reset');
+    console.log('> ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + ' ' + gatt[currentGatt].serviceName + ' is ' + value + gatt[currentGatt].unit);
   }
 
   function onDisconnected() {
