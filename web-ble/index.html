@@ -183,6 +183,8 @@
     let value = event.target.value.getUint8(0);
     var now = new Date()
     console.log('> ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + ' ' + gatt[currentGatt].serviceName + ' is ' + value + gatt[currentGatt].unit);
+
+    if (currentGatt == 'env') { changeBackground(value) }
   }
 
   function onDisconnected() {
@@ -192,5 +194,19 @@
     .catch(error => {
       console.log('[ERROR] on disconnected:  ' + error);
     })
+  }
+
+  function changeBackground(value) {
+    if (value <= 2) {
+      document.body.style.background = "yellowgreen"
+    } else if (value <= 5) {
+      document.body.style.background = "lemonchiffon"
+    } else if (value <= 7) {
+      document.body.style.background = "tomato"
+    } else if (value <= 10) {
+      document.body.style.background = "indianred"
+    } else {
+      document.body.style.background = "plum"
+    }
   }
 </script>
