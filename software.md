@@ -15,7 +15,7 @@ features:
 
 <section class="section is-small">
   <div class="container">
-    <h2 class="title is-1">Client</h2>
+    <h2 class="title is-1">iOS Client</h2>
 
     <p class="subtitle is-4">Use the <a href="https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8">nRF Connect iPhone app</a> to view the exact UV Index levels.</p>
 
@@ -33,5 +33,18 @@ features:
         <a href="{{site.url}}/images/software/ios-characteristics-uv.jpg"><img src="{{site.url}}/images/software/ios-characteristics-uv.jpg" alt="iOS GATT Characteristics UV Index"></a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title is-1">Web BLE</h2>
+    <p class="subtitle is-4 is-spaced">Web BLE on Chrome browser is used to display the UV Index and Battery level on laptop.</p>
+
+    <a class="button is-primary" href="{{ site.github.repository_url }}/tree/master/web-ble">Download code</a>
+    <a class="button is-primary" href="/web-ble">View demo</a>
+    <br>
+
+    {% highlight html %}{%- include_relative web-ble/index.html -%}{% endhighlight %}
   </div>
 </section>

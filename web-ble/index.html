@@ -1,30 +1,47 @@
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+<!doctype html>
+<html>
+<head>
+  <title>Web BLE</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+</head>
+<body>
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle is-1">Web Bluetooth: Read GATT Values Changing</h2>
+    </div>
+  </div>
+</section>
 
-<h1>Web Bluetooth: Read Characteristic Value Changed</h1>
+<section class="section is-small">
+  <div class="container">
+    <div class="columns is-desktop">
+      <div class="column">
+        <p class="title is-2">Get UV Index</p>
 
-<p>
-  For BLE GATT Service
-  <code>environmental_sensing</code>
-  and BLE GATT Characteristic
-  <code>uv_index</code>
-</p>
+        <button class="button is-primary" id="read-env">Read UV Index</button>
+        <button class="button is-info" id="start-env" disabled>Start</button>
+        <button class="button is-info" id="stop-env" disabled>Stop</button>
+        <button class="button is-dark" id="reset-env">Reset device</button>
 
-<button id="read-env">Read UV Index</button>
-<button id="start-env" disabled>Start</button>
-<button id="stop-env" disabled>Stop</button>
-<button id="reset-env">Reset device</button>
+        <p class="subtitle is-3 is-spaced" id="env-value"></p>
+      </div>
+      <div class="column">
+        <p class="title is-2">Get Battery level</p>
 
-<p>
-  For BLE GATT Service
-  <code>battery_service</code>
-  and BLE GATT Characteristic
-  <code>battery_level</code>
-</p>
+        <button class="button is-primary" id="read-batt">Read Battery level</button>
+        <button class="button is-info" id="start-batt" disabled>Start</button>
+        <button class="button is-info" id="stop-batt" disabled>Stop</button>
+        <button class="button is-dark" id="reset-batt">Reset device</button>
 
-<button id="read-batt">Read Battery level</button>
-<button id="start-batt" disabled>Start</button>
-<button id="stop-batt" disabled>Stop</button>
-<button id="reset-batt">Reset device</button>
+        <p class="subtitle is-3 is-spaced" id="batt-value"></p>
+        <progress class="progress is-primary" value="0" max="100" id="batt-bar"></progress>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-small" id="uv-index"> </section>
 
 <script>
   var bluetoothDevice;
@@ -140,6 +157,7 @@
     document.querySelector('#stop-batt').disabled = true;
     document.querySelector('#start-env').disabled = true;
     document.querySelector('#stop-env').disabled = true;
+    document.getElementById("uv-index").style.background = "";
 
     console.log('> Bluetooth Device reset');
   }
@@ -184,7 +202,10 @@
     var now = new Date()
     console.log('> ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + ' ' + gatt[currentGatt].serviceName + ' is ' + value + gatt[currentGatt].unit);
 
+    document.getElementById(gatt[currentGatt].shortName + '-value').innerText = gatt[currentGatt].serviceName + ' is ' + value + gatt[currentGatt].unit
+
     if (currentGatt == 'env') { changeBackground(value) }
+    if (currentGatt == 'batt') { changeProgressBar(value) }
   }
 
   function onDisconnected() {
@@ -197,16 +218,25 @@
   }
 
   function changeBackground(value) {
+    var uvIndexStyle = document.getElementById("uv-index").style
+
     if (value <= 2) {
-      document.body.style.background = "yellowgreen"
+      uvIndexStyle.background = "yellowgreen"
     } else if (value <= 5) {
-      document.body.style.background = "lemonchiffon"
+      uvIndexStyle.background = "lemonchiffon"
     } else if (value <= 7) {
-      document.body.style.background = "tomato"
+      uvIndexStyle.background = "tomato"
     } else if (value <= 10) {
-      document.body.style.background = "indianred"
+      uvIndexStyle.background = "indianred"
     } else {
-      document.body.style.background = "plum"
+      uvIndexStyle.background = "plum"
     }
   }
+
+  function changeProgressBar(value) {
+    document.getElementById("batt-bar").value = value
+  }
 </script>
+
+</body>
+</html>
