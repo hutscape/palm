@@ -6,6 +6,7 @@ _autosave*
 *-rescue.lib
 *-rescue.dcm
 *.elf
+*.bin
 *.hex
 *.pyc
 
