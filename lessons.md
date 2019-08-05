@@ -12,8 +12,9 @@ lessons:
   - title: V2.0
     subtitle: For next iteration
     list:
-      - name: Do not use modules as they are big and bulky
+      - name: Do not use modules as they are big and bulky. E.g. <a href="https://www.adafruit.com/product/4077">MDBT42Q</a>
       - name: Use DP3T to power on, wireless off and wireless on options instead of 2 switches
       - name: Use a smaller and brighter RGB LED
       - name: Use a single layer board with only SMD parts so that a housing can be catered for the battery at the back
+      - name: Use a smaller rechargeable coin cell battery E.g. CR2450
 ---
