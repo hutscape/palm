@@ -189,8 +189,8 @@
   function requestDevice() {
     console.log('Requesting any Bluetooth Device...');
     return navigator.bluetooth.requestDevice({
-        acceptAllDevices: true,
-        optionalServices: [gatt[currentGatt].service]})
+      filters: [ { "namePrefix": "Palm" } ],
+      optionalServices: [gatt[currentGatt].service]})
     .then(device => {
       bluetoothDevice = device;
       bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
