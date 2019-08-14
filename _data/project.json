@@ -1,18 +1,22 @@
 {
-   "power": "LiPO",
-   "wireless":"BLE",
-   "sensor": "UV Index",
-   "mcu": "nRF52",
-   "ota": "No",
-   "battery-life": "5 days",
-   "version": "1.0",
+  "name": "Palm",
+  "description": "🌴 Get alerted on excessive UV radiation with a backpack keychain 🗝",
+  "version": "1.0",
 
-   "bom-uniq": 10,
-   "bom-total": 13,
-   "bom-cost-sgd": 68.64,
-   "bom-cost-usd": 50.47,
-   "vendors": 4,
-   "schedule": "3 months",
-   "status": "completed",
-   "completion": "July 2019"
+  "wireless":"BLE",
+  "mcu": "nRF52",
+  "sensor": "UV Index",
+  "power": "LiPO",
+  "ota": "No",
+  "battery-life": "5 days",
+  
+  "bom-uniq": 10,
+  "bom-total": 13,
+  "bom-cost-sgd": 68.64,
+  "bom-cost-usd": 50.47,
+  "vendors": 4,
+
+  "schedule": "3 months",
+  "status": "completed",
+  "completion": "July 2019"
 }
