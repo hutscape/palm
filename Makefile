@@ -1,4 +1,4 @@
-.PHONY: compile upload bom clean
+.PHONY: serve build install bom
 
 serve: build
 	jekyll serve
@@ -15,10 +15,6 @@ install:
 	touch .git/hooks/pre-commit || exit
 	echo "Making pre-commit hook executable"
 	chmod u+x .git/hooks/pre-commit
-
-clean:
-	rm firmware/*.bin
-	rm firmware/*.elf
 
 bom:
 	rm -f bill_of_materials.csv
