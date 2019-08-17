@@ -4,6 +4,7 @@ url: "https://hutscape.com/palm"
 markdown: kramdown
 permalink: /:title
 google_analytics: UA-144008567-1
+youtube: https://www.youtube.com/user/sweska/videos
 github:
   repository_url: https://github.com/hutscape/palm
   raw_content_url: https://raw.githubusercontent.com/hutscape/palm/master
