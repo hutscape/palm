@@ -3,13 +3,13 @@
   "description": "🌴 Get alerted on excessive UV radiation with a backpack keychain 🗝",
   "version": "1.0",
 
+  "power": "LiPO",
   "wireless":"BLE",
   "mcu": "nRF52",
   "sensor": "UV Index",
-  "power": "LiPO",
   "ota": "No",
   "battery-life": "5 days",
-  
+
   "bom-uniq": 10,
   "bom-total": 13,
   "bom-cost-sgd": 68.64,
