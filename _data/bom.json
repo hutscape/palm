@@ -1,0 +1,13 @@
+{
+  "bom-uniq": 10,
+  "bom-total": 13,
+  "bom-cost": "68.64",
+  "vendors": 5,
+  "vendor-names": [
+    "RS Components",
+    "Old Stock",
+    "AliExpress",
+    "Adafruit",
+    "JLCPCB"
+  ]
+}

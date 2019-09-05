@@ -13,4 +13,7 @@ _autosave*
 # jekyll
 _site
 
+# node
+node_modules
+
 datasheets

@@ -18,4 +18,5 @@ install:
 
 bom:
 	rm -f bill_of_materials.csv
-	python bom/bom.py hardware/Palm.xml bill_of_materials.csv
+	python scripts/bom.py hardware/Palm.xml _data/bill_of_materials.csv
+	node scripts/bom_info.js
