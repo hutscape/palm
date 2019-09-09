@@ -3,6 +3,7 @@ layout: default
 title: Power
 permalink: /power
 sequence: 6
+power_tree: true
 power_source: <code>380mAh</code> LiPo battery
 battery_life: 5 days
 charging_duration: 5 hours
