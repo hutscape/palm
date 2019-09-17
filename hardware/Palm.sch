@@ -9217,6 +9217,7 @@ F 3 "~" H 9350 1500 50  0001 C CNN
 F 4 "Electronics" H 0   0   50  0001 C CNN "Category"
 F 5 "0805" H 0   0   50  0001 C CNN "Package"
 F 6 "15-res-0805-0" H 0   0   50  0001 C CNN "Stock"
+F 7 "Yes" H 0   0   50  0001 C CNN "DNP"
 	1    9350 1500
 	0    1    1    0   
 $EndComp

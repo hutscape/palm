@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch)
-    (date "2019 June 12, Wednesday 15:02:29")
+    (date "2019 September 17, Tuesday 17:41:23")
     (tool "Eeschema (5.1.0-0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -117,17 +117,17 @@
       (tstamp 5CEE5E28))
     (comp (ref J1)
       (value Conn_01x02_Female)
-      (footprint Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal)
-      (datasheet https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4b4.pdf)
+      (footprint "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal, Body orientation: Right angle")
+      (datasheet https://docs-apac.rs-online.com/webdocs/13ce/0900766b813ce4bd.pdf)
       (fields
         (field (name Category) Connector)
         (field (name Manufacturer) JST)
         (field (name "Minimum Order") 5)
         (field (name Package) SMD)
-        (field (name "Part No.") "B2B-PH-SM4-TB(LF)(SN) ")
+        (field (name "Part No.") "S2B-PH-SM4-TB(LF)(SN)")
         (field (name "Unit cost") 0.486)
         (field (name Vendor) "RS Components")
-        (field (name "Vendor link") https://sg.rs-online.com/web/p/pcb-headers/6881325/))
+        (field (name "Vendor link") https://sg.rs-online.com/web/p/products/6881353/))
       (libsource (lib Connector) (part Conn_01x02_Female) (description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5CEE767E))
@@ -167,6 +167,7 @@
       (datasheet ~)
       (fields
         (field (name Category) Electronics)
+        (field (name DNP) Yes)
         (field (name Package) 0805)
         (field (name Stock) 15-res-0805-0))
       (libsource (lib Device) (part R_Small) (description "Resistor, small symbol"))
