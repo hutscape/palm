@@ -13,6 +13,39 @@ references:
       - name: "#badgelife"
         url: https://twitter.com/search?q=%23badgelife&src=typed_query on Twitter for various PCB designs
 
+  - topic: Processor
+    list:
+      - name: nRF52 Adafruit Bluefruit board schematic
+        url: https://cdn-learn.adafruit.com/assets/assets/000/052/793/original/microcontrollers_revgsch.png?1523067417
+      - name: Adafruit Feather 32u4 Bluefruit LE with USB or LiPo JST connector
+        url: https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/overview
+
+  - topic: UV Sensor
+    list:
+      - name: VEML6075 Adafruit Breakout board footprint
+        url: https://cdn-learn.adafruit.com/assets/assets/000/062/588/original/adafruit_products_fab.png?1537993768
+      - name: VEML6075 Adafruit Breakout board schematic
+        url: https://cdn-learn.adafruit.com/assets/assets/000/062/587/original/adafruit_products_schem.png?1537993764
+      - name: VEML6075 datasheet from manufacturer Vishay
+        url: https://www.vishay.com/docs/84304/veml6075.pdf
+      - name: Arduino UV Index Meter - Working with Ultraviolet Light
+        url: https://www.youtube.com/watch?v=dBljvUBZqI8
+      - name: SENS-43UV analog UV sensor
+        url: https://abra-electronics.com/sensors/sensors-light-imaging-en/sens-43uv-analog-ultra-violet-light-sensor-module-for-5v-microcontrollers.html
+      - name: Analog UV Light Sensor Breakout from Adafruit
+        url: https://www.adafruit.com/product/1918
+      - name: SI1145 Digital UV Index / IR / Visible light sensor breakout board from Adafruit with <code>I2C</code> bus connection
+        url: https://www.adafruit.com/product/1777
+      - name: VEML6070 breakout board with <code>I2C</code>
+        url: https://www.adafruit.com/product/2899
+
+  - topic: Other parts used
+    list:
+      - name: RGB LED SMD datasheet
+        url: https://docs-apac.rs-online.com/webdocs/1524/0900766b815247fa.pdf
+      - name: Toggle Switch SPDT
+        url: https://www.aliexpress.com/item/50Pcs-Mini-7-Pin-On-Off-1P2T-SPDT-MSK-12C02-SMD-Toggle-Slide-Switch-For-MP3/32856542440.html
+
   - topic: Measuring power consumption
     list:
       - name: Measuring current for nRF52832
@@ -28,30 +61,12 @@ references:
       - name: nRF52832 Product Specification v1.1
         url: https://infocenter.nordicsemi.com/pdf/nRF52832_PS_v1.1.pdf
 
-  - topic: UV Sensor
-    list:
-      - name: Arduino UV Index Meter - Working with Ultraviolet Light
-        url: https://www.youtube.com/watch?v=dBljvUBZqI8
-      - name: SENS-43UV analog UV sensor
-        url: https://abra-electronics.com/sensors/sensors-light-imaging-en/sens-43uv-analog-ultra-violet-light-sensor-module-for-5v-microcontrollers.html
-      - name: Analog UV Light Sensor Breakout from Adafruit
-        url: https://www.adafruit.com/product/1918
-      - name: SI1145 Digital UV Index / IR / Visible light sensor breakout board from Adafruit with <code>I2C</code> bus connection
-        url: https://www.adafruit.com/product/1777
-      - name: VEML6070 breakout board with <code>I2C</code>
-        url: https://www.adafruit.com/product/2899
-
   - topic: Humidity, Temperature and Barometric pressure sensor
     list:
       - name: Adafruit BME280 breakout board from Adafruit with <code>I2C</code> or <code>SPI</code>
         url: https://www.adafruit.com/product/2652
       - name: What's the difference between the BMP280 and the BME280 atmospheric sensors
         url: https://www.youtube.com/watch?v=0aL1PxK3rkE
-
-  - topic: Processor
-    list:
-      - name: Adafruit Feather 32u4 Bluefruit LE with USB or LiPo JST connector
-        url: https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/overview
 
   - topic: Coin Cell
     list:
