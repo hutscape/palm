@@ -74,7 +74,8 @@ BLECharacteristic battery_level_characteristic = BLECharacteristic(UUID16_CHR_BA
 
 void setup() {
   Serial.begin(115200);
-  while (!Serial) delay(10);
+  delay(500);
+
   pinMode(ENSensorPin, OUTPUT);
   digitalWrite(ENSensorPin, LOW);
   pinMode(ENBLEPin, INPUT);
