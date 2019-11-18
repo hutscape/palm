@@ -1,4 +1,4 @@
-15835193426846004
+15821160527658696
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -40872,13 +40872,6 @@ DCDC-Converter XP_POWER JTE06 Dual
 0
 8
 8
-CREE_RGB_LED_-PLCC-6_5.5x5.5mm
-LED_RGB_Cree-PLCC-6_5.5x5.5mm_P2.1mm
-
-
-0
-6
-6
 Crystal
 Crystal_AT310_D3.0mm_L10.0mm_Horizontal
 Crystal THT AT310 10.0mm-10.5mm length 3.0mm diameter
@@ -49839,13 +49832,6 @@ net tie
 0
 4
 4
-nRF52_Bluefruit_Adafruit_breakout
-nRF52_Bluefruit_Adafruit_breakout_board
-
-
-0
-32
-28
 OptoDevice
 ADNS-9800
 Laser Gaming Sensor ADNS-9800
@@ -62341,13 +62327,6 @@ Potentiometer vertical Vishay T73YP
 0
 3
 3
-Push_Button
-Tactile_pushbutton
-
-
-0
-4
-2
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf
@@ -65246,13 +65225,6 @@ LEM Hall Effect Voltage transducer
 0
 5
 5
-Si7021
-Si7021_breakout_board
-Through hole straight pin header, 1x05, 2.54mm pitch, single row
-Through hole pin header THT 1x05 2.54mm single row
-0
-5
-5
 Socket
 3M_Textool_240-1288-00-0602J_2x20_P2.54mm
 3M 40-pin zero insertion force socket, though-hole, row spacing 25.4 mm (1000 mils)
@@ -65358,13 +65330,6 @@ https://www.farnell.com/cad/316865.pdf?_ga=2.37208032.177107060.1530611323-24901
 0
 48
 48
-Switch_Tactile_pushbutton
-Tactile_pushbutton
-
-
-0
-4
-2
 Symbol
 CE-Logo_8.5x6mm_SilkScreen
 CE marking
@@ -71371,31 +71336,3 @@ varistor SIOV
 0
 2
 2
-veml6075_breakout_board
-VEML6075_breakout_board
-
-
-0
-5
-5
-wemos_battery_shield
-wemos_battery_shield
-
-
-0
-16
-16
-wemos_d1_mini
-Battery_shield
-
-
-0
-16
-16
-wemos_d1_mini
-D1_mini_board
-https://wiki.wemos.cc/products:d1:d1_mini
-
-0
-16
-16

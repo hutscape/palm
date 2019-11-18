@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Adafruit_nRF52_Feather:Adafruit_nRF52_Feather U1
+L Adafruit_nRF52_feather:Adafruit_nRF52_Feather U1
 U 1 1 5CB07E1A
 P 2750 2400
 F 0 "U1" H 3150 3350 50  0000 C CNN

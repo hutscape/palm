@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name nrf52_bluefruit_Adafruit_breakout_board)(type KiCad)(uri ${KIPRJMOD}/library/footprints/nrf52_bluefruit_Adafruit_breakout_board.pretty)(options "")(descr ""))
+  (lib (name veml6075_breakout_board)(type KiCad)(uri ${KIPRJMOD}/library/footprints/veml6075_breakout_board.pretty)(options "")(descr ""))
+  (lib (name cree_rgb_led_55x55mm)(type KiCad)(uri ${KIPRJMOD}/library/footprints/cree_rgb_led_55x55mm.pretty)(options "")(descr ""))
+)
