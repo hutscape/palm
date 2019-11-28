@@ -1,5 +1,4 @@
 (sym_lib_table
   (lib (name Adafruit_nRF52_feather)(type Legacy)(uri ${KIPRJMOD}/library/symbols/Adafruit_nRF52_feather.lib)(options "")(descr ""))
   (lib (name Sensor_UV)(type Legacy)(uri ${KIPRJMOD}/library/symbols/Sensor_UV.lib)(options "")(descr ""))
-  (lib (name Palm-rescue)(type Legacy)(uri ${KIPRJMOD}/Palm-rescue.lib)(options "")(descr ""))
 )
