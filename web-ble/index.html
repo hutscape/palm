@@ -3,12 +3,24 @@
 <head>
   <title>Web BLE</title>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script src="//kit.fontawesome.com/f22621fdb0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="subtitle is-1">Web Bluetooth: Read GATT Values Changing</h2>
+      <div class="box" id="alert" style="display:none">
+        <div class="icon-text">
+          <span class="icon has-text-info">
+            <i class="fab fa-bluetooth"></i>
+          </span>
+          <span>Bluetooth is conected</span>
+        </div>
+        <p class="block">
+          Reading <strong>UV Index</strong>. No data is stored.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -17,19 +29,31 @@
   <div class="container">
     <div class="columns is-desktop">
       <div class="column">
-        <p class="title is-2">Get UV Index</p>
+        <div class="block">
+          <p class="title is-2">Get UV Index</p>
 
-        <button class="button is-primary" id="read-env">Read UV Index</button>
-        <button class="button is-info" id="start-env" disabled>Start</button>
-        <button class="button is-info" id="stop-env" disabled>Stop</button>
-        <button class="button is-dark" id="reset-env">Reset device</button>
+          <button class="button is-primary" id="connect">Read UV Index</button>
+          <button class="button is-info" id="start-env" disabled>Start</button>
+          <button class="button is-info" id="stop-env" disabled>Stop</button>
+          <button class="button is-dark" id="reset-env">Reset device</button>
+        </div>
+
+        <div class="block" id="ble-info" style="display:none">
+          <div class="notification">
+            <button class="delete"></button>
+            Connect to the BLE device, <strong>Palm</strong> to read live <strong>UV Index</strong> data.  This data is not stored.
+            <br>
+            <br>
+            <button class="button is-info" id="read-env">Connect to Palm device</button>
+          </div>
+        </div>
 
         <p class="subtitle is-3 is-spaced" id="env-value"></p>
       </div>
       <div class="column">
         <p class="title is-2">Get Battery level</p>
 
-        <button class="button is-primary" id="read-batt">Read Battery level</button>
+        <button class="button is-primary" id="read-batt">Connect to BLE device</button>
         <button class="button is-info" id="start-batt" disabled>Start</button>
         <button class="button is-info" id="stop-batt" disabled>Stop</button>
         <button class="button is-dark" id="reset-batt">Reset device</button>
@@ -64,21 +88,40 @@
     }
   }
 
+  var bleAlertBox = document.getElementById("alert")
+
+  document.querySelector('#connect').addEventListener('click', function() {
+    document.querySelector('#ble-info').style.display = 'block'
+  })
+
   // User actions read, start, stop, reset
   document.querySelector('#read-env').addEventListener('click', function() {
-    if (isWebBluetoothEnabled()) { currentGatt = 'env'; read() }
+    if (isWebBluetoothEnabled()) {
+      currentGatt = 'env';
+      document.querySelector('#ble-info').style.display = 'none'
+      read()
+    }
   })
 
   document.querySelector('#start-env').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { start() }
+    if (isWebBluetoothEnabled()) {
+      start()
+      bleAlertBox.style.display = 'block'
+    }
   })
 
   document.querySelector('#stop-env').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { stop() }
+    if (isWebBluetoothEnabled()) {
+      stop()
+      bleAlertBox.style.display = 'none'
+    }
   })
 
   document.querySelector('#reset-env').addEventListener('click', function(event) {
-    if (isWebBluetoothEnabled()) { currentGatt = ''; reset() }
+    if (isWebBluetoothEnabled()) {
+      currentGatt = ''; reset()
+      bleAlertBox.style.display = 'none'
+    }
   })
 
   document.querySelector('#read-batt').addEventListener('click', function() {
@@ -159,6 +202,10 @@
     document.querySelector('#stop-env').disabled = true;
     document.getElementById("uv-index").style.background = "";
 
+    document.querySelector('#env-value').innerHTML = ''
+    document.querySelector('#batt-value').innerHTML = ''
+    document.getElementById("batt-bar").value = 0
+
     console.log('> Bluetooth Device reset');
   }
 
@@ -236,6 +283,16 @@
   function changeProgressBar(value) {
     document.getElementById("batt-bar").value = value
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
+
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      })
+    })
+  })
 </script>
 
 </body>
