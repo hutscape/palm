@@ -41,9 +41,12 @@
         <div class="block" id="ble-info" style="display:none">
           <div class="notification">
             <button class="delete"></button>
-            Connect to the BLE device, <strong>Palm</strong> to read live <strong>UV Index</strong> data.  This data is not stored.
+
+            <p>Connect to the BLE device, <strong>Palm</strong> to read live <strong>UV Index</strong> data. This data is not stored.</p>
             <br>
+            <p>This feature is using the experimental <a href="https://webbluetoothcg.github.io/web-bluetooth/">Web Bluetooth API</a>. Check the <a href="https://github.com/hutscape/palm/blob/master/web-ble/index.html#L241-L246">source code</a> for verification.</p>
             <br>
+
             <button class="button is-info" id="read-env">Connect to Palm device</button>
           </div>
         </div>
