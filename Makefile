@@ -4,10 +4,10 @@ KICAD_XML?=hardware/Palm.xml
 .PHONY: serve build install bom
 
 serve: build
-	jekyll serve
+	bundle exec jekyll serve
 
 build:
-	jekyll build
+	bundle exec jekyll build
 
 install:
 	echo "Installing git-secrets from awslabs..."
