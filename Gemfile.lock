@@ -61,7 +61,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.9.0)
   kramdown-parser-gfm
-  tzinfo-data
 
 BUNDLED WITH
    1.17.2
