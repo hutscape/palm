@@ -1,6 +1,6 @@
 {
   "name": "Palm",
-  "description": "🌴 Get alerted on excessive UV radiation with a backpack keychain 🗝",
+  "description": "🌴 Outdoor BLE-connected UV sensor keychain 🗝",
   "version": "1.0",
 
   "power": "LiPO",
