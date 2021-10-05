@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: start
 title: Getting Started
 permalink: /
 sequence: 1
@@ -22,7 +22,6 @@ software:
 <section class="section is-small">
   <div class="container">
     <h2 class="title is-1">Getting Started</h2>
-
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-12">
         <div class="tile">
@@ -61,7 +60,6 @@ software:
 <section class="section is-small">
   <div class="container">
     <h2 class="title is-1">Maintenance</h2>
-
     <div class="content is-medium">
       <ul>
         <li><strong>Flashing firmware:</strong> Plug in the USB cable into the USB connector</li>
