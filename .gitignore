@@ -1,20 +1,32 @@
 # Temporary
-*.kicad_pcb-bak
-*.bak
+.DS_Store
 _autosave*
+.vscode
+*.kicad_pcb-bak
+*.sch-bak
+*.bak
 *-cache.lib
 *-rescue.lib
 *-rescue.dcm
 *.elf
-*.bin
 *.hex
 *.pyc
+*.gch
 
 # jekyll
+ideas
 _site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
 
 # node js
 node_modules
 package-lock.json
 
+# build files
+build
+
+# hardware
 datasheets
+gerbers
