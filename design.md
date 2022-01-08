@@ -52,17 +52,20 @@ user_stories:
         reason: I can be hands-free when outdoors
 
 # Power
-power_tree: true
-power_source: <code>380mAh</code> LiPo battery
-battery_life: 5 days
-charging_duration: 5 hours
-charging_instruction: Plug in the USB cable to charge. <code>Yellow</code> LED will be on while it is charging.
+power:
+  tree: true
+  components: true
+  calculation: true
+  source: <code>380mAh</code> LiPo battery
+  battery_life: 5 days
+  charging_duration: 5 hours
+  charging_instruction: Plug in the USB cable to charge. <code>Yellow</code> LED will be on while it is charging.
 ---
 
 
 <section class="section is-small">
   <div class="container">
-    <h2 class="title is-1">Power consumption from main components</h2>
+    <h2 class="title is-1">Power consumption of main components</h2>
     <table class="table is-fullwidth">
       <thead>
         <tr>
