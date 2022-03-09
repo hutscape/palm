@@ -1,6 +1,7 @@
 title: Palm
 description: 🌴 Outdoor BLE-connected UV sensor keychain 🗝
 url: "https://hutscape.com/palm"
+parent: "https://hutscape.com"
 markdown: kramdown
 permalink: /:title
 youtube: https://www.youtube.com/user/sweska/videos
