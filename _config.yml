@@ -10,3 +10,20 @@ github:
   raw_content_url: https://raw.githubusercontent.com/hutscape/palm/master
 exclude: ["datasheets", "Gemfile", "Gemfile.lock", "contributing.md", "Makefile", "readme.md", "test", "scripts", "firmware"]
 include: ["_data"]
+
+project:
+  version: 1.0
+  power: LiPO
+  wireless: BLE
+  mcu: nRF52
+  sensor: UV Index
+  ota: No
+  battery-life: 5 days
+  bom-uniq: 10
+  bom-total: 13
+  bom-cost-sgd: 68.64
+  bom-cost-usd: 50.47
+  vendors: 4
+  schedule: 3 months
+  status: completed
+  completion: July 2019
