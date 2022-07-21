@@ -12,12 +12,18 @@ downloads:
   gerber: true
   bom: true
 software:
-  - name: Firmware
-    code: firmware
+  - name: Demo firmware
+    code: _code/demo
   - name: Test
     code: test
-  - name: Web BLE
-    code: web-ble
+features:
+  - detail: Read UV Index with the on-board sensor <code>VEML6075</code> and the battery level
+  - detail: Display the UV Index color code with the on-board RGB LED
+  - detail: Power on/off the entire device with the on-board power switch
+  - detail: Start or stop BLE advertising with the on-board BLE switch
+  - detail: Connect via the USB cable to flash the firmware or charge the LiPo
+  - detail: Hang it like as keychain using the <code>M6</code> drill hole
+  - detail: Display UV Index and Battery level as a GATT service and characteristic on a BLE client such as the iPhone or Web BLE on Chrome browser
 ---
 
 <section class="section is-small">
@@ -38,7 +44,7 @@ software:
             <article class="tile is-child notification">
               <p class="title">Step 2</p>
               <p class="subtitle">Flash the firmware onto the <code>nRF52</code> board to display UV Index and battery level.</p>
-              <a href="images/software/console.png"><img src="images/software/console.png" alt="Serial console for firmware"></a>
+              <a href="images/code/demo-console.png"><img src="images/code/demo-console.png" alt="Serial console for firmware"></a>
             </article>
           </div>
           <div class="tile is-parent">
@@ -46,9 +52,9 @@ software:
               <div class="content">
                 <p class="title">Step 3</p>
                 <p class="subtitle">See the UV and battery level values on the <a href="https://itunes.apple.com/sg/app/nrf-connect/id1054362403?mt=8">nRF Connect iPhone app</a></p>
-                <img src="images/software/ios-detect.jpg" alt="iOS app detect">
+                <img src="images/code/ios-detect.jpg" alt="iOS app detect">
                 <br><br>
-                <img src="images/software/ios-services.jpg" alt="iOS app GATT Services">
+                <img src="images/code/ios-services.jpg" alt="iOS app GATT Services">
               </div>
             </article>
           </div>
