@@ -14,8 +14,7 @@ downloads:
 software:
   - name: Demo firmware
     code: _code/demo
-  - name: Test
-    code: test
+
 features:
   - detail: Read UV Index with the on-board sensor <code>VEML6075</code> and the battery level
   - detail: Display the UV Index color code with the on-board RGB LED
