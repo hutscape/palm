@@ -11,6 +11,7 @@ downloads:
   kicad: true
   gerber: true
   bom: true
+  case: false
 software:
   - name: Demo firmware
     code: _code/demo
@@ -35,7 +36,7 @@ features:
             <article class="tile is-child notification">
               <p class="title">Step 1</p>
               <p class="subtitle">Wire up the hardware components with <a href="">nRF52 Adafruit feather board</a>, <a href="https://www.adafruit.com/product/3964">VEML6075 sensor board</a> and LiPo battery. Turn on the switch for power and BLE.</p>
-              <a href="images/hardware/schematic.png"><img src="images/hardware/schematic.png" alt="Schematic"></a>
+              <a href="images/pcb/schematic.png"><img src="images/pcb/schematic.png" alt="Schematic"></a>
               <a href="images/prototype/prototype-3.jpg"><img src="images/prototype/prototype-3.jpg" alt="Prototype"></a>
             </article>
           </div>

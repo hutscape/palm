@@ -1,6 +1,6 @@
 (export (version D)
   (design
-    (source /Users/sayanee/Documents/hutscape/palm/hardware/Palm.sch)
+    (source /Users/sayanee/Documents/hutscape/palm/pcb/Palm.sch)
     (date "2019 September 17, Tuesday 17:41:23")
     (tool "Eeschema (5.1.0-0)")
     (sheet (number 1) (name /) (tstamps /)
