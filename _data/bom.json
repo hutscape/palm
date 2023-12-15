@@ -2,6 +2,7 @@
   "bom-uniq": 10,
   "bom-total": 13,
   "bom-cost": "68.64",
+  "currency": "SGD",
   "vendors": 5,
   "vendor-names": [
     "RS Components",
