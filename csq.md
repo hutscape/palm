@@ -2,7 +2,7 @@
 layout: csq
 title: CSQ
 permalink: /csq
-sequence: 6
+sequence: 7
 
 # Lessons
 lessons:

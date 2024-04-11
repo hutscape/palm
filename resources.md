@@ -2,7 +2,7 @@
 layout: resources
 title: Resources
 permalink: /resource
-sequence: 7
+sequence: 8
 
 # References
 references:
