@@ -1,5 +1,4 @@
 BOM_PATH?=_data/bill_of_materials.csv
-XML_PATH?=hardware/*.xml
 
 .PHONY: default serve build install bom
 
@@ -10,13 +9,6 @@ serve:
 
 build:
 	jekyll build
-
-bom:
-	rm -f $(BOM_PATH)
-	python scripts/bom.py $(XML_PATH) $(BOM_PATH)
-
-stats:
-	python3 scripts/bom_stats.py $(BOM_PATH)
 
 install:
 	echo "Installing git-secrets from awslabs..."
@@ -34,13 +26,21 @@ install:
 	echo "Adding .gitignore..."
 	cat scripts/_gitignore > .gitignore
 
+	echo "Adding .gitmodules..."
+	cat scripts/_gitmodules > .gitmodules
+	git submodule update --recursive --remote
+
 	echo "Adding Gemfile and installing ruby gems..."
 	cat scripts/Gemfile > Gemfile
 	bundle install
 
-update:
+submodule:
 	git submodule foreach --recursive git reset --hard HEAD
 	git submodule update --remote
+
+update:
+	rm Gemfile.lock
+	bundle install
 
 uncommit:
 	# git uncommit the last commit
